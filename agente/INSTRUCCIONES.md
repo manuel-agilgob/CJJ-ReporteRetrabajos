@@ -12,7 +12,7 @@ persona; el agente las lee y no las edita.
 | `agente/contrato-datos.md` | Cómo se llena cada clave del JSON y qué se verifica antes de publicar. |
 | `agente/categorias.md` | Taxonomía de retrabajos y de causas de hotfix, con sus criterios. |
 | `agente/etapas.md` | Mapa de estado de Jira → etapa del flujo. |
-| `agente/colaboradores.md` | Lista fija de desarrolladores: cuenta de Jira, nombre publicado y rol. |
+| `agente/colaboradores.md` | Lista fija de desarrolladores: `accountId` de Jira, nombre publicado y rol. |
 | `agente/plantilla-vacia.json` | Esqueleto del JSON de un periodo. |
 
 ## Programación
@@ -101,8 +101,8 @@ Cuando el entorno no tiene el pipeline:
 
 ## Paso 3 — Colaboradores
 
-1. Tomar la lista de `colaboradores.md` y resolver cada cuenta (correo o `accountId`) a su `accountId` de Jira. Una cuenta
-   que no se encuentra: **detener** y reportarla.
+1. Tomar la lista de `colaboradores.md` y comprobar que cada `accountId` exista en Jira. Uno que no se encuentra:
+   **detener** y reportarlo.
 2. **Todos los de la lista van en el JSON**, en el orden de la lista, aunque en el periodo tengan todo en cero.
 3. El responsable de un retrabajo es el asignado (`assignee`) de la tarjeta **en el momento de la transición**. En el
    changelog es el valor del último cambio de `assignee` anterior a esa fecha. Si no hubo cambios antes, es el valor previo
@@ -165,14 +165,14 @@ generación.
    del JSON: no se escriben a mano.
 2. Commit en español: `reporte: periodo <inicio> → <fin>`. Si va directo a `main` o por PR queda por definir al configurar
    la rutina. Al llegar a `main`, el workflow `.github/workflows/pages.yml` publica el sitio.
-3. **Lo que está en `reportes/` es público.** Pages publica solo `index.html`, `plantilla/` y `reportes/`: ahí nunca van
+3. **Todo el repositorio es público**, y el sitio publica `index.html`, `plantilla/` y `reportes/`. En ningún archivo van
    correos, apellidos, usuarios de Jira ni extracciones crudas. El trabajo intermedio se hace en `.tmp/`, que está ignorado.
 
 ## Cuándo detenerse sin publicar
 
 - Un estado de origen que no está en `etapas.md`.
 - Una categoría que no está en `categorias.md`.
-- Una cuenta de `colaboradores.md` que no existe en Jira.
+- Un `accountId` de `colaboradores.md` que no existe en Jira.
 - Un resultado de Jira truncado o incompleto: límite alcanzado, paginación fallida o credenciales rechazadas.
 - Una invariante del contrato que no se cumple.
 - Un periodo que no es del ciclo, que no ha cerrado, o que ya está publicado y no se pidió regenerar.
@@ -190,6 +190,5 @@ Al terminar, o al detenerse, el agente informa en su respuesta (y en la descripc
 ## Pendientes de definir
 
 - Configurar la rutina: acceso a Jira (con la zona horaria de la cuenta), vía de extracción y destino del commit.
-- Llenar la lista de `colaboradores.md`: cuentas, nombres publicados y roles.
-- Activar Pages con la fuente «GitHub Actions» (ver `README.md`).
+- Llenar la lista de `colaboradores.md`: `accountId`, nombres publicados y roles.
 - Actualizar `reworkStage.ts` en `ai-tools-documentation` para que `Aprobado` vaya a MERGE (ver `etapas.md`).

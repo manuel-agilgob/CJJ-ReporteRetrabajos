@@ -6,7 +6,7 @@ tienen las mismas secciones y el mismo formato.
 
 ## Estructura
 
-| Ruta | Qué es | ¿Se publica? |
+| Ruta | Qué es | ¿Va al sitio? |
 |---|---|---|
 | `index.html` | Portada: lista los periodos publicados y enlaza a cada reporte. Es la entrada del sitio. | Sí |
 | `plantilla/` | Esqueleto del diseño, copia fiel del proyecto de Claude Design. No se edita por periodo. Ver `plantilla/ORIGEN.md`. | Sí |
@@ -38,14 +38,15 @@ detalle, y lo que falta definir, está en `agente/INSTRUCCIONES.md`.
 
 ## Publicación en GitHub Pages
 
-Settings → Pages → Source: **GitHub Actions**. En cada push a `main` que toque el sitio, el workflow publica únicamente
-`index.html`, `plantilla/` y `reportes/`, en <https://manuel-agilgob.github.io/CJJ-ReporteRetrabajos/>.
+Settings → Pages → Source: **GitHub Actions** (ya configurado). En cada push a `main` que toque el sitio, el workflow
+publica únicamente `index.html`, `plantilla/` y `reportes/`, en <https://manuel-agilgob.github.io/CJJ-ReporteRetrabajos/>.
+También se puede lanzar a mano desde la pestaña Actions («Publicar sitio» → *Run workflow*).
 
-- **No usar «Deploy from a branch»**: publicaría el repositorio completo, incluida la lista de colaboradores con sus
-  correos.
-- El sitio es **público** aunque el repositorio sea privado (Pages en repositorios privados requiere GitHub Pro o superior).
-  Por eso en `reportes/` de las personas solo va el nombre de pila, y ninguna extracción cruda de Jira se versiona
-  (`.gitignore` excluye `.tmp/` y las hojas de cálculo).
+- **No usar «Deploy from a branch»**: GitHub pasaría el repo por Jekyll, que omite `plantilla/_ds/` (los estilos del
+  diseño), y los reportes se verían sin recuadros ni tipografías.
+- **El repositorio es público**, igual que el sitio. Por eso en ningún archivo van correos, apellidos ni extracciones crudas
+  de Jira: a las personas se las identifica por su `accountId` (ver `agente/colaboradores.md`) y en los reportes solo va el
+  nombre de pila. `.gitignore` excluye `.tmp/` y las hojas de cálculo.
 
 ## Relación con otros repositorios
 

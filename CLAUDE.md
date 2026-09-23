@@ -9,6 +9,6 @@ y mensajes de commit.
   vuelve a copiar (`plantilla/ORIGEN.md`).
 - `agente/categorias.md`, `agente/etapas.md` y `agente/colaboradores.md` los mantiene una persona: se leen, no se editan. Si
   falta algo en ellos, detenerse y reportarlo.
-- GitHub Pages publica solo `index.html`, `plantilla/` y `reportes/` (`.github/workflows/pages.yml`). Lo que va en
-  `reportes/` es público: de las personas solo el nombre de pila, nunca correos, apellidos ni extracciones crudas de Jira.
-  `agente/colaboradores.md` tiene correos y nunca se copia al sitio.
+- El repositorio es público y GitHub Pages publica `index.html`, `plantilla/` y `reportes/` (`.github/workflows/pages.yml`).
+  En ningún archivo van correos, apellidos ni extracciones crudas de Jira: a las personas se las identifica por su
+  `accountId` y en los reportes solo va el nombre de pila.

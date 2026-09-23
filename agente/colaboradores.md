@@ -5,20 +5,24 @@ colaborador», aunque en el periodo tengan todo en cero: así el reporte muestra
 
 ## Lista
 
-| Cuenta de Jira | Nombre publicado | Rol |
+| accountId de Jira | Nombre publicado | Rol |
 |---|---|---|
 
-- **Cuenta de Jira:** el correo de la cuenta de Atlassian de la persona, o su `accountId` si el correo no es visible en
-  Jira. El agente la traduce a su cuenta de Jira; si no la encuentra, se detiene.
+- **accountId de Jira:** el identificador de la cuenta de Atlassian de la persona (con la forma
+  `5b10ac8d82e05b22cc7d4ef5` o `557058:` seguido de un UUID). Aparece al final de la URL de su perfil en Jira
+  (`https://<sitio>.atlassian.net/jira/people/<accountId>`). Si no se encuentra en Jira, el agente se detiene.
 - **Nombre publicado:** solo el nombre de pila (Samuel, Sebastián, Manuel…). Si dos coinciden, se agrega la inicial del
   primer apellido: «Manuel V.». Debe ser único en la lista.
 - **Rol:** `Frontend`, `Backend`, `Full-stack`, `Integraciones`… Si se deja vacío, se publica `n/d`.
 
 ## Privacidad
 
-Este archivo tiene correos, así que **no se publica**: el sitio de GitHub Pages solo publica `index.html`, `plantilla/` y
-`reportes/` (ver `.github/workflows/pages.yml`). En los JSON del periodo va únicamente el nombre publicado, nunca correos,
-apellidos ni usuarios de Jira.
+**El repositorio es público**: todo lo que se escriba aquí se puede ver en GitHub. Por eso la lista usa el `accountId`,
+que es un identificador opaco, y **nunca correos**, apellidos ni usuarios de Jira. Para dar de alta a alguien a partir de su
+correo, se busca su `accountId` en Jira (en el perfil, o pidiéndoselo a Claude en una sesión) y solo el `accountId` se
+escribe en este archivo.
+
+En los JSON del periodo va únicamente el nombre publicado.
 
 ## Retrabajos fuera de la lista
 
