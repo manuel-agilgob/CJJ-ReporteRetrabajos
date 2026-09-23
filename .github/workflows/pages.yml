@@ -1,5 +1,6 @@
 # Publica en GitHub Pages solo el sitio: la portada, la plantilla y los reportes.
-# El resto del repositorio (agente/, con los correos del equipo) no sale del repo privado.
+# Sube los archivos tal cual, sin Jekyll: Jekyll omitiría plantilla/_ds/ (los estilos
+# del diseño) y la plantilla se vería sin recuadros ni tipografías.
 # Requiere Settings → Pages → Source: «GitHub Actions».
 name: Publicar sitio
 
@@ -29,18 +30,18 @@ jobs:
       name: github-pages
       url: ${{ steps.despliegue.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Armar el sitio
         run: |
           mkdir -p _site
           cp -r index.html plantilla reportes _site/
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
       - id: despliegue
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
