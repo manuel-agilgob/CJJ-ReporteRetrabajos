@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css">
+<script src="_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/_ds_bundle.js"></script>
+<script src="./doc-page.js"></script>
+<script src="./data/report-data.js"></script>
+<style>
+doc-page:not(:defined){visibility:hidden}
+doc-page h1,doc-page h2,doc-page h3{font-family:var(--font-heading)}
+doc-page p,doc-page li,doc-page td,doc-page th,doc-page span{font-family:var(--font-body)}
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent-900)}
+</style>
+</helmet>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="240" height="240" fill="#5980a6"></rect>
+    <g fill="none" stroke="#f2f2f3" stroke-width="3">
+      <rect x="72" y="72" width="44" height="34"></rect>
+      <rect x="124" y="72" width="44" height="34"></rect>
+      <rect x="72" y="134" width="44" height="34"></rect>
+      <rect x="124" y="134" width="44" height="34"></rect>
+      <path d="M116 89h8M116 151h8M94 106v28M146 106v28"></path>
+    </g>
+    <text x="120" y="205" fill="#f2f2f3" font-family="Barlow Condensed, sans-serif" font-size="26" letter-spacing="4" text-anchor="middle">RET</text>
+  </svg>
+</template>
+<doc-page size="a4" margin="0.75in">
+  <div slot="header" style="display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8px;border-bottom:1px solid var(--color-neutral-300);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-600)">
+    <span>Reporte de retrabajos · {{ meta.etiquetaPeriodo }}</span>
+    <span>Uso interno</span>
+  </div>
+
+
+  <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:22px">
+    <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-700)">§1 — Encabezado</span>
+    <h1 style="font-size:42px;line-height:1.02;letter-spacing:-0.01em;margin:0;text-transform:uppercase;color:var(--color-text)">{{ meta.titulo }}</h1>
+    <p style="font-size:16px;line-height:1.6;margin:8px 0 0;max-width:44em;color:var(--color-neutral-700)">{{ meta.subtitulo }}</p>
+  </div>
+
+  <div class="blueprint" style="padding:14px 18px;margin-bottom:30px;break-inside:avoid">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px 24px">
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Periodo</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.etiquetaPeriodo }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Generado</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.generado }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Responsable</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.responsable }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Fuente de datos</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.fuente }}</span></div>
+    </div>
+  </div>
+
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Análisis por etapa y categoría de retrabajo</h2>
+  <figure class="blueprint" style="margin:0 0 30px;padding:16px 18px 12px;display:flex;flex-direction:column;gap:14px;break-inside:avoid">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Figura 0 — Flujo de la actividad</span>
+    <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:0">
+      <sc-for list="{{ stages }}" as="s" hint-placeholder-count="8">
+        <div style="display:flex;flex-direction:column;padding-right:14px;position:relative">
+          <div onClick="{{ s.select }}" title="Ver retrabajos de esta etapa" style="{{ s.boxStyle }}">{{ s.key }}</div>
+          <span style="{{ s.connectorStyle }}"></span>
+          <span style="width:1px;height:14px;background:var(--color-neutral-400);margin:0 auto"></span>
+          <div onClick="{{ s.select }}" title="Ver retrabajos de esta etapa" style="{{ s.badgeStyle }}">
+            <span style="{{ s.totalStyle }}">{{ s.totalText }}</span>
+            <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">{{ s.badgeLabel }}</span>
+          </div>
+          <span style="font-size:10.5px;line-height:1.35;min-height:28px;color:var(--color-neutral-600);margin-top:8px">{{ s.sub }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <figcaption style="font-size:11.5px;line-height:1.45;color:var(--color-neutral-600)">Etapas del flujo y retrabajos originados en cada una durante el periodo. Un retrabajo es todo retorno de la actividad a una etapa anterior; se contabiliza en la etapa donde se detectó.</figcaption>
+  </figure>
+
+  <p style="font-size:15px;line-height:1.62;margin:12px 0 14px">{{ sel.intro }}</p>
+  <div class="blueprint" style="padding: 16px 18px; margin: 0 0 12px; break-inside: avoid">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--color-neutral-300)">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Etapa en vista</span>
+        <span style="font-family:var(--font-heading);font-size:26px;line-height:1.05;letter-spacing:.03em;text-transform:uppercase;color:var(--color-text)">{{ sel.title }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;text-align:right">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Total de retrabajos</span>
+        <span style="font-family:var(--font-heading);font-size:26px;line-height:1.05;color:var(--color-accent-700)">{{ sel.total }}</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <sc-for list="{{ sel.rows }}" as="r" hint-placeholder-count="10">
+        <div style="display:grid;grid-template-columns:270px 1fr 30px 44px;align-items:center;gap:10px;font-size:12px">
+          <span style="color:var(--color-neutral-700);line-height:1.3;text-wrap:pretty">{{ r.name }}</span>
+          <span style="height:10px;background:var(--color-neutral-200);display:block"><span style="{{ r.barStyle }}"></span></span>
+          <span style="text-align:right;font-family:var(--font-heading);font-size:15px;color:var(--color-text)">{{ r.count }}</span>
+          <span style="text-align:right;color:var(--color-neutral-600)">{{ r.pct }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <h2 style="font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-accent-700); margin: 34px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--color-neutral-300)">{{ hotfix.titulo }}</h2>
+  <p style="font-size: 15px; line-height: 1.62; margin: 0 0 16px">{{ hotfix.intro }}</p>
+  <div style="display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-bottom: 18px; break-inside: avoid">
+    <sc-for list="{{ hotfix.ambientes }}" as="a" hint-placeholder-count="2">
+      <div class="blueprint" onClick="{{ a.select }}" title="{{ a.estadoText }}" style="{{ a.cardStyle }}">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">{{ a.ambiente }} — {{ a.nombre }}</span>
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:var(--font-heading);font-size:32px;line-height:1;color:var(--color-text)">{{ a.total }}</span>
+          <span style="{{ a.deltaStyle }}">{{ a.deltaText }}</span>
+        </div>
+        <span style="font-size:12.5px;line-height:1.5;color:var(--color-neutral-700)">{{ a.detalleText }}</span>
+        <span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700);margin-top:2px">{{ a.estadoText }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <sc-if value="{{ hotfix.mostrarTabla }}" hint-placeholder-val="{{ true }}">
+  <table class="table" style="width:100%;margin:0 0 8px;font-size:12.5px">
+    <thead>
+      <tr>
+        <th style="width:84px">Clave</th>
+        <th style="width:58px">Amb.</th>
+        <th>Hotfix</th>
+        <th>Causa</th>
+        <th style="width:74px">Severidad</th>
+        <th style="width:58px;text-align:right">Horas</th>
+        <th style="width:88px">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ hotfix.detalle }}" as="h" hint-placeholder-count="8">
+        <tr>
+          <td>{{ h.clave }}</td>
+          <td>{{ h.ambiente }}</td>
+          <td>{{ h.titulo }}</td>
+          <td>{{ h.causa }}</td>
+          <td>{{ h.severidad }}</td>
+          <td style="text-align:right">{{ h.horas }}</td>
+          <td>{{ h.fecha }}</td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">{{ hotfix.pie }}</p>
+  </sc-if>
+
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:34px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">{{ dev.titulo }}</h2>
+  <p style="font-size:15px;line-height:1.62;margin:0 0 16px">{{ dev.intro }}</p>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px;break-inside:avoid">
+    <sc-for list="{{ dev.tarjetas }}" as="c" hint-placeholder-count="6">
+      <div class="blueprint" onClick="{{ c.select }}" title="{{ c.estadoText }}" style="{{ c.cardStyle }}">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15;color:var(--color-text)">{{ c.nombre }}</span>
+        <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-600)">{{ c.rol }}</span>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px">
+          <span style="font-family:var(--font-heading);font-size:26px;line-height:1;color:var(--color-text)">{{ c.retrabajos }}</span>
+          <span style="font-size:11.5px;color:var(--color-neutral-700)">{{ c.metaText }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div class="blueprint" style="padding:16px 18px;margin:0 0 8px;break-inside:avoid">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--color-neutral-300)">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Matriz motivo × etapa</span>
+        <span style="font-family:var(--font-heading);font-size:24px;line-height:1.05;text-transform:uppercase;color:var(--color-text)">{{ dev.sel.nombre }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;text-align:right">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Retrabajos</span>
+        <span style="font-family:var(--font-heading);font-size:24px;line-height:1.05;color:var(--color-accent-700)">{{ dev.sel.total }}</span>
+      </div>
+    </div>
+    <table class="table" style="width:100%;font-size:11.5px">
+      <thead>
+        <tr>
+          <th>Motivo de retrabajo</th>
+          <sc-for list="{{ dev.columnas }}" as="col" hint-placeholder-count="7">
+            <th style="text-align:right;width:52px">{{ col }}</th>
+          </sc-for>
+          <th style="text-align:right;width:46px">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ dev.filas }}" as="f" hint-placeholder-count="11">
+          <tr>
+            <td style="line-height:1.3">{{ f.motivo }}</td>
+            <sc-for list="{{ f.celdas }}" as="cel" hint-placeholder-count="7">
+              <td style="{{ cel.style }}">{{ cel.text }}</td>
+            </sc-for>
+            <td style="{{ f.totalStyle }}">{{ f.total }}</td>
+          </tr>
+        </sc-for>
+        <tr>
+          <td style="font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase">Total por etapa</td>
+          <sc-for list="{{ dev.totales }}" as="t" hint-placeholder-count="7">
+            <td style="text-align:right;font-family:var(--font-heading);font-size:13px">{{ t }}</td>
+          </sc-for>
+          <td style="text-align:right;font-family:var(--font-heading);font-size:13px;color:var(--color-accent-700)">{{ dev.sel.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">{{ dev.pie }}</p>
+
+
+
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;hotfixAmbiente&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Automático&quot;,&quot;Ambos&quot;,&quot;SAND&quot;,&quot;PROD&quot;],&quot;default&quot;:&quot;Automático&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hotfixes&quot;},&quot;sincronizarConFlujo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hotfixes&quot;},&quot;mostrarTablaHotfix&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hotfixes&quot;}}">
+class Component extends DCLogic {
+  state = { data: null, sel: null, hf: null, dev: null };
+
+  componentDidMount() {
+    const src = new URLSearchParams(location.search).get('data');
+    const apply = d => this.setState({ data: d, sel: d.etapaPorDefecto });
+    if (src) {
+      fetch(src).then(r => r.json()).then(apply)
+        .catch(() => { if (window.REPORT_DATA) apply(window.REPORT_DATA); });
+    } else if (window.REPORT_DATA) {
+      apply(window.REPORT_DATA);
+    } else {
+      const t = setInterval(() => {
+        if (window.REPORT_DATA) { clearInterval(t); apply(window.REPORT_DATA); }
+      }, 60);
+      setTimeout(() => clearInterval(t), 4000);
+    }
+  }
+
+  renderVals() {
+    const d = this.state.data;
+    if (!d) return {};
+    const sum = a => a.reduce((x, y) => x + y, 0);
+    const selKey = this.state.sel || d.etapaPorDefecto;
+
+    const stages = d.etapas.map((e, i) => {
+      const on = e.key === selKey;
+      const prod = e.key === 'PROD';
+      const base = 'height:46px;display:flex;align-items:center;justify-content:center;padding:0 2px;text-align:center;white-space:nowrap;font-family:var(--font-heading);font-size:12px;letter-spacing:0;cursor:pointer;';
+      const none = !!e.sinRetrabajo;
+      return {
+        key: e.key, sub: e.sub, total: sum(e.counts),
+        totalText: none ? '—' : sum(e.counts),
+        totalStyle: 'font-family:var(--font-heading);font-size:20px;line-height:1;color:' +
+          (none ? 'var(--color-neutral-400)' : 'var(--color-text)'),
+        badgeLabel: none ? 'N/A' : 'RET',
+        select: () => this.setState({ sel: e.key }),
+        boxStyle: base + (prod
+          ? 'border:1px solid var(--color-accent-700);background:var(--color-accent);color:var(--color-bg);'
+          : 'border:1px solid var(--color-accent);color:var(--color-text);') +
+          (on ? 'outline:2px solid var(--color-accent-700);outline-offset:2px;' : ''),
+        connectorStyle: i === d.etapas.length - 1 ? 'display:none'
+          : 'position:absolute;top:23px;right:0;width:14px;height:1px;background:var(--color-accent-400)',
+        badgeStyle: 'padding:7px 4px;text-align:center;display:flex;flex-direction:column;gap:1px;cursor:pointer;' +
+          (on ? 'border:1px solid var(--color-accent);background:var(--color-accent-100);'
+              : 'border:1px dashed var(--color-neutral-400);'),
+      };
+    });
+
+    const e = d.etapas.find(x => x.key === selKey) || d.etapas[0];
+    const total = sum(e.counts);
+    const maxC = Math.max(1, ...e.counts);
+    const rows = d.categorias.map((name, i) => {
+      const c = e.counts[i] || 0;
+      return {
+        name, count: c,
+        pct: total ? Math.round((c / total) * 100) + '%' : '0%',
+        barStyle: 'display:block;height:10px;background:var(--color-accent);width:' + Math.round((c / maxC) * 100) + '%',
+      };
+    });
+
+    const grand = d.etapas.reduce((s, x) => s + sum(x.counts), 0);
+    const share = grand ? Math.round((total / grand) * 100) : 0;
+    const ranked = d.etapas.map(x => ({ key: x.key, t: sum(x.counts) })).sort((a, b) => b.t - a.t);
+    const rank = ranked.findIndex(x => x.key === e.key) + 1;
+    const withCat = rows.filter(r => r.count > 0).length;
+    const top = rows.slice().sort((a, b) => b.count - a.count)[0];
+    const intro = e.sinRetrabajo
+      ? (e.nota || '') + ' El desglose por categoría no aplica a esta etapa.'
+      : total === 0
+      ? 'En la etapa ' + e.key + ' (' + e.sub.toLowerCase() + ') no se registró ningún retrabajo en el periodo: ninguna actividad regresó desde este estado. El desglose queda en cero para las once categorías.'
+      : (e.nota ? e.nota + ' ' : '') + 'En la etapa ' + e.key + ' (' + e.sub.toLowerCase() + ') se detectaron ' + total +
+        ' retrabajos, el ' + share + ' % del total del periodo (' + grand + '), lo que la ubica en el lugar ' +
+        rank + ' de las ocho etapas del flujo. El motivo dominante es «' + top.name.toLowerCase() + '», con ' +
+        top.count + ' casos (' + top.pct + ' de la etapa); ' + withCat + ' de las once categorías registran al menos un caso.';
+
+    const kpis = d.indicadores.map(k => {
+      const up = k.direccion === 'up', flat = k.direccion === 'flat';
+      return {
+        nombre: k.nombre, valor: k.valor, meta: k.meta,
+        deltaText: flat ? '— sin cambio' : (up ? '▲ ' : '▼ ') + k.delta + ' vs. periodo anterior',
+        deltaStyle: 'font-size:12.5px;color:' + (up ? 'var(--color-accent-700)' : 'var(--color-neutral-600)'),
+      };
+    });
+
+    const maxS = Math.max(1, ...d.serie.map(p => p.valor));
+    const serie = d.serie.map((p, i) => {
+      const last = i === d.serie.length - 1;
+      return {
+        etiqueta: p.etiqueta,
+        barStyle: 'height:' + Math.round((p.valor / maxS) * 100) + '%;' + (last
+          ? 'background:var(--color-accent);border:1px solid var(--color-accent-700)'
+          : 'background:var(--color-accent-200);border:1px solid var(--color-accent)'),
+        labelStyle: last ? 'color:var(--color-accent-700)' : '',
+      };
+    });
+
+    const maxP = Math.max(1, ...d.composicion.map(c => c.pct));
+    const composicion = d.composicion.map(c => ({
+      nombre: c.nombre, pctText: c.pct + '%',
+      barStyle: 'display:block;height:11px;width:' + Math.round((c.pct / maxP) * 100) + '%;background:' +
+        (c.nombre.toLowerCase() === 'otros' ? 'var(--color-neutral-300)' : 'var(--color-accent)'),
+    }));
+
+    const hf = d.hotfixes || { ambientes: [], detalle: [], nota: '' };
+    const hfAll = hf.ambientes;
+    const modo = this.props.hotfixAmbiente ?? 'Automático';
+    const sincronizar = this.props.sincronizarConFlujo ?? true;
+    let hfKey = null, origen = '';
+    if (this.state.hf) { hfKey = this.state.hf; origen = 'panel'; }
+    else if (modo === 'SAND' || modo === 'PROD') { hfKey = modo; origen = 'tweak'; }
+    else if (modo === 'Automático' && sincronizar && hfAll.some(a => a.ambiente === selKey)) { hfKey = selKey; origen = 'flujo'; }
+    const filtrado = hfAll.some(a => a.ambiente === hfKey);
+    const amb = filtrado ? hfAll.filter(a => a.ambiente === hfKey) : hfAll;
+    const det = filtrado ? hf.detalle.filter(h => h.ambiente === hfKey) : hf.detalle;
+    const hfTotal = amb.reduce((s, a) => s + (a.total || 0), 0);
+    const hfCrit = amb.reduce((s, a) => s + (a.criticos || 0), 0);
+    const horas = det.map(h => parseFloat(h.horas)).filter(n => !isNaN(n));
+    const hLargo = horas.length ? Math.max(...horas).toFixed(1) : '0';
+    const ambNombre = filtrado ? amb[0].nombre.toLowerCase() : '';
+    const hotfix = {
+      nota: hf.nota,
+      titulo: filtrado ? 'Hotfixes en ' + amb[0].nombre : 'Hotfixes en ambientes de despliegue',
+      intro: hfTotal === 0
+        ? (filtrado
+            ? 'No se desplegó ningún hotfix en ' + ambNombre + ' durante el periodo.'
+            : 'No se desplegó ningún hotfix en el periodo: todo lo liberado se corrigió dentro del flujo normal.')
+        : (filtrado
+            ? (origen === 'flujo'
+                ? 'Vista filtrada por la etapa seleccionada en la Figura 0. '
+                : origen === 'panel'
+                ? 'Vista filtrada por el panel de ' + amb[0].nombre + '; clic de nuevo en el panel devuelve la vista a los dos ambientes. '
+                : 'Vista fijada en ' + amb[0].nombre + '. ') +
+              'En ' + ambNombre + ' se desplegaron ' +
+              hfTotal + ' hotfixes, ' + hfCrit + ' con severidad crítica; el más costoso tomó ' + hLargo +
+              ' horas de resolución.' +
+              (origen === 'flujo' ? ' Seleccionar otra etapa del flujo devuelve la vista a los dos ambientes.' : '')
+            : 'Producción no genera retrabajos —una corrección posterior al despliegue abre trabajo nuevo, no devuelve la actividad a una etapa anterior—, así que la salud de los ambientes de despliegue se mide aquí. En el periodo se desplegaron ' +
+              hfTotal + ' hotfixes, ' + hfCrit + ' de ellos con severidad crítica. Dando clic en SAND o PROD la vista se filtra a ese ambiente.'),
+      gridStyle: 'display:grid;grid-template-columns:repeat(' + (filtrado ? 1 : 2) +
+        ',minmax(0,1fr));gap:16px;margin-bottom:18px;break-inside:avoid',
+      pie: filtrado
+        ? 'Tabla 1 — Hotfixes de ' + ambNombre + ' en el periodo, ordenados por fecha. ' + hf.nota
+        : 'Tabla 1 — Hotfixes del periodo, ordenados por ambiente y fecha. ' + hf.nota,
+      mostrarTabla: this.props.mostrarTablaHotfix ?? true,
+      ambientes: (filtrado ? hfAll : amb).map(a => {
+        const up = a.direccion === 'up', flat = a.direccion === 'flat';
+        const on = a.ambiente === hfKey;
+        return {
+          ambiente: a.ambiente, nombre: a.nombre, total: a.total,
+          select: () => this.setState({ hf: this.state.hf === a.ambiente ? null : a.ambiente }),
+          cardStyle: 'padding:14px 16px;display:flex;flex-direction:column;gap:4px;cursor:pointer;' +
+            (on ? 'outline:2px solid var(--color-accent-700);outline-offset:2px;background:var(--color-accent-100);' : ''),
+          estadoText: on ? 'Filtrando por este ambiente — clic para quitar' : 'Clic para filtrar la tabla',
+          deltaText: flat ? '— sin cambio' : (up ? '▲ ' : '▼ ') + a.delta + ' vs. periodo anterior',
+          deltaStyle: 'font-size:12px;color:' + (up ? 'var(--color-accent-700)' : 'var(--color-neutral-600)'),
+          detalleText: a.criticos + (a.criticos === 1 ? ' crítico' : ' críticos') +
+            ' · ' + a.horasMedia + ' h de resolución en promedio',
+        };
+      }),
+      detalle: det,
+    };
+
+    const cols = d.etapas.filter(x => !x.sinRetrabajo);
+    const colKeys = cols.map(x => x.key);
+    const totDev = c => colKeys.reduce((s, k) => s + sum(c.matriz[k] || []), 0);
+    const colabs = (d.colaboradores || []).slice().sort((a, b) => totDev(b) - totDev(a));
+    const devSel = colabs.find(c => c.nombre === this.state.dev) || colabs[0];
+    const devTotal = devSel ? totDev(devSel) : 0;
+    const devGrand = colabs.reduce((s, c) => s + totDev(c), 0);
+    const maxCell = devSel
+      ? Math.max(1, ...colKeys.map(k => Math.max(...(devSel.matriz[k] || [0]))))
+      : 1;
+
+    const filas = devSel ? d.categorias.map((motivo, ci) => {
+      const celdas = colKeys.map(k => {
+        const v = (devSel.matriz[k] || [])[ci] || 0;
+        return {
+          text: v || '·',
+          style: 'text-align:right;font-family:var(--font-heading);font-size:13px;color:' +
+            (v === 0 ? 'var(--color-neutral-600)' : 'var(--color-text)') +
+            (v >= maxCell && v > 0 ? ';background:var(--color-accent-100)' : ''),
+        };
+      });
+      const t = colKeys.reduce((s, k) => s + ((devSel.matriz[k] || [])[ci] || 0), 0);
+      return {
+        motivo, celdas, total: t || '·',
+        totalStyle: 'text-align:right;font-family:var(--font-heading);font-size:13px;color:' +
+          (t === 0 ? 'var(--color-neutral-600)' : 'var(--color-accent-700)'),
+      };
+    }) : [];
+
+    const topMotivo = devSel
+      ? d.categorias.map((m, ci) => ({ m, t: colKeys.reduce((s, k) => s + ((devSel.matriz[k] || [])[ci] || 0), 0) }))
+          .sort((a, b) => b.t - a.t)[0]
+      : null;
+    const topEtapa = devSel
+      ? colKeys.map(k => ({ k, t: sum(devSel.matriz[k] || []) })).sort((a, b) => b.t - a.t)[0]
+      : null;
+
+    const dev = {
+      titulo: devSel ? 'Retrabajos por colaborador — ' + devSel.nombre : 'Retrabajos por colaborador',
+      intro: !devSel
+        ? 'No hay colaboradores registrados en el periodo.'
+        : 'Todos los responsables de tarjeta con actividad en el periodo. La tarjeta seleccionada despliega su matriz de motivo × etapa: ' +
+          devSel.nombre + ' acumula ' + devTotal + ' retrabajos, el ' +
+          (devGrand ? Math.round((devTotal / devGrand) * 100) : 0) + ' % del total, concentrados en ' +
+          topEtapa.k + ' (' + topEtapa.t + ') y con «' + topMotivo.m.toLowerCase() + '» como motivo dominante (' +
+          topMotivo.t + '). Clic en otra tarjeta cambia la matriz.',
+      pie: 'Tabla 2 — Matriz de motivo × etapa para ' + (devSel ? devSel.nombre : '—') +
+        '. Las celdas vacías se marcan con «·»; la celda sombreada es el máximo del colaborador. ' +
+        (d.colaboradoresNota || ''),
+      columnas: colKeys,
+      totales: colKeys.map(k => devSel ? sum(devSel.matriz[k] || []) : 0),
+      filas,
+      sel: { nombre: devSel ? devSel.nombre : '—', total: devTotal },
+      tarjetas: colabs.map(c => {
+        const t = totDev(c);
+        const on = devSel && c.nombre === devSel.nombre;
+        return {
+          nombre: c.nombre, rol: c.rol, retrabajos: t,
+          metaText: 'retrabajos · ' + c.tarjetas + ' tarjetas',
+          estadoText: on ? 'Matriz en vista' : 'Ver la matriz de ' + c.nombre,
+          select: () => this.setState({ dev: c.nombre }),
+          cardStyle: 'padding:12px 14px;display:flex;flex-direction:column;gap:2px;cursor:pointer;' +
+            (on ? 'outline:2px solid var(--color-accent-700);outline-offset:2px;background:var(--color-accent-100);' : ''),
+        };
+      }),
+    };
+
+    return {
+      hotfix, dev,
+      meta: d.meta, resumen: d.resumen, areas: d.areas, areasTotal: d.areasTotal,
+      hallazgos: d.hallazgos, acciones: d.acciones,
+      riesgos: d.riesgos.map((r, i) => Object.assign({ n: i + 1 }, r)),
+      riesgosNota: d.riesgos.length ? '' : 'Sin riesgos abiertos en el periodo.',
+      stages, sel: { title: e.key + ' — ' + e.sub, total, rows, intro },
+      kpis, serie, composicion,
+    };
+  }
+}
+</script>
+</body>
+</html>

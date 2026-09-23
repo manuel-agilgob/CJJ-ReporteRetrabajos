@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "titulo": "Retrabajos del ciclo de entrega",
+    "subtitulo": "Transiciones a Retrabajo clasificadas por motivo según la taxonomía vigente, agrupadas por la etapa del flujo donde se detectaron.",
+    "etiquetaPeriodo": "",
+    "periodoInicio": "",
+    "periodoFin": "",
+    "generado": "",
+    "responsable": "Ingeniería — Lead de entrega",
+    "fuente": "",
+    "version": "v1.0"
+  },
+  "categorias": [
+    "El funcionamiento es incorrecto",
+    "No cubre todos los escenarios o escenarios borde",
+    "Regresión detectada en otra funcionalidad",
+    "No cumple lineamientos de UX/UI",
+    "El codigo produce un error (crash) en runtime o compilacion",
+    "Conflicto con la rama principal",
+    "Cambios solicitados por negocio después de entregar",
+    "No cumple definición de terminado (DoD)",
+    "No hay comentarios para categorizar",
+    "Error de QA - testing",
+    "OTRO, No se ajusta a ninguna categoria definida"
+  ],
+  "etapaPorDefecto": "",
+  "etapas": [
+    {
+      "key": "DOR",
+      "sub": "Listo para tomar",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "DEV",
+      "sub": "Desarrollo",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "AI",
+      "sub": "Revisión asistida",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "LEAD-REV",
+      "sub": "Revisión de lead",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "QA",
+      "sub": "Pruebas",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "MERGE",
+      "sub": "Integración",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "key": "SAND",
+      "sub": "Sandbox",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "nota": "Sandbox puede generar retrabajos cuando el despliegue revela un defecto antes de producción; es poco frecuente."
+    },
+    {
+      "key": "PROD",
+      "sub": "Producción",
+      "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "sinRetrabajo": true,
+      "nota": "Producción no genera retrabajos: una corrección posterior al despliegue se registra como hotfix en la sección de hotfixes de despliegue, no como retorno de la actividad."
+    }
+  ],
+  "hotfixes": {
+    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta y se cuenta en el periodo en que se creó.",
+    "ambientes": [
+      {
+        "ambiente": "SAND",
+        "nombre": "Sandbox",
+        "total": 0,
+        "delta": "n/d",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      },
+      {
+        "ambiente": "PROD",
+        "nombre": "Producción",
+        "total": 0,
+        "delta": "n/d",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      }
+    ],
+    "detalle": []
+  },
+  "colaboradores": [],
+  "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
+  "indicadores": [],
+  "serie": [],
+  "composicion": [],
+  "riesgos": []
+}

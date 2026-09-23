@@ -1,0 +1,46 @@
+# Publica en GitHub Pages solo el sitio: la portada, la plantilla y los reportes.
+# El resto del repositorio (agente/, con los correos del equipo) no sale del repo privado.
+# Requiere Settings → Pages → Source: «GitHub Actions».
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'plantilla/**'
+      - 'reportes/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Armar el sitio
+        run: |
+          mkdir -p _site
+          cp -r index.html plantilla reportes _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: despliegue
+        uses: actions/deploy-pages@v4

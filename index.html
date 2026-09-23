@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reportes de retrabajo — CJJ</title>
+<link rel="stylesheet" href="plantilla/_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css">
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 64px 32px 96px; }
+  h1, h2 { font-family: var(--font-heading); }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  .tabla-periodos { overflow-x: auto; margin: 14px 0 40px; }
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 16px 64px; }
+    .wrap h1 { font-size: 34px !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-700)">Reporte cada dos semanas · Proyectos CJJ</span>
+  <h1 style="font-size:44px;line-height:1.02;margin:8px 0 0;text-transform:uppercase">Retrabajos del ciclo de entrega</h1>
+  <p style="font-size:16px;line-height:1.6;margin:12px 0 40px;max-width:44em;color:var(--color-neutral-700)">Transiciones a <em>Retrabajo</em> clasificadas por motivo y agrupadas por la etapa desde la que se originaron. Un periodo por publicación; las categorías no cambian entre periodos, de modo que las cifras son comparables.</p>
+
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 6px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Periodos publicados</h2>
+  <div class="tabla-periodos">
+    <table class="table" style="width:100%;font-size:14px">
+      <thead>
+        <tr><th>Periodo</th><th style="text-align:right">Retrabajos</th><th style="text-align:right">Etapa dominante</th><th style="width:110px">Reporte</th></tr>
+      </thead>
+      <tbody id="periodos">
+        <tr><td colspan="4" style="color:var(--color-neutral-600)">Cargando periodos…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="blueprint" style="padding:18px 20px">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Cómo se agrega un periodo</span>
+    <ol style="font-size:14px;line-height:1.6;margin:10px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px">
+      <li>Cada dos semanas, al cerrar el viernes, el agente genera <code>reportes/&lt;AAAA-MM-DD&gt;.json</code> siguiendo <code>agente/INSTRUCCIONES.md</code>.</li>
+      <li>Agrega el periodo a <code>reportes/indice.json</code>. Las cifras de esta tabla se calculan del propio JSON; no se escriben a mano.</li>
+      <li>La plantilla no se modifica: es la misma para todos los periodos. <a href="plantilla/reporte.dc.html">Ver la plantilla con datos de ejemplo →</a></li>
+    </ol>
+  </div>
+</div>
+<script>
+(() => {
+  const cuerpo = document.getElementById('periodos');
+  const suma = (a) => a.reduce((x, y) => x + y, 0);
+
+  const celda = (contenido, alinear) => {
+    const td = document.createElement('td');
+    if (typeof contenido === 'string') td.textContent = contenido;
+    else td.appendChild(contenido);
+    if (alinear) td.style.textAlign = alinear;
+    return td;
+  };
+
+  const aviso = (texto) => {
+    const td = celda(texto);
+    td.colSpan = 4;
+    td.style.color = 'var(--color-neutral-600)';
+    const tr = document.createElement('tr');
+    tr.appendChild(td);
+    cuerpo.replaceChildren(tr);
+  };
+
+  // Total del periodo y etapa con más retrabajos; en empate gana la primera del flujo.
+  const resumir = (d) => {
+    const etapas = d.etapas.map((e) => ({ key: e.key, sub: e.sub, total: suma(e.counts) }));
+    const total = suma(etapas.map((e) => e.total));
+    const dominante = etapas.reduce((max, e) => (e.total > max.total ? e : max), etapas[0]);
+    return {
+      total: String(total),
+      dominante: total ? dominante.key + ' — ' + dominante.sub + ' (' + dominante.total + ')' : '—',
+    };
+  };
+
+  const leer = (ruta) => fetch(ruta, { cache: 'no-cache' }).then((r) => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  });
+
+  leer('reportes/indice.json')
+    .then((indice) => {
+      const periodos = (indice.periodos || []).slice().sort((a, b) => b.inicio.localeCompare(a.inicio));
+      if (!periodos.length) {
+        aviso('Aún no hay periodos publicados.');
+        return;
+      }
+      return Promise.all(periodos.map((p) =>
+        leer('reportes/' + p.archivo).catch(() => null).then((d) => ({ p, d }))
+      )).then((filas) => {
+        cuerpo.replaceChildren(...filas.map(({ p, d }) => {
+          const r = d ? resumir(d) : { total: 'n/d', dominante: 'No se pudo leer el JSON' };
+          const enlace = document.createElement('a');
+          enlace.href = 'plantilla/reporte.dc.html?data=../reportes/' + p.archivo;
+          enlace.textContent = 'Abrir →';
+          const tr = document.createElement('tr');
+          tr.append(
+            celda((d && d.meta && d.meta.etiquetaPeriodo) || p.inicio + ' → ' + p.fin),
+            celda(r.total, 'right'),
+            celda(r.dominante, 'right'),
+            celda(enlace)
+          );
+          return tr;
+        }));
+      });
+    })
+    .catch(() => aviso('No se pudo leer reportes/indice.json. Abre la portada por HTTP (GitHub Pages o python3 -m http.server).'));
+})();
+</script>
+</body>
+</html>

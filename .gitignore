@@ -1,0 +1,4 @@
+# Extracciones crudas de Jira: nunca se versionan (GitHub Pages publica todo el repositorio).
+.tmp/
+*.xlsx
+*.ods
