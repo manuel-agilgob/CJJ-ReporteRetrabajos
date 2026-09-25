@@ -1,3 +1,5 @@
 {
-  "periodos": []
+  "periodos": [
+    { "inicio": "2026-09-12", "fin": "2026-09-25", "archivo": "2026-09-12.json" }
+  ]
 }
