@@ -120,7 +120,7 @@ plantilla las vuelve a ordenar igual). `[]` si ninguna se movió. Cómo se obtie
 | Clave | Valor |
 |---|---|
 | `clave` | Clave de la tarjeta en Jira (`CJJ-2041`). Única dentro del periodo. |
-| `titulo` | Nombre de la tarjeta (`summary`), tal cual. La plantilla no lo muestra hoy. |
+| `titulo` | Siempre `"n/d"`. La plantilla no lo muestra, y el JSON es público: los nombres de tarjeta pueden describir vulnerabilidades abiertas. |
 | `responsable` | Nombre de pila del asignado al cierre del periodo, como en `colaboradores.md`; `Otros` si no está en la lista; `Sin asignar` si no tiene. |
 | `creada` | Fecha y hora de creación de la tarjeta (`AAAA-MM-DDTHH:MM`). Puede ser anterior al periodo. |
 | `estado` | La `key` de la etapa del último tramo, o `En producción` si es `PROD`. La plantilla no lo muestra hoy. |

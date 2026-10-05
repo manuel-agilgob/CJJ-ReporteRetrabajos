@@ -173,6 +173,9 @@ durante el periodo y las veces que regresó a `Retrabajo`.
    búsqueda; si falta alguna, se agrega.
 2. **Estado en cada momento:** el changelog da los cambios de `status` (`fromString` → `toString`, en `created`). Antes del
    primer cambio, la tarjeta estaba en el `fromString` de ese cambio; si no hubo cambios, en su estado actual.
+   **El changelog guarda el nombre que tenía el estado en ese momento**, y algunos se renombraron (`To Do` hoy es `Tareas
+   por hacer`, `Approved` es `Aprobado`, `Done` es `Finalizada`). Se resuelve por el id (`from`/`to`) contra los nombres
+   actuales de `/rest/api/3/status` antes de buscarlo en `etapas.md`. Esto vale también para el paso 2.
 3. **Tramos:** recorrer los estados en orden y convertir cada uno en etapa con `etapas.md`, con las mismas reglas:
    - `Retrabajo` → `RET`.
    - Estados descartados (linode): ese lapso no se dibuja; queda como hueco entre tramos.
