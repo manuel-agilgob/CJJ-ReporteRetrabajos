@@ -6,7 +6,7 @@ Taxonomía única del reporte. La usan dos secciones:
 - **Hotfixes** (Tabla 1, columna *Causa*): la causa del defecto que corrigió el hotfix.
 
 El agente copia la columna **Categoría**, en este orden, al arreglo `categorias` del JSON de cada periodo. El número de fila
-es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts[0]`, la 11 es `counts[10]`.
+es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts[0]`, la 12 es `counts[11]`.
 
 | # | Categoría (texto exacto en el reporte) | Cuándo aplica |
 |---|---|---|
@@ -21,6 +21,7 @@ es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts
 | 9 | No hay comentarios para categorizar | No hay texto del que se pueda sacar el motivo (ver criterios abajo). |
 | 10 | Error de QA - testing | El retorno se debió a un error de QA: prueba mal planteada, ambiente equivocado, falso positivo. |
 | 11 | OTRO, No se ajusta a ninguna categoria definida | Hay un motivo claro, pero no encaja en ninguna de las anteriores. |
+| 12 | Malas prácticas de programación | El código funciona, pero no sigue las buenas prácticas o los estándares del equipo: duplicación, nombres poco claros, código muerto o comentado, falta de manejo de errores, lógica en la capa equivocada. |
 
 > La columna «Cuándo aplica» es una primera versión, redactada para que la clasificación sea consistente entre periodos.
 > Se puede afinar cuando el equipo precise el criterio. Los textos de la columna *Categoría* no se tocan (ver reglas).
@@ -43,6 +44,8 @@ Cuando la categoría la asigna el agente (vía B de `INSTRUCCIONES.md`, y siempr
 
 - **Retrabajo**: usar **solo** el comentario asociado a la transición a `Retrabajo`, no el nombre ni la descripción de la
   tarjeta. Sin comentario asociado → 9. Comentario sin un motivo claro → 11.
+- **12 frente a 1 y 5**: si lo entregado falla (resultado equivocado o error), es 1 o 5 aunque además haya malas
+  prácticas. 12 es solo cuando el retorno se pide por la calidad del código y no por su comportamiento.
 - **Hotfix**: usar la descripción y los comentarios de la tarjeta del hotfix. Sin texto que explique la causa → 9. Texto
   sin una causa clara → 11.
 - Si caben varias, elegir la más específica. Una sola categoría por caso.
@@ -63,3 +66,6 @@ Cuando la categoría la asigna el agente (vía B de `INSTRUCCIONES.md`, y siempr
 
 - **2026-09-23** — Versión inicial: las 11 categorías del diseño (enum `reworkReasons` del pipeline). Se documenta la
   equivalencia de la categoría 11 y se decide usar la misma taxonomía para las causas de hotfix.
+- **2026-10-05** — Se agrega la 12, `Malas prácticas de programación`, al final. El enum `reworkReasons` del pipeline
+  todavía no la tiene: hasta que se agregue, la vía A no puede asignarla y los periodos se extraen por la vía B. La
+  plantilla sigue diciendo «once categorías» en sus textos (`plantilla/ORIGEN.md`, limitación 2).

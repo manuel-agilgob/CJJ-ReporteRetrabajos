@@ -58,7 +58,10 @@ anteriores. Hay que filtrar cada transición por su fecha; si no, se cuentan de 
 Se extrae por una de dos vías; `meta.fuente` declara cuál se usó. Las dos necesitan además el acceso directo a Jira para
 los colaboradores, los hotfixes y el recorrido de actividades.
 
-### Vía A — pipeline `generate-rework-report` (vigente)
+### Vía A — pipeline `generate-rework-report`
+
+> **En pausa desde el 2026-10-05:** el clasificador del pipeline no conoce la categoría 12 (`Malas prácticas de
+> programación`). Hasta que su enum `reworkReasons` la incluya, se usa la vía B.
 
 En una copia de `ai-tools-documentation`, en una rama que incluya `src/tools/jira/reworkStage.ts` (hoy
 `feat/reporte-retrabajo-html`) y con su `.env` (`JIRA_*` y la llave del LLM clasificador):
@@ -78,7 +81,7 @@ npm run dev -- generate-rework-report \
 - **No usar la etapa que calcula el pipeline** (columna `Stage`): su mapa no tiene MERGE. La etapa se deriva en el paso 2.
 - Si el comando se detiene por estados desconocidos, la generación se detiene también y se reporta.
 
-### Vía B — consulta directa a Jira (alternativa)
+### Vía B — consulta directa a Jira (vigente mientras la vía A esté en pausa)
 
 Cuando el entorno no tiene el pipeline:
 

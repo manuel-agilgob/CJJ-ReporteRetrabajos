@@ -39,7 +39,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 
 ## `categorias`
 
-Copia de la columna *Categoría* de `categorias.md`, en el mismo orden y con el mismo texto. Su longitud, `N` (hoy 11), es
+Copia de la columna *Categoría* de `categorias.md`, en el mismo orden y con el mismo texto. Su longitud, `N` (hoy 12), es
 la de todos los `counts` y de cada renglón de `matriz`.
 
 ## `etapas`
