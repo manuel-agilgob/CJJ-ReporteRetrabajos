@@ -8,7 +8,7 @@
     "generado": "",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "",
-    "version": "v1.0"
+    "version": "v1.1"
   },
   "categorias": [
     "El funcionamiento es incorrecto",
@@ -70,7 +70,7 @@
     }
   ],
   "hotfixes": {
-    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta y se cuenta en el periodo en que se creó.",
+    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta o por la etiqueta «hotfix», y se cuenta en el periodo en que se creó.",
     "ambientes": [
       {
         "ambiente": "SAND",
@@ -95,8 +95,5 @@
   },
   "colaboradores": [],
   "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
-  "indicadores": [],
-  "serie": [],
-  "composicion": [],
-  "riesgos": []
+  "actividades": []
 }

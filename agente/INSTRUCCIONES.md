@@ -56,7 +56,7 @@ Ese JQL encuentra las **tarjetas**, pero cada tarjeta trae **todas** sus transic
 anteriores. Hay que filtrar cada transición por su fecha; si no, se cuentan de nuevo retrabajos ya reportados.
 
 Se extrae por una de dos vías; `meta.fuente` declara cuál se usó. Las dos necesitan además el acceso directo a Jira para
-los colaboradores y los hotfixes.
+los colaboradores, los hotfixes y el recorrido de actividades.
 
 ### Vía A — pipeline `generate-rework-report` (vigente)
 
@@ -126,14 +126,19 @@ Cuando el entorno no tiene el pipeline:
 
 ## Paso 4 — Hotfixes
 
-- **Qué es un hotfix:** una tarjeta de los mismos proyectos cuyo nombre (`summary`) contiene «hotfix», sin distinguir
-  mayúsculas, y que se **creó** dentro del periodo.
+- **Qué es un hotfix:** una tarjeta de los mismos proyectos que se **creó** dentro del periodo y que cumple **al menos una**
+  de estas condiciones (es un «o»: basta una):
+  1. su nombre (`summary`) contiene «hotfix», sin distinguir mayúsculas;
+  2. tiene la etiqueta (`labels`) `hotfix`.
+
+  Una tarjeta que cumple las dos se cuenta una sola vez.
 
   ```text
-  project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND summary ~ "hotfix" AND created >= "<inicio> 00:00" AND created < "<cierre> 00:00"
+  project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND (summary ~ "hotfix" OR labels = "hotfix") AND created >= "<inicio> 00:00" AND created < "<cierre> 00:00"
   ```
 
-  La búsqueda de texto de Jira es aproximada: confirmar que el nombre contenga literalmente «hotfix».
+  La búsqueda de texto de Jira es aproximada: confirmar que el nombre contenga literalmente «hotfix» o que la tarjeta
+  tenga la etiqueta `hotfix`. Si no cumple ninguna de las dos, se descarta.
 - **Ambiente:** donde se detectó el problema. Se toma, en este orden:
   1. el campo `Entorno` de la tarjeta (`environment`), si está lleno;
   2. lo que digan el nombre o la descripción sobre dónde se detectó: `sandbox` o `sand` → `SAND`; `producción`,
@@ -149,16 +154,46 @@ Cuando el entorno no tiene el pipeline:
 - **Delta por ambiente:** contra el JSON del periodo anterior en `reportes/` (el que terminó 14 días antes). Si no existe,
   `"n/d"` y `flat`.
 
-## Paso 5 — Armar el JSON
+## Paso 5 — Recorrido de actividades
+
+Alimenta la sección «Recorrido de actividades» (Figura 4): una fila por tarjeta, con el tiempo que pasó en cada etapa
+durante el periodo y las veces que regresó a `Retrabajo`.
+
+1. **Qué tarjetas:** todas las de los mismos proyectos que cambiaron de estado en el periodo, con retrabajo o sin él.
+
+   ```text
+   project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND status CHANGED DURING ("<inicio> 00:00", "<cierre> 00:00")
+   ```
+
+   Pedir `expand=changelog` y los campos `summary`, `assignee`, `status` y `created`, y paginar todo (la búsqueda y el
+   changelog de cada tarjeta, como en la vía B). Toda tarjeta con un retrabajo contado en el paso 2 tiene que salir en esta
+   búsqueda; si falta alguna, se agrega.
+2. **Estado en cada momento:** el changelog da los cambios de `status` (`fromString` → `toString`, en `created`). Antes del
+   primer cambio, la tarjeta estaba en el `fromString` de ese cambio; si no hubo cambios, en su estado actual.
+3. **Tramos:** recorrer los estados en orden y convertir cada uno en etapa con `etapas.md`, con las mismas reglas:
+   - `Retrabajo` → `RET`.
+   - Estados descartados (linode): ese lapso no se dibuja; queda como hueco entre tramos.
+   - Estado que no está en el mapa: **detener**, como en el paso 2.
+   - Estados seguidos que caen en la misma etapa se juntan en un solo tramo.
+   - **Se recorta al periodo:** un tramo que empezó antes de `<inicio> 00:00` empieza ahí, y el que sigue abierto al cierre
+     termina en `<cierre> 00:00`. Lo que queda fuera del periodo no se dibuja.
+4. **Retrabajos de la fila:** los retrabajos **contados** de esa tarjeta en el paso 2, con su fecha, la etapa de origen y la
+   categoría. Los descartados y los de PROD no van.
+5. **Responsable:** el asignado de la tarjeta al cierre del periodo (`<cierre> 00:00`), con el nombre de pila de
+   `colaboradores.md`; `Otros` si no está en la lista y `Sin asignar` si no tiene. Se obtiene del changelog de `assignee`
+   como en el paso 3.
+6. **Estado:** la etapa del último tramo; si es `PROD`, `En producción`.
+
+## Paso 6 — Armar el JSON
 
 Copiar `agente/plantilla-vacia.json` a `reportes/<inicio>.json` y llenarlo según `contrato-datos.md`.
 
-## Paso 6 — Verificar
+## Paso 7 — Verificar
 
 Comprobar todas las invariantes de `contrato-datos.md`. Si una falla, se corrige; si no se puede corregir, se detiene la
 generación.
 
-## Paso 7 — Publicar
+## Paso 8 — Publicar
 
 1. Agregar el periodo a `reportes/indice.json` como `{ "inicio": "<inicio>", "fin": "<fin>", "archivo": "<inicio>.json" }`,
    en orden ascendente por `inicio`. Las cifras de la portada (retrabajos, etapa dominante) las calcula `index.html` a partir

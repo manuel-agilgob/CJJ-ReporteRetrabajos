@@ -207,6 +207,37 @@ a:hover{color:var(--color-accent-900)}
   </div>
   <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">{{ dev.pie }}</p>
 
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:34px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Recorrido de actividades</h2>
+  <p style="font-size:15px;line-height:1.62;margin:0 0 16px">{{ act.intro }}</p>
+  <div class="blueprint" style="padding:14px 16px 12px;margin-bottom:8px;break-inside:avoid">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 36px;gap:10px;align-items:end;padding-bottom:6px">
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Actividad</span>
+      <span></span>
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);text-align:right">RET</span>
+    </div>
+    <sc-for list="{{ act.rows }}" as="r" hint-placeholder-count="16">
+      <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 36px;gap:10px;align-items:center;padding:5px 0;border-top:1px solid var(--color-neutral-200)">
+        <div style="display:flex;flex-direction:column;min-width:0">
+          <span style="font-family:var(--font-heading);font-size:13.5px;line-height:1.1;color:var(--color-text)">{{ r.clave }}</span>
+          <span style="font-size:10.5px;line-height:1.3;color:var(--color-neutral-600);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.responsable }}</span>
+        </div>
+        <div style="position:relative;height:20px">
+          <sc-for list="{{ r.segs }}" as="g" hint-placeholder-count="6">
+            <span title="{{ g.title }}" style="{{ g.style }}"></span>
+          </sc-for>
+        </div>
+        <span style="{{ r.retStyle }}">{{ r.ret }}</span>
+      </div>
+    </sc-for>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 16px;padding-top:12px;margin-top:6px;border-top:1px solid var(--color-neutral-300)">
+      <sc-for list="{{ act.leyenda }}" as="l" hint-placeholder-count="9">
+        <span style="display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--color-neutral-700)"><span style="{{ l.style }}"></span>{{ l.label }}</span>
+      </sc-for>
+    </div>
+  </div>
+  <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">Figura 4 — Recorrido de cada actividad del periodo, con y sin retrabajo. Cada tramo es el tiempo en una etapa; pasar el cursor sobre un tramo muestra su duración.</p>
+
 
 
 </doc-page>
@@ -230,6 +261,57 @@ class Component extends DCLogic {
       }, 60);
       setTimeout(() => clearInterval(t), 4000);
     }
+  }
+
+  buildActividades(d) {
+    const all = (d.actividades || []).slice();
+    const P = x => Date.parse(x);
+    const DAY = 864e5;
+    const etapaKeys = ['DOR', 'DEV', 'AI', 'LEAD-REV', 'QA', 'MERGE', 'SAND', 'PROD'];
+    const fill = {
+      DOR: 'oklch(0.58 0.15 295)', DEV: 'oklch(0.60 0.15 258)', AI: 'oklch(0.72 0.12 222)',
+      'LEAD-REV': 'oklch(0.70 0.13 165)', QA: 'oklch(0.78 0.15 128)', MERGE: 'oklch(0.85 0.15 92)',
+      SAND: 'oklch(0.75 0.16 58)', PROD: 'oklch(0.36 0.03 260)', RET: 'oklch(0.58 0.22 27)',
+    };
+    const nombre = { DOR: 'DOR', DEV: 'DEV', AI: 'AI', 'LEAD-REV': 'LEAD-REV', QA: 'QA', MERGE: 'MERGE', SAND: 'SAND', PROD: 'PROD', RET: 'Retrabajo' };
+    all.sort((x, y) => P(x.creada) - P(y.creada));
+    const t0 = all.length ? Math.min(...all.map(x => P(x.tramos[0].inicio))) : 0;
+    const t1 = all.length ? Math.max(...all.map(x => P(x.tramos[x.tramos.length - 1].fin))) : 1;
+    const span = Math.max(1, t1 - t0);
+    const pct = t => ((t - t0) / span) * 100;
+    const durTxt = ms => {
+      const h = ms / 36e5;
+      return h < 24 ? Math.max(1, Math.round(h)) + ' h' : (h / 24).toFixed(1) + ' días';
+    };
+    const rows = all.map(x => {
+      const n = x.retrabajos.length;
+      return {
+        clave: x.clave, responsable: x.responsable, ret: n,
+        retStyle: 'text-align:right;font-family:var(--font-heading);font-size:16px;color:' + (n ? fill.RET : 'var(--color-neutral-600)'),
+        segs: x.tramos.map(t => {
+          const l = pct(P(t.inicio)), w = Math.max(0.35, pct(P(t.fin)) - l);
+          return {
+            title: nombre[t.etapa] + ' · ' + durTxt(P(t.fin) - P(t.inicio)),
+            style: 'position:absolute;top:3px;bottom:3px;left:' + l + '%;width:' + w + '%;background:' + fill[t.etapa],
+          };
+        }),
+      };
+    });
+    const conRet = all.filter(x => x.retrabajos.length).length;
+    const totalRet = all.reduce((s2, x) => s2 + x.retrabajos.length, 0);
+    const peor = all.slice().sort((x, y) => y.retrabajos.length - x.retrabajos.length)[0];
+    return {
+      intro: !all.length
+        ? 'No hubo actividades con movimiento en el periodo.'
+        : all.length + ' actividades con movimiento en el periodo, ordenadas por fecha de creación. ' + conRet +
+          ' pasaron por retrabajo al menos una vez, con ' + totalRet + ' retornos en total; la de más retornos es ' +
+          peor.clave + ', con ' + peor.retrabajos.length + '. En rojo, el tiempo que cada actividad pasó en retrabajo.',
+      rows,
+      leyenda: etapaKeys.concat(['RET']).map(k => ({
+        label: nombre[k],
+        style: 'width:14px;height:10px;background:' + fill[k],
+      })),
+    };
   }
 
   renderVals() {
@@ -288,34 +370,6 @@ class Component extends DCLogic {
         ' retrabajos, el ' + share + ' % del total del periodo (' + grand + '), lo que la ubica en el lugar ' +
         rank + ' de las ocho etapas del flujo. El motivo dominante es «' + top.name.toLowerCase() + '», con ' +
         top.count + ' casos (' + top.pct + ' de la etapa); ' + withCat + ' de las once categorías registran al menos un caso.';
-
-    const kpis = d.indicadores.map(k => {
-      const up = k.direccion === 'up', flat = k.direccion === 'flat';
-      return {
-        nombre: k.nombre, valor: k.valor, meta: k.meta,
-        deltaText: flat ? '— sin cambio' : (up ? '▲ ' : '▼ ') + k.delta + ' vs. periodo anterior',
-        deltaStyle: 'font-size:12.5px;color:' + (up ? 'var(--color-accent-700)' : 'var(--color-neutral-600)'),
-      };
-    });
-
-    const maxS = Math.max(1, ...d.serie.map(p => p.valor));
-    const serie = d.serie.map((p, i) => {
-      const last = i === d.serie.length - 1;
-      return {
-        etiqueta: p.etiqueta,
-        barStyle: 'height:' + Math.round((p.valor / maxS) * 100) + '%;' + (last
-          ? 'background:var(--color-accent);border:1px solid var(--color-accent-700)'
-          : 'background:var(--color-accent-200);border:1px solid var(--color-accent)'),
-        labelStyle: last ? 'color:var(--color-accent-700)' : '',
-      };
-    });
-
-    const maxP = Math.max(1, ...d.composicion.map(c => c.pct));
-    const composicion = d.composicion.map(c => ({
-      nombre: c.nombre, pctText: c.pct + '%',
-      barStyle: 'display:block;height:11px;width:' + Math.round((c.pct / maxP) * 100) + '%;background:' +
-        (c.nombre.toLowerCase() === 'otros' ? 'var(--color-neutral-300)' : 'var(--color-accent)'),
-    }));
 
     const hf = d.hotfixes || { ambientes: [], detalle: [], nota: '' };
     const hfAll = hf.ambientes;
@@ -443,14 +497,12 @@ class Component extends DCLogic {
       }),
     };
 
+    const act = this.buildActividades(d);
+
     return {
-      hotfix, dev,
-      meta: d.meta, resumen: d.resumen, areas: d.areas, areasTotal: d.areasTotal,
-      hallazgos: d.hallazgos, acciones: d.acciones,
-      riesgos: d.riesgos.map((r, i) => Object.assign({ n: i + 1 }, r)),
-      riesgosNota: d.riesgos.length ? '' : 'Sin riesgos abiertos en el periodo.',
+      hotfix, dev, act,
+      meta: d.meta,
       stages, sel: { title: e.key + ' — ' + e.sub, total, rows, intro },
-      kpis, serie, composicion,
     };
   }
 }

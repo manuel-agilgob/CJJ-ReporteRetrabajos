@@ -8,7 +8,8 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 - UTF-8, indentación de 2 espacios, sin comentarios.
 - **No se borra ninguna clave del esqueleto.** Un texto sin dato se escribe `"n/d"`; un conteo sin casos es `0`. Ningún
   texto queda como `""`.
-- Fechas en ISO 8601 (`AAAA-MM-DD`), en hora de la Ciudad de México (`America/Mexico_City`).
+- Fechas en ISO 8601 (`AAAA-MM-DD`), en hora de la Ciudad de México (`America/Mexico_City`). Donde se pide fecha y hora
+  (solo en `actividades`), `AAAA-MM-DDTHH:MM`, también en hora de la Ciudad de México y sin zona.
 - Deltas con signo, y el negativo con el signo menos tipográfico `−` (U+2212), como en el diseño: `+1`, `−2`, `0`.
 - De las personas, solo el nombre de pila (ver `colaboradores.md`).
 
@@ -21,7 +22,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | `etapas`, `etapaPorDefecto` | Figura 0 y desglose por etapa |
 | `hotfixes` | «Hotfixes en ambientes de despliegue» y Tabla 1 |
 | `colaboradores`, `colaboradoresNota` | «Retrabajos por colaborador» y Tabla 2 |
-| `indicadores`, `serie`, `composicion`, `riesgos` | No se ven (ver «Claves heredadas») |
+| `actividades` | «Recorrido de actividades» y Figura 4 |
 
 ## `meta`
 
@@ -34,7 +35,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | `generado` | Fecha en que se generó el JSON. |
 | `responsable` | Fijo: `Ingeniería — Lead de entrega`. |
 | `fuente` | Según la vía de extracción (`INSTRUCCIONES.md`, paso 1). Vía A: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — pipeline generate-rework-report`. Vía B: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente`. |
-| `version` | Versión de la plantilla con que se generó, hoy `v1.0` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
+| `version` | Versión de la plantilla con que se generó, hoy `v1.1` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
 
 ## `categorias`
 
@@ -63,7 +64,7 @@ tiene retrabajos, `DOR`. Es la etapa que se ve al abrir el reporte.
 
 | Clave | Valor |
 |---|---|
-| `nota` | Fija: `Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta y se cuenta en el periodo en que se creó.` |
+| `nota` | Fija: `Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta o por la etiqueta «hotfix», y se cuenta en el periodo en que se creó.` |
 | `ambientes` | Exactamente dos objetos, en este orden: `SAND` y `PROD` (tabla siguiente). |
 | `detalle` | Un objeto por hotfix (tabla siguiente); primero los de `PROD` y luego los de `SAND`, y dentro de cada ambiente por `fecha` ascendente. `[]` si no hubo. |
 
@@ -85,7 +86,7 @@ Cada objeto de `detalle`:
 |---|---|
 | `clave` | Clave de la tarjeta en Jira (`CJJ-2041`). |
 | `ambiente` | `SAND` o `PROD`. |
-| `titulo` | Nombre de la tarjeta sin el término «hotfix» ni los separadores que queden sobrando al inicio o al final: `HOTFIX - Sesión expira antes de tiempo` → `Sesión expira antes de tiempo`. |
+| `titulo` | Nombre de la tarjeta sin el término «hotfix» ni los separadores que queden sobrando al inicio o al final: `HOTFIX - Sesión expira antes de tiempo` → `Sesión expira antes de tiempo`. Si el hotfix entró solo por la etiqueta y el nombre no trae el término, el nombre va tal cual. |
 | `causa` | Una de las `categorias` (misma taxonomía que los retrabajos). |
 | `severidad` | `Crítica`, `Mayor` o `Menor`. |
 | `horas` | Tiempo dedicado a resolver la tarjeta (`Σ Tiempo empleado` de Jira), en horas con un decimal, como texto (`"2.5"`); `"n/d"` si no tiene horas registradas. |
@@ -111,10 +112,35 @@ las ordena por total al mostrarlas.
 - Normal: `Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.`
 - Si se usó el asignado actual porque no hubo historial de asignación (`INSTRUCCIONES.md`, paso 3): `Se contabiliza al responsable actual de la tarjeta: el historial de asignación no estuvo disponible al generar este periodo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.`
 
-## Claves heredadas
+## `actividades`
 
-`indicadores`, `serie`, `composicion` y `riesgos` van siempre como arreglos vacíos (`[]`). Son de una versión anterior de la
-plantilla: la lógica actual los recorre aunque ya no los muestra, y si faltan la página falla. No se llenan.
+Una entrada por tarjeta que cambió de estado en el periodo, con retrabajo o sin él; ordenadas por `creada` ascendente (la
+plantilla las vuelve a ordenar igual). `[]` si ninguna se movió. Cómo se obtiene cada dato: `INSTRUCCIONES.md`, paso 5.
+
+| Clave | Valor |
+|---|---|
+| `clave` | Clave de la tarjeta en Jira (`CJJ-2041`). Única dentro del periodo. |
+| `titulo` | Nombre de la tarjeta (`summary`), tal cual. La plantilla no lo muestra hoy. |
+| `responsable` | Nombre de pila del asignado al cierre del periodo, como en `colaboradores.md`; `Otros` si no está en la lista; `Sin asignar` si no tiene. |
+| `creada` | Fecha y hora de creación de la tarjeta (`AAAA-MM-DDTHH:MM`). Puede ser anterior al periodo. |
+| `estado` | La `key` de la etapa del último tramo, o `En producción` si es `PROD`. La plantilla no lo muestra hoy. |
+| `tramos` | Al menos un tramo (la plantilla falla con un arreglo vacío), en orden cronológico (tabla siguiente). |
+| `retrabajos` | Uno por retrabajo contado de la tarjeta en el periodo, en orden cronológico (tabla siguiente). `[]` si no tuvo. |
+
+Cada tramo:
+
+| Clave | Valor |
+|---|---|
+| `etapa` | Una de las ocho `key` de `etapas`, o `RET` mientras estuvo en `Retrabajo`. |
+| `inicio`, `fin` | Fecha y hora (`AAAA-MM-DDTHH:MM`), recortadas al periodo: `inicio` no es anterior a `<inicio>T00:00` y `fin` no es posterior a `<cierre>T00:00`. `fin` es posterior a `inicio`. |
+
+Cada retrabajo:
+
+| Clave | Valor |
+|---|---|
+| `fecha` | Fecha y hora de la transición a `Retrabajo` (`AAAA-MM-DDTHH:MM`). |
+| `desde` | La etapa de origen, la misma con que se contó en `etapas`. |
+| `categoria` | Una de las `categorias`, la misma con que se contó. |
 
 ## Invariantes
 
@@ -134,6 +160,9 @@ las cumpla.
 7. Cada persona de `colaboradores.md` aparece exactamente una vez; la suma de todas las `matriz` es igual a la suma de
    todos los `counts`; cada `matriz` tiene las siete etapas con `N` enteros; los `nombre` no se repiten y ninguno trae
    correo ni apellido.
-8. `indicadores`, `serie`, `composicion` y `riesgos` existen y son `[]`.
+8. En `actividades`: `clave` no se repite; cada entrada tiene al menos un tramo; los tramos están en orden, no se
+   enciman y caen dentro del periodo; cada `etapa` es una `key` de `etapas` o `RET`; `responsable` es un nombre de
+   `colaboradores`, `Otros` o `Sin asignar`. La suma de todos los `retrabajos` es igual a la suma de todos los `counts`, y
+   por cada etapa y categoría coincide con `counts`. Cada tarjeta con un retrabajo contado aparece aquí.
 9. Ningún texto quedó como `""`, y ninguna clave del esqueleto falta.
 10. Si se puede probar, la plantilla abre el JSON sin errores: `plantilla/reporte.dc.html?data=../reportes/<archivo>`.

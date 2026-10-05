@@ -3,7 +3,8 @@
 Copia fiel del proyecto de Claude Design «Plantilla reporte retrabajo»:
 <https://claude.ai/design/p/c1920c29-3492-4d8c-90af-2d65b08be535?file=Plantilla+de+Reporte+Periodico.dc.html>
 
-Copiada el **2026-09-23**. Versión de plantilla: **v1.0** (el valor de `meta.version` en los JSON).
+Copiada el **2026-09-23** y de nuevo el **2026-10-05** (sección «Recorrido de actividades»). Versión de plantilla:
+**v1.1** (el valor de `meta.version` en los JSON).
 
 | En el diseño | En este repositorio |
 |---|---|
@@ -18,7 +19,8 @@ Los archivos son idénticos a los del diseño, salvo el nombre de la plantilla y
 
 `report-data.js` es el ejemplo del diseño ajustado al contrato vigente: marcado como ficticio en el título y en el periodo,
 solo con nombres de pila, las causas de hotfix dentro de las 11 categorías, `etapaPorDefecto` según la regla del contrato, y
-sin las claves heredadas con contenido.
+con un `actividades` ficticio generado para el periodo de ejemplo (nombres de pila, tramos recortados al periodo), y sin
+las claves heredadas de la versión anterior (`indicadores`, `serie`, `composicion`, `riesgos`), que la plantilla ya no lee.
 
 ## Qué no se copió
 
@@ -50,8 +52,7 @@ Vienen del diseño; se corrigen allá y se vuelve a copiar.
 2. Los textos dicen «once categorías» y «ocho etapas», fijos, y la Figura 0 tiene ocho columnas fijas. Cambiar el número de
    categorías o de etapas exige cambiar la plantilla.
 3. En el primer periodo, sin uno anterior contra el cual comparar, las tarjetas de hotfix dicen «— sin cambio».
-4. La lógica recorre `indicadores`, `serie`, `composicion` y `riesgos` aunque no los muestra: el JSON debe traerlos como
-   arreglos vacíos.
+4. La Figura 4 lee `tramos[0]` de cada actividad: una actividad sin tramos rompe la página. El contrato exige al menos uno.
 5. Si el colaborador en vista no tiene retrabajos, el texto de la sección dice «acumula 0 retrabajos… concentrados en DOR
    (0) y con «el funcionamiento es incorrecto» como motivo dominante (0)». Pasa al dar clic en su tarjeta, o al abrir un
    periodo en que nadie tuvo retrabajos. Como todos los de la lista aparecen siempre, conviene que el diseño diga en ese
