@@ -1,0 +1,5597 @@
+{
+  "meta": {
+    "titulo": "Retrabajos del ciclo de entrega",
+    "subtitulo": "Transiciones a Retrabajo clasificadas por motivo según la taxonomía vigente, agrupadas por la etapa del flujo donde se detectaron.",
+    "etiquetaPeriodo": "2026-09-27 → 2026-10-03",
+    "periodoInicio": "2026-09-27",
+    "periodoFin": "2026-10-03",
+    "generado": "2026-10-05",
+    "responsable": "Ingeniería — Lead de entrega",
+    "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
+    "version": "v1.1"
+  },
+  "categorias": [
+    "El funcionamiento es incorrecto",
+    "No cubre todos los escenarios o escenarios borde",
+    "Regresión detectada en otra funcionalidad",
+    "No cumple lineamientos de UX/UI",
+    "El codigo produce un error (crash) en runtime o compilacion",
+    "Conflicto con la rama principal",
+    "Cambios solicitados por negocio después de entregar",
+    "No cumple definición de terminado (DoD)",
+    "No hay comentarios para categorizar",
+    "Error de QA - testing",
+    "OTRO, No se ajusta a ninguna categoria definida",
+    "Malas prácticas de programación"
+  ],
+  "etapaPorDefecto": "LEAD-REV",
+  "etapas": [
+    {
+      "key": "DOR",
+      "sub": "Listo para tomar",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "DEV",
+      "sub": "Desarrollo",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "AI",
+      "sub": "Revisión asistida",
+      "counts": [
+        6,
+        0,
+        4,
+        0,
+        2,
+        2,
+        0,
+        7,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "key": "LEAD-REV",
+      "sub": "Revisión de lead",
+      "counts": [
+        1,
+        3,
+        2,
+        0,
+        0,
+        45,
+        0,
+        1,
+        1,
+        0,
+        5,
+        6
+      ]
+    },
+    {
+      "key": "QA",
+      "sub": "Pruebas",
+      "counts": [
+        2,
+        4,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "MERGE",
+      "sub": "Integración",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "SAND",
+      "sub": "Sandbox",
+      "counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nota": "Sandbox puede generar retrabajos cuando el despliegue revela un defecto antes de producción; es poco frecuente."
+    },
+    {
+      "key": "PROD",
+      "sub": "Producción",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sinRetrabajo": true,
+      "nota": "Producción no genera retrabajos: una corrección posterior al despliegue se registra como hotfix en la sección de hotfixes de despliegue, no como retorno de la actividad."
+    }
+  ],
+  "hotfixes": {
+    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta o por la etiqueta «hotfix», y se cuenta en el periodo en que se creó.",
+    "ambientes": [
+      {
+        "ambiente": "SAND",
+        "nombre": "Sandbox",
+        "total": 0,
+        "delta": "n/d",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      },
+      {
+        "ambiente": "PROD",
+        "nombre": "Producción",
+        "total": 0,
+        "delta": "n/d",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      }
+    ],
+    "detalle": []
+  },
+  "colaboradores": [
+    {
+      "nombre": "Manny",
+      "rol": "Revisor",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Marck",
+      "rol": "Revisor",
+      "tarjetas": 14,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          3,
+          1
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Rafael",
+      "rol": "Tech lead",
+      "tarjetas": 6,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Samuel",
+      "rol": "Desarrollador",
+      "tarjetas": 52,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "LEAD-REV": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "QA": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Sebastián",
+      "rol": "Desarrollador",
+      "tarjetas": 23,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Manuel",
+      "rol": "QA",
+      "tarjetas": 1,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Adrián",
+      "rol": "Desarrollador",
+      "tarjetas": 38,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          4,
+          0,
+          3,
+          0,
+          2,
+          2,
+          0,
+          5,
+          1,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Alfonso",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Karla",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Christian",
+      "rol": "Revisora",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Juan José",
+      "rol": "Tech lead",
+      "tarjetas": 9,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Luis Fernando",
+      "rol": "Desarrollador",
+      "tarjetas": 20,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "QA": [
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
+  "actividades": [
+    {
+      "clave": "CJJ-22",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2025-12-08T09:27",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:46",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:46",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-37",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-19T17:06",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T09:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T09:54",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-38",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-20T12:26",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T09:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T09:54",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-44",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-22T09:07",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T13:55"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T13:55",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-46",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-22T12:43",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-54",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-22T15:42",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-69",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-09T12:05",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-71",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-09T12:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-74",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-02-09T12:41",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-76",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-10T12:43",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T09:56"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T09:56",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-81",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:56",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T09:56"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T09:56",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-82",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:58",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T09:56"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T09:56",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-87",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:59",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-86",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:59",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T12:57"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T12:57",
+          "fin": "2026-09-28T13:02"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T13:02",
+          "fin": "2026-09-28T13:17"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T13:17",
+          "fin": "2026-09-28T13:21"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T13:21",
+          "fin": "2026-09-30T16:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T13:02",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-85",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:59",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-84",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T12:59",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-88",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-13T13:00",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-101",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-19T14:32",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T10:46"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-29T10:46",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-105",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-02-20T14:23",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-106",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-02-20T15:17",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-136",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-03-10T12:23",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T10:02"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T10:02",
+          "fin": "2026-10-01T14:58"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-01T14:58",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T10:02",
+          "desde": "AI",
+          "categoria": "No hay comentarios para categorizar"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-139",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-03-10T13:06",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-138",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-03-10T13:06",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T10:11"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T10:11",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-140",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-03-10T13:08",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-148",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-03-17T16:39",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T10:11"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T10:11",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-176",
+      "titulo": "n/d",
+      "responsable": "Rafael",
+      "creada": "2026-04-02T18:46",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T13:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T13:46",
+          "fin": "2026-09-29T15:42"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T15:42",
+          "fin": "2026-09-30T13:25"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:25",
+          "fin": "2026-09-30T13:31"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:31",
+          "fin": "2026-10-01T16:21"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-01T16:21",
+          "fin": "2026-10-02T11:09"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-02T11:09",
+          "fin": "2026-10-02T11:13"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T11:13",
+          "fin": "2026-10-02T13:31"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-02T13:31",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T13:46",
+          "desde": "QA",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-184",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:17",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T10:49"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T10:49",
+          "fin": "2026-09-29T11:13"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T11:13",
+          "fin": "2026-09-29T11:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T11:20",
+          "fin": "2026-09-29T13:11"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T13:11",
+          "fin": "2026-09-29T13:40"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T13:40",
+          "fin": "2026-09-29T13:46"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T13:46",
+          "fin": "2026-09-29T14:14"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-29T14:14",
+          "fin": "2026-09-30T14:58"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-30T14:58",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T10:49",
+          "desde": "LEAD-REV",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-09-29T13:11",
+          "desde": "LEAD-REV",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-183",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:17",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T10:14"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T10:14",
+          "fin": "2026-09-28T10:46"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-28T10:46",
+          "fin": "2026-09-29T14:16"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T14:16",
+          "fin": "2026-09-29T14:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T14:22",
+          "fin": "2026-09-29T18:02"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T18:02",
+          "fin": "2026-09-30T16:25"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T16:25",
+          "fin": "2026-10-01T11:02"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T11:02",
+          "fin": "2026-10-01T11:09"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:09",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T10:14",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-09-29T18:02",
+          "desde": "LEAD-REV",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-207",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-08T20:18",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T00:16"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T00:16",
+          "fin": "2026-09-28T00:23"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T00:23",
+          "fin": "2026-09-28T00:48"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T00:48",
+          "fin": "2026-09-28T00:53"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-28T00:53",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T00:23",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-203",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:18",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-201",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:18",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T15:25"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T15:25",
+          "fin": "2026-09-29T17:30"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T17:30",
+          "fin": "2026-09-30T11:01"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T11:01",
+          "fin": "2026-09-30T13:56"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:56",
+          "fin": "2026-09-30T14:01"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T14:01",
+          "fin": "2026-10-01T13:09"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-01T13:09",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T17:30",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-200",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T20:18",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-199",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-08T20:18",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T22:33"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T22:33",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T22:33",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-196",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T20:18",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-215",
+      "titulo": "n/d",
+      "responsable": "Marck",
+      "creada": "2026-04-08T23:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T15:37"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T15:37",
+          "fin": "2026-09-29T15:47"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T15:47",
+          "fin": "2026-09-30T13:05"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:05",
+          "fin": "2026-09-30T13:29"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:29",
+          "fin": "2026-09-30T20:20"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T20:20",
+          "fin": "2026-10-01T14:58"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-01T14:58",
+          "fin": "2026-10-01T19:57"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T19:57",
+          "fin": "2026-10-01T20:28"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-01T20:28",
+          "fin": "2026-10-02T08:41"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-02T08:41",
+          "fin": "2026-10-02T09:20"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T09:20",
+          "fin": "2026-10-02T12:33"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-02T12:33",
+          "fin": "2026-10-02T13:08"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T13:08",
+          "fin": "2026-10-02T13:51"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-02T13:51",
+          "fin": "2026-10-02T14:27"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T14:27",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T15:37",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        },
+        {
+          "fecha": "2026-09-30T20:20",
+          "desde": "LEAD-REV",
+          "categoria": "No hay comentarios para categorizar"
+        },
+        {
+          "fecha": "2026-10-01T20:28",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        },
+        {
+          "fecha": "2026-10-02T09:20",
+          "desde": "AI",
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion"
+        },
+        {
+          "fecha": "2026-10-02T13:08",
+          "desde": "AI",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-214",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-04-08T23:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T11:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-225",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-04-08T23:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-236",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-08T23:22",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T10:06"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-28T10:06",
+          "fin": "2026-09-28T12:31"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T12:31",
+          "fin": "2026-09-28T12:37"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T12:37",
+          "fin": "2026-09-29T10:53"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T10:53",
+          "fin": "2026-09-29T14:17"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T14:17",
+          "fin": "2026-09-29T14:24"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T14:24",
+          "fin": "2026-09-29T15:46"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T15:46",
+          "fin": "2026-09-29T15:55"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T15:55",
+          "fin": "2026-09-29T21:59"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T21:59",
+          "fin": "2026-09-29T22:11"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T22:11",
+          "fin": "2026-09-30T13:11"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T13:11",
+          "fin": "2026-09-30T13:36"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:36",
+          "fin": "2026-09-30T13:44"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:44",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T12:37",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-09-29T14:24",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-09-29T15:55",
+          "desde": "AI",
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion"
+        },
+        {
+          "fecha": "2026-09-30T13:11",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        },
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-235",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T16:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T16:40",
+          "fin": "2026-09-28T16:58"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T16:58",
+          "fin": "2026-09-29T15:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T15:21",
+          "fin": "2026-09-30T12:28"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-30T12:28",
+          "fin": "2026-09-30T16:25"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T16:25",
+          "fin": "2026-10-01T08:17"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T08:17",
+          "fin": "2026-10-01T08:25"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T08:25",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T16:40",
+          "desde": "LEAD-REV",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida"
+        },
+        {
+          "fecha": "2026-09-30T16:25",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-233",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:22",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T13:16"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-29T13:16",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-231",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T23:22",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-228",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:22",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T12:30"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-28T12:30",
+          "fin": "2026-09-29T13:04"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T13:04",
+          "fin": "2026-09-29T14:25"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T14:25",
+          "fin": "2026-09-29T14:55"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T14:55",
+          "fin": "2026-09-29T16:36"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T16:36",
+          "fin": "2026-09-29T18:12"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T18:12",
+          "fin": "2026-09-29T18:17"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T18:17",
+          "fin": "2026-09-30T13:27"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T13:27",
+          "fin": "2026-09-30T13:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T13:41",
+          "fin": "2026-09-30T13:43"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:43",
+          "fin": "2026-09-30T13:49"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:49",
+          "fin": "2026-10-01T11:22"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-01T11:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T13:04",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-09-29T16:36",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-09-30T13:27",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-240",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-13T15:04",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T13:10"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-29T13:10",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-241",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-13T15:05",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T13:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T13:41",
+          "fin": "2026-09-30T17:55"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T17:55",
+          "fin": "2026-09-30T20:28"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T20:28",
+          "fin": "2026-09-30T20:36"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T20:36",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T13:41",
+          "desde": "QA",
+          "categoria": "El funcionamiento es incorrecto"
+        },
+        {
+          "fecha": "2026-09-30T20:36",
+          "desde": "AI",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-242",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-13T15:13",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T18:12"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T18:12",
+          "fin": "2026-09-30T15:22"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T15:22",
+          "fin": "2026-09-30T16:25"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T16:25",
+          "fin": "2026-09-30T16:31"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:31",
+          "fin": "2026-09-30T17:42"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-30T17:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T18:12",
+          "desde": "LEAD-REV",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-247",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-14T16:41",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T13:03"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T13:03",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-267",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-25T10:03",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:39"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:39",
+          "desde": "AI",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-265",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-25T10:03",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-264",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-25T10:03",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:39"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:39",
+          "desde": "AI",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-269",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-25T13:18",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-272",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-25T13:39",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-305",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-304",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T12:14"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T12:14",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T12:14",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-296",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-295",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:20",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T16:38"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T16:38",
+          "fin": "2026-09-28T16:58"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T16:58",
+          "fin": "2026-09-28T17:04"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T17:04",
+          "fin": "2026-09-28T17:15"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T17:15",
+          "fin": "2026-09-28T17:23"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-28T17:23",
+          "fin": "2026-09-29T12:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T12:42",
+          "fin": "2026-09-29T14:25"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T14:25",
+          "fin": "2026-09-29T14:30"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T14:30",
+          "fin": "2026-09-29T15:54"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-29T15:54",
+          "fin": "2026-09-30T16:03"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-30T16:03",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T16:38",
+          "desde": "LEAD-REV",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida"
+        },
+        {
+          "fecha": "2026-09-28T17:04",
+          "desde": "AI",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        },
+        {
+          "fecha": "2026-09-29T12:42",
+          "desde": "LEAD-REV",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-287",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T10:56"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-29T10:56",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-283",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T11:39"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-01T11:39",
+          "fin": "2026-10-01T11:50"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T11:50",
+          "fin": "2026-10-01T11:55"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:55",
+          "fin": "2026-10-01T18:02"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-01T18:02",
+          "fin": "2026-10-01T18:29"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T18:29",
+          "fin": "2026-10-01T18:34"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T18:34",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-01T11:39",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-10-01T18:02",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-282",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T03:02"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T03:02",
+          "fin": "2026-09-28T03:08"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T03:08",
+          "fin": "2026-09-28T09:39"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T09:39",
+          "fin": "2026-09-28T09:45"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-28T09:45",
+          "fin": "2026-09-28T13:15"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-28T13:15",
+          "fin": "2026-09-28T16:06"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-28T16:06",
+          "fin": "2026-09-28T16:09"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-28T16:09",
+          "fin": "2026-10-01T12:13"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T12:13",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T03:08",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-337",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:47"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:47",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:47",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-334",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-332",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-329",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-328",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-324",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T12:41"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T12:41",
+          "fin": "2026-10-02T20:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:46",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:46",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-323",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:43",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:43",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-322",
+      "titulo": "n/d",
+      "responsable": "Juan José",
+      "creada": "2026-05-27T09:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T12:59"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T12:59",
+          "fin": "2026-09-30T13:14"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T13:14",
+          "fin": "2026-09-30T13:31"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:31",
+          "fin": "2026-09-30T13:40"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:40",
+          "fin": "2026-09-30T15:15"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T15:15",
+          "fin": "2026-09-30T15:35"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T15:35",
+          "fin": "2026-09-30T15:42"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T15:42",
+          "fin": "2026-10-01T11:20"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-01T11:20",
+          "fin": "2026-10-01T11:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-30T12:59",
+          "desde": "LEAD-REV",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        },
+        {
+          "fecha": "2026-09-30T15:15",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-320",
+      "titulo": "n/d",
+      "responsable": "Juan José",
+      "creada": "2026-05-27T09:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T12:28"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T12:28",
+          "fin": "2026-09-30T12:46"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T12:46",
+          "fin": "2026-09-30T12:55"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T12:55",
+          "fin": "2026-09-30T13:03"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T13:03",
+          "fin": "2026-09-30T13:09"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T13:09",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-30T12:28",
+          "desde": "LEAD-REV",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-316",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-311",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-310",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-309",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-308",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T11:29"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T11:29",
+          "fin": "2026-10-02T11:45"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-02T11:45",
+          "fin": "2026-10-02T11:50"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T11:50",
+          "fin": "2026-10-02T13:07"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T13:07",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T11:29",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        },
+        {
+          "fecha": "2026-10-02T13:07",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-350",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:10",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T17:09"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T17:09",
+          "fin": "2026-09-29T09:59"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T09:59",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-349",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:10",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T03:51"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T03:51",
+          "fin": "2026-09-29T03:59"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T03:59",
+          "fin": "2026-09-29T04:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T04:30",
+          "fin": "2026-09-29T04:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T04:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T03:59",
+          "desde": "AI",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-353",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:11",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T22:54"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T22:54",
+          "fin": "2026-09-29T10:03"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T10:03",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-352",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:11",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T17:10"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T17:10",
+          "fin": "2026-09-29T10:00"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T10:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-351",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:11",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T17:11"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T17:11",
+          "fin": "2026-09-29T10:00"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T10:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-354",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T12:12",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T22:54"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-28T22:54",
+          "fin": "2026-09-29T10:00"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T10:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-357",
+      "titulo": "n/d",
+      "responsable": "Rafael",
+      "creada": "2026-06-05T14:22",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-361",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-08T11:21",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:50"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-30T16:50",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-368",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-09T13:37",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-374",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-17T10:53",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T15:51"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-29T15:51",
+          "fin": "2026-10-01T11:12"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-01T11:12",
+          "fin": "2026-10-01T11:50"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-01T11:50",
+          "fin": "2026-10-01T11:58"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-01T11:58",
+          "fin": "2026-10-01T16:39"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T16:39",
+          "fin": "2026-10-01T16:45"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T16:45",
+          "fin": "2026-10-02T14:22"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-02T14:22",
+          "fin": "2026-10-02T17:00"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-02T17:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-01T11:50",
+          "desde": "SAND",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-375",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-17T13:43",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-01T11:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-403",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-18T17:36",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-410",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-25T17:06",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T17:10"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-28T17:10",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-412",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-26T13:19",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-414",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-26T13:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-422",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-30T11:26",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:45",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-424",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-30T11:27",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-451",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-06T10:54",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:46",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:46",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-452",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-06T12:09",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T03:54"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T03:54",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-455",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-07T18:44",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T00:01"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T00:01",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-464",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-07-14T11:15",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T13:33"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-28T13:33",
+          "fin": "2026-09-29T14:24"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T14:24",
+          "fin": "2026-09-29T15:28"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T15:28",
+          "fin": "2026-09-29T15:34"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-29T15:34",
+          "fin": "2026-09-29T16:29"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-29T16:29",
+          "fin": "2026-09-30T13:22"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T13:22",
+          "fin": "2026-09-30T13:59"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-30T13:59",
+          "fin": "2026-09-30T15:15"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T15:15",
+          "fin": "2026-09-30T15:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T15:20",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-28T13:33",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        },
+        {
+          "fecha": "2026-09-30T13:22",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-470",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-20T11:25",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:42"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:42",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:42",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-476",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-27T17:33",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T11:22"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T11:22",
+          "fin": "2026-09-29T18:11"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T18:11",
+          "fin": "2026-09-30T16:33"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T16:33",
+          "fin": "2026-10-01T08:17"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T08:17",
+          "fin": "2026-10-01T08:26"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-01T08:26",
+          "fin": "2026-10-01T09:09"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-01T09:09",
+          "fin": "2026-10-01T09:11"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T09:11",
+          "fin": "2026-10-01T17:22"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-01T17:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T11:22",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        },
+        {
+          "fecha": "2026-09-30T16:33",
+          "desde": "AI",
+          "categoria": "Malas prácticas de programación"
+        },
+        {
+          "fecha": "2026-10-01T08:26",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-478",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-28T22:00",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-488",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-07-29T10:57",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-491",
+      "titulo": "n/d",
+      "responsable": "Manuel",
+      "creada": "2026-07-31T14:10",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-493",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-03T10:23",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:40"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:40",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:40",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-494",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-03T10:24",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:41",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-495",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-03T10:47",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T09:11"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-28T09:11",
+          "fin": "2026-09-29T15:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T15:46",
+          "fin": "2026-09-29T16:42"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T16:42",
+          "fin": "2026-09-30T10:27"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T10:27",
+          "fin": "2026-09-30T10:33"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T10:33",
+          "fin": "2026-09-30T10:39"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T10:39",
+          "fin": "2026-09-30T10:48"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T10:48",
+          "fin": "2026-09-30T10:52"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T10:52",
+          "fin": "2026-09-30T10:58"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T10:58",
+          "fin": "2026-09-30T17:00"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-30T17:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T15:46",
+          "desde": "QA",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        },
+        {
+          "fecha": "2026-09-30T10:48",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-531",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-530",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-529",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-520",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-519",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-514",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-590",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-586",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-569",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T12:36"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T12:36",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-608",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-07T13:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T00:49"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-28T00:49",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-599",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-07T13:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-620",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-11T12:09",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-622",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-12T16:54",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T16:09"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-28T16:09",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-635",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-15T11:02",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T14:20"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T14:20",
+          "fin": "2026-09-30T17:55"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-30T17:55",
+          "fin": "2026-09-30T18:00"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-30T18:00",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-30T18:00",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-634",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-633",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-632",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-631",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-630",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-15T11:02",
+      "estado": "AI",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T10:53"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-29T10:53",
+          "fin": "2026-09-29T14:19"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T14:19",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-629",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-627",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T12:31"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-28T12:31",
+          "fin": "2026-09-29T02:53"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T02:53",
+          "fin": "2026-09-29T02:59"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-09-29T02:59",
+          "fin": "2026-09-29T03:32"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-29T03:32",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-09-29T02:59",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-626",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T22:32"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-02T22:32",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-625",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-15T11:02",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T16:22"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T16:22",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-642",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-18T17:35",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-658",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-25T12:48",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "DEV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-29T16:42"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-29T16:42",
+          "fin": "2026-10-02T11:45"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-02T11:45",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-664",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-26T14:58",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-688",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-09-02T14:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:44"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:44",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:44",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-728",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-09-23T10:00",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "AI",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-30T20:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-30T20:39",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-729",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-09-23T11:35",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-10-02T20:46"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-02T20:46",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-02T20:46",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-731",
+      "titulo": "n/d",
+      "responsable": "Rafael",
+      "creada": "2026-09-24T12:48",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T10:16"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-28T10:16",
+          "fin": "2026-10-01T11:30"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:30",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-732",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-09-24T14:08",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T10:16"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-28T10:16",
+          "fin": "2026-10-01T11:28"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-01T11:28",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-733",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-09-24T14:29",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-09-27T00:00",
+          "fin": "2026-09-28T14:48"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-09-28T14:48",
+          "fin": "2026-09-28T16:07"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-09-28T16:07",
+          "fin": "2026-09-28T16:09"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-09-28T16:09",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-739",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-09-30T17:21",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-09-30T17:21",
+          "fin": "2026-10-04T00:00"
+        }
+      ],
+      "retrabajos": []
+    }
+  ]
+}
