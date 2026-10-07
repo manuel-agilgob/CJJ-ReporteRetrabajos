@@ -4,7 +4,7 @@ Copia fiel del proyecto de Claude Design «Plantilla reporte retrabajo»:
 <https://claude.ai/design/p/c1920c29-3492-4d8c-90af-2d65b08be535?file=Plantilla+de+Reporte+Periodico.dc.html>
 
 Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de actividades») y el **2026-10-07**
-(detalle desplegable por tarjeta en esa sección). Versión de plantilla:
+(detalle desplegable por tarjeta en esa sección; luego, columna «Estado» y fondo del detalle desplegado). Versión de plantilla:
 **v1.1** (el valor de `meta.version` en los JSON).
 
 | En el diseño | En este repositorio |

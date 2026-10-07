@@ -211,19 +211,19 @@ a:hover{color:var(--color-accent-900)}
   <p style="font-size:15px;line-height:1.62;margin:0 0 16px">{{ act.intro }}</p>
   <div class="blueprint" style="padding:10px 16px 8px;margin-bottom:8px">
     <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-    <div style="display:grid;grid-template-columns:84px minmax(0,1fr) 130px 64px 40px 16px;gap:12px;align-items:end;padding:4px 0 8px">
+    <div style="display:grid;grid-template-columns:84px 104px minmax(0,1fr) 64px 40px 16px;gap:12px;align-items:end;padding:4px 0 8px">
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Clave</span>
-      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Actividad</span>
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Estado</span>
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Responsable</span>
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);text-align:right">Días</span>
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);text-align:right">RET</span>
       <span></span>
     </div>
     <sc-for list="{{ act.rows }}" as="r" hint-placeholder-count="16">
-      <div style="border-top:1px solid var(--color-neutral-200)">
+      <div style="{{ r.wrapStyle }}">
         <div onClick="{{ r.toggle }}" title="{{ r.hint }}" style="{{ r.rowStyle }}">
           <span style="font-family:var(--font-heading);font-size:13.5px;color:var(--color-text)">{{ r.clave }}</span>
-          <span style="font-size:13px;line-height:1.35;color:var(--color-text);min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.titulo }}</span>
+          <span style="{{ r.estadoStyle }}">{{ r.estado }}</span>
           <span style="font-size:12px;color:var(--color-neutral-700);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.responsable }}</span>
           <span style="text-align:right;font-size:12.5px;color:var(--color-neutral-700)">{{ r.dias }}</span>
           <span style="{{ r.retStyle }}">{{ r.ret }}</span>
@@ -330,13 +330,17 @@ class Component extends DCLogic {
       const n = x.retrabajos.length;
       const open = x.clave === openKey;
       const row = {
-        clave: x.clave, titulo: x.titulo, responsable: x.responsable, ret: n,
+        clave: x.clave, responsable: x.responsable, ret: n, estado: x.estado,
+        estadoStyle: 'font-family:var(--font-heading);font-size:13px;letter-spacing:.04em;white-space:nowrap;color:' +
+          (x.estado === 'RET' || x.estado === 'En retrabajo' ? fill.RET : 'var(--color-text)'),
+        wrapStyle: 'border-top:1px solid var(--color-neutral-200);' +
+          (open ? 'margin:0 -16px;padding:0 16px 0 13px;border-left:3px solid var(--color-accent-700);background:var(--color-accent-100);' : ''),
         dias: ((finDe(x) - P(x.creada)) / DAY).toFixed(1),
         open, chevron: open ? '▾' : '▸',
         hint: open ? 'Clic para cerrar' : 'Clic para ver el cronograma',
         toggle: () => this.setState({ actSel: open ? null : x.clave }),
-        rowStyle: 'display:grid;grid-template-columns:84px minmax(0,1fr) 130px 64px 40px 16px;gap:12px;align-items:center;padding:7px 0;cursor:pointer;' +
-          (open ? 'background:var(--color-accent-100);margin:0 -16px;padding:7px 16px;' : ''),
+        rowStyle: 'display:grid;grid-template-columns:84px 104px minmax(0,1fr) 64px 40px 16px;gap:12px;align-items:center;padding:7px 0;cursor:pointer;' +
+          (open ? 'background:var(--color-accent-100);' : ''),
         retStyle: 'text-align:right;font-family:var(--font-heading);font-size:16px;color:' + (n ? fill.RET : 'var(--color-neutral-600)'),
         det: {},
       };
@@ -368,7 +372,7 @@ class Component extends DCLogic {
           label: nombre(k),
           labelStyle: 'font-family:var(--font-heading);font-size:11.5px;letter-spacing:.06em;line-height:22px;color:' +
             (k === 'RET' ? fill.RET : 'var(--color-neutral-700)'),
-          trackStyle: 'position:relative;height:22px;border-top:1px solid var(--color-neutral-200)',
+          trackStyle: 'position:relative;height:22px;border-top:1px solid var(--color-neutral-200);background:var(--color-bg)',
           segs: x.tramos.filter(t => t.etapa === k).map(t => {
             const l = pct(P(t.inicio)), w = Math.max(0.6, pct(P(t.fin)) - l);
             return {
