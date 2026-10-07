@@ -209,34 +209,76 @@ a:hover{color:var(--color-accent-900)}
 
   <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:34px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Recorrido de actividades</h2>
   <p style="font-size:15px;line-height:1.62;margin:0 0 16px">{{ act.intro }}</p>
-  <div class="blueprint" style="padding:14px 16px 12px;margin-bottom:8px;break-inside:avoid">
+  <div class="blueprint" style="padding:10px 16px 8px;margin-bottom:8px">
     <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-    <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 36px;gap:10px;align-items:end;padding-bottom:6px">
+    <div style="display:grid;grid-template-columns:84px minmax(0,1fr) 130px 64px 40px 16px;gap:12px;align-items:end;padding:4px 0 8px">
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Clave</span>
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Actividad</span>
-      <span></span>
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Responsable</span>
+      <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);text-align:right">Días</span>
       <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);text-align:right">RET</span>
+      <span></span>
     </div>
     <sc-for list="{{ act.rows }}" as="r" hint-placeholder-count="16">
-      <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 36px;gap:10px;align-items:center;padding:5px 0;border-top:1px solid var(--color-neutral-200)">
-        <div style="display:flex;flex-direction:column;min-width:0">
-          <span style="font-family:var(--font-heading);font-size:13.5px;line-height:1.1;color:var(--color-text)">{{ r.clave }}</span>
-          <span style="font-size:10.5px;line-height:1.3;color:var(--color-neutral-600);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.responsable }}</span>
+      <div style="border-top:1px solid var(--color-neutral-200)">
+        <div onClick="{{ r.toggle }}" title="{{ r.hint }}" style="{{ r.rowStyle }}">
+          <span style="font-family:var(--font-heading);font-size:13.5px;color:var(--color-text)">{{ r.clave }}</span>
+          <span style="font-size:13px;line-height:1.35;color:var(--color-text);min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.titulo }}</span>
+          <span style="font-size:12px;color:var(--color-neutral-700);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.responsable }}</span>
+          <span style="text-align:right;font-size:12.5px;color:var(--color-neutral-700)">{{ r.dias }}</span>
+          <span style="{{ r.retStyle }}">{{ r.ret }}</span>
+          <span style="font-size:12px;color:var(--color-neutral-600);text-align:center">{{ r.chevron }}</span>
         </div>
-        <div style="position:relative;height:20px">
-          <sc-for list="{{ r.segs }}" as="g" hint-placeholder-count="6">
-            <span title="{{ g.title }}" style="{{ g.style }}"></span>
-          </sc-for>
-        </div>
-        <span style="{{ r.retStyle }}">{{ r.ret }}</span>
+        <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:6px 0 16px;break-inside:avoid">
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 20px;padding:10px 0 14px">
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Creada</span><span style="font-size:13.5px">{{ r.det.creada }}</span></div>
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Días en ciclo</span><span style="font-size:13.5px">{{ r.det.dias }}</span></div>
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Estado al cierre</span><span style="font-size:13.5px">{{ r.det.estado }}</span></div>
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Tiempo en retrabajo</span><span style="{{ r.det.retTimeStyle }}">{{ r.det.retTime }}</span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:0 10px">
+              <span></span>
+              <div style="position:relative;height:14px;margin-bottom:4px">
+                <sc-for list="{{ r.det.ticks }}" as="t" hint-placeholder-count="6">
+                  <span style="{{ t.style }}">{{ t.label }}</span>
+                </sc-for>
+              </div>
+              <sc-for list="{{ r.det.lanes }}" as="ln" hint-placeholder-count="9">
+                <span style="{{ ln.labelStyle }}">{{ ln.label }}</span>
+                <div style="{{ ln.trackStyle }}">
+                  <sc-for list="{{ act.gridLines }}" as="gl" hint-placeholder-count="5">
+                    <span style="{{ gl }}"></span>
+                  </sc-for>
+                  <sc-for list="{{ ln.segs }}" as="g" hint-placeholder-count="2">
+                    <span title="{{ g.title }}" style="{{ g.style }}"></span>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ r.det.hayRet }}" hint-placeholder-val="{{ true }}">
+              <table class="table" style="width:100%;font-size:12px;margin-top:14px">
+                <thead>
+                  <tr><th style="width:30px">#</th><th style="width:96px">Fecha</th><th style="width:96px">Detectado en</th><th>Motivo</th></tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ r.det.retrabajos }}" as="x" hint-placeholder-count="2">
+                    <tr><td>{{ x.n }}</td><td>{{ x.fecha }}</td><td>{{ x.desde }}</td><td>{{ x.categoria }}</td></tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </sc-if>
+          </div>
+        </sc-if>
       </div>
     </sc-for>
-    <div style="display:flex;flex-wrap:wrap;gap:8px 16px;padding-top:12px;margin-top:6px;border-top:1px solid var(--color-neutral-300)">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 16px;padding-top:10px;margin-top:2px;border-top:1px solid var(--color-neutral-300)">
       <sc-for list="{{ act.leyenda }}" as="l" hint-placeholder-count="9">
         <span style="display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--color-neutral-700)"><span style="{{ l.style }}"></span>{{ l.label }}</span>
       </sc-for>
     </div>
   </div>
-  <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">Figura 4 — Recorrido de cada actividad del periodo, con y sin retrabajo. Cada tramo es el tiempo en una etapa; pasar el cursor sobre un tramo muestra su duración.</p>
+  <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">Figura 4 — Actividades del periodo ordenadas de más a menos retrabajos. Clic en una actividad despliega su cronograma por carriles, uno por etapa; el eje cuenta días desde la creación y pasar el cursor sobre un tramo muestra su duración.</p>
 
 
 
@@ -267,50 +309,102 @@ class Component extends DCLogic {
     const all = (d.actividades || []).slice();
     const P = x => Date.parse(x);
     const DAY = 864e5;
-    const etapaKeys = ['DOR', 'DEV', 'AI', 'LEAD-REV', 'QA', 'MERGE', 'SAND', 'PROD'];
+    const keys = ['DOR', 'DEV', 'AI', 'LEAD-REV', 'QA', 'MERGE', 'SAND', 'PROD', 'RET'];
     const fill = {
       DOR: 'oklch(0.58 0.15 295)', DEV: 'oklch(0.60 0.15 258)', AI: 'oklch(0.72 0.12 222)',
       'LEAD-REV': 'oklch(0.70 0.13 165)', QA: 'oklch(0.78 0.15 128)', MERGE: 'oklch(0.85 0.15 92)',
       SAND: 'oklch(0.75 0.16 58)', PROD: 'oklch(0.36 0.03 260)', RET: 'oklch(0.58 0.22 27)',
     };
-    const nombre = { DOR: 'DOR', DEV: 'DEV', AI: 'AI', 'LEAD-REV': 'LEAD-REV', QA: 'QA', MERGE: 'MERGE', SAND: 'SAND', PROD: 'PROD', RET: 'Retrabajo' };
-    all.sort((x, y) => P(x.creada) - P(y.creada));
-    const t0 = all.length ? Math.min(...all.map(x => P(x.tramos[0].inicio))) : 0;
-    const t1 = all.length ? Math.max(...all.map(x => P(x.tramos[x.tramos.length - 1].fin))) : 1;
-    const span = Math.max(1, t1 - t0);
-    const pct = t => ((t - t0) / span) * 100;
+    const nombre = k => k === 'RET' ? 'Retrabajo' : k;
+    const fmt = x => x.slice(8, 10) + '/' + x.slice(5, 7);
     const durTxt = ms => {
       const h = ms / 36e5;
       return h < 24 ? Math.max(1, Math.round(h)) + ' h' : (h / 24).toFixed(1) + ' días';
     };
+    const finDe = x => P(x.tramos[x.tramos.length - 1].fin);
+    const inicioDe = x => P(x.tramos[0].inicio);
+    all.sort((x, y) => y.retrabajos.length - x.retrabajos.length || P(x.creada) - P(y.creada));
+    const openKey = this.state.actSel === undefined ? (all[0] && all[0].clave) : this.state.actSel;
+
     const rows = all.map(x => {
       const n = x.retrabajos.length;
-      return {
-        clave: x.clave, responsable: x.responsable, ret: n,
+      const open = x.clave === openKey;
+      const row = {
+        clave: x.clave, titulo: x.titulo, responsable: x.responsable, ret: n,
+        dias: ((finDe(x) - P(x.creada)) / DAY).toFixed(1),
+        open, chevron: open ? '▾' : '▸',
+        hint: open ? 'Clic para cerrar' : 'Clic para ver el cronograma',
+        toggle: () => this.setState({ actSel: open ? null : x.clave }),
+        rowStyle: 'display:grid;grid-template-columns:84px minmax(0,1fr) 130px 64px 40px 16px;gap:12px;align-items:center;padding:7px 0;cursor:pointer;' +
+          (open ? 'background:var(--color-accent-100);margin:0 -16px;padding:7px 16px;' : ''),
         retStyle: 'text-align:right;font-family:var(--font-heading);font-size:16px;color:' + (n ? fill.RET : 'var(--color-neutral-600)'),
-        segs: x.tramos.map(t => {
-          const l = pct(P(t.inicio)), w = Math.max(0.35, pct(P(t.fin)) - l);
-          return {
-            title: nombre[t.etapa] + ' · ' + durTxt(P(t.fin) - P(t.inicio)),
-            style: 'position:absolute;top:3px;bottom:3px;left:' + l + '%;width:' + w + '%;background:' + fill[t.etapa],
-          };
-        }),
+        det: {},
       };
+      if (!open) return row;
+      const t0 = inicioDe(x), t1 = finDe(x);
+      const span = Math.max(DAY / 4, t1 - t0);
+      const pct = t => ((t - t0) / span) * 100;
+      const totalDays = span / DAY;
+      const step = totalDays > 14 ? 4 : totalDays > 7 ? 2 : 1;
+      const ticks = [];
+      for (let dd = 0; dd <= totalDays + 1e-9; dd += step) {
+        const l = (dd / totalDays) * 100;
+        ticks.push({
+          label: 'D+' + dd,
+          style: 'position:absolute;bottom:0;left:' + l + '%;transform:translateX(' + (l > 94 ? '-100%' : l < 3 ? '0' : '-50%') +
+            ');font-size:10px;line-height:1;color:var(--color-neutral-600);white-space:nowrap',
+        });
+      }
+      const retMs = x.tramos.filter(t => t.etapa === 'RET').reduce((m, t) => m + P(t.fin) - P(t.inicio), 0);
+      const presentes = keys.filter(k => x.tramos.some(t => t.etapa === k));
+      row.det = {
+        creada: fmt(x.creada) + '/' + x.creada.slice(0, 4),
+        dias: ((t1 - P(x.creada)) / DAY).toFixed(1) + ' días',
+        estado: x.estado,
+        retTime: retMs ? durTxt(retMs) : 'Sin retrabajo',
+        retTimeStyle: 'font-size:13.5px;color:' + (retMs ? fill.RET : 'var(--color-text)'),
+        ticks,
+        lanes: presentes.map(k => ({
+          label: nombre(k),
+          labelStyle: 'font-family:var(--font-heading);font-size:11.5px;letter-spacing:.06em;line-height:22px;color:' +
+            (k === 'RET' ? fill.RET : 'var(--color-neutral-700)'),
+          trackStyle: 'position:relative;height:22px;border-top:1px solid var(--color-neutral-200)',
+          segs: x.tramos.filter(t => t.etapa === k).map(t => {
+            const l = pct(P(t.inicio)), w = Math.max(0.6, pct(P(t.fin)) - l);
+            return {
+              title: nombre(k) + ' · ' + durTxt(P(t.fin) - P(t.inicio)),
+              style: 'position:absolute;top:4px;bottom:4px;left:' + l + '%;width:' + w + '%;background:' + fill[k],
+            };
+          }),
+        })),
+        hayRet: n > 0,
+        retrabajos: x.retrabajos.map((r, i) => ({ n: i + 1, fecha: fmt(r.fecha) + ' ' + r.fecha.slice(11, 16), desde: r.desde, categoria: r.categoria })),
+      };
+      row.det.gridSpan = totalDays;
+      return row;
     });
+
+    const openRow = rows.find(r => r.open);
+    const gridLines = [];
+    if (openRow) {
+      const totalDays = openRow.det.gridSpan;
+      const step = totalDays > 14 ? 4 : totalDays > 7 ? 2 : 1;
+      for (let dd = step; dd < totalDays; dd += step) {
+        gridLines.push('position:absolute;top:0;bottom:0;width:1px;background:var(--color-neutral-200);left:' + (dd / totalDays) * 100 + '%');
+      }
+    }
+
     const conRet = all.filter(x => x.retrabajos.length).length;
-    const totalRet = all.reduce((s2, x) => s2 + x.retrabajos.length, 0);
-    const peor = all.slice().sort((x, y) => y.retrabajos.length - x.retrabajos.length)[0];
+    const totalRet = all.reduce((m, x) => m + x.retrabajos.length, 0);
     return {
       intro: !all.length
         ? 'No hubo actividades con movimiento en el periodo.'
-        : all.length + ' actividades con movimiento en el periodo, ordenadas por fecha de creación. ' + conRet +
-          ' pasaron por retrabajo al menos una vez, con ' + totalRet + ' retornos en total; la de más retornos es ' +
-          peor.clave + ', con ' + peor.retrabajos.length + '. En rojo, el tiempo que cada actividad pasó en retrabajo.',
-      rows,
-      leyenda: etapaKeys.concat(['RET']).map(k => ({
-        label: nombre[k],
-        style: 'width:14px;height:10px;background:' + fill[k],
-      })),
+        : all.length + ' actividades con movimiento en el periodo, de más a menos retrabajos. ' + conRet +
+          ' pasaron por retrabajo al menos una vez, con ' + totalRet + ' retornos en total; ' +
+          (all[0].retrabajos.length ? 'la de más retornos es ' + all[0].clave + ', con ' + all[0].retrabajos.length + '. ' : '') +
+          'Clic en una actividad para ver su recorrido por etapa.',
+      rows, gridLines,
+      leyenda: keys.map(k => ({ label: nombre(k), style: 'width:14px;height:10px;background:' + fill[k] })),
     };
   }
 

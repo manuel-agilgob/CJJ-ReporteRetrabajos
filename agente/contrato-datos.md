@@ -115,15 +115,16 @@ las ordena por total al mostrarlas.
 ## `actividades`
 
 Una entrada por tarjeta que cambió de estado en el periodo, con retrabajo o sin él; ordenadas por `creada` ascendente (la
-plantilla las vuelve a ordenar igual). `[]` si ninguna se movió. Cómo se obtiene cada dato: `INSTRUCCIONES.md`, paso 5.
+plantilla las reordena de más a menos retrabajos y despliega la primera). `[]` si ninguna se movió. Cómo se obtiene
+cada dato: `INSTRUCCIONES.md`, paso 5.
 
 | Clave | Valor |
 |---|---|
 | `clave` | Clave de la tarjeta en Jira (`CJJ-2041`). Única dentro del periodo. |
-| `titulo` | Siempre `"n/d"`. La plantilla no lo muestra, y el JSON es público: los nombres de tarjeta pueden describir vulnerabilidades abiertas. |
+| `titulo` | Siempre `"n/d"`. La plantilla lo muestra en la columna «Actividad», y el JSON es público: los nombres de tarjeta pueden describir vulnerabilidades abiertas. |
 | `responsable` | Nombre de pila del asignado al cierre del periodo, como en `colaboradores.md`; `Otros` si no está en la lista; `Sin asignar` si no tiene. |
-| `creada` | Fecha y hora de creación de la tarjeta (`AAAA-MM-DDTHH:MM`). Puede ser anterior al periodo. |
-| `estado` | La `key` de la etapa del último tramo, o `En producción` si es `PROD`. La plantilla no lo muestra hoy. |
+| `creada` | Fecha y hora de creación de la tarjeta (`AAAA-MM-DDTHH:MM`). Puede ser anterior al periodo. La plantilla cuenta los «Días» desde aquí hasta el `fin` del último tramo. |
+| `estado` | La `key` de la etapa del último tramo, o `En producción` si es `PROD`. La plantilla lo muestra como «Estado al cierre» en el detalle de la tarjeta. |
 | `tramos` | Al menos un tramo (la plantilla falla con un arreglo vacío), en orden cronológico (tabla siguiente). |
 | `retrabajos` | Uno por retrabajo contado de la tarjeta en el periodo, en orden cronológico (tabla siguiente). `[]` si no tuvo. |
 
