@@ -48,6 +48,18 @@ También se puede lanzar a mano desde la pestaña Actions («Publicar sitio» �
   de Jira: a las personas se las identifica por su `accountId` (ver `agente/colaboradores.md`) y en los reportes solo va el
   nombre de pila. `.gitignore` excluye `.tmp/` y las hojas de cálculo.
 
+## Skill
+
+`.claude/skills/reporte-retrabajos/` es una skill de Claude: consolida los JSON publicados para armar dashboards o
+comparar periodos (modo A) y documenta las reglas para consultar Jira igual que el reporte (modo B). La ven los agentes
+que trabajan sobre este repositorio, también en Claude web. Para compartirla con quien no use el repo:
+
+```bash
+cd .claude/skills && zip -r reporte-retrabajos.zip reporte-retrabajos   # y subirlo en Claude → Configuración → Skills
+```
+
+El modo A es autosuficiente (lee el sitio publicado); el modo B remite a `agente/` como fuente de verdad.
+
 ## Relación con otros repositorios
 
 - **`ai-tools-documentation`**: el pipeline `generate-rework-report`, la vía A de extracción. Su mapa de etapas
