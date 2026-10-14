@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-10-11 → 2026-10-17",
     "periodoInicio": "2026-10-11",
     "periodoFin": "2026-10-17",
-    "generado": "2026-10-12",
+    "generado": "2026-10-13",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.1"
@@ -202,7 +202,7 @@
     {
       "nombre": "Manny",
       "rol": "Revisor",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -517,7 +517,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 1,
+      "tarjetas": 5,
       "matriz": {
         "DOR": [
           0,
@@ -622,7 +622,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 0,
+      "tarjetas": 3,
       "matriz": {
         "DOR": [
           0,
@@ -727,7 +727,7 @@
     {
       "nombre": "Manuel",
       "rol": "QA",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -832,7 +832,7 @@
     {
       "nombre": "Adrián",
       "rol": "Desarrollador",
-      "tarjetas": 2,
+      "tarjetas": 5,
       "matriz": {
         "DOR": [
           0,
@@ -1357,7 +1357,7 @@
     {
       "nombre": "Luis Fernando",
       "rol": "Desarrollador",
-      "tarjetas": 0,
+      "tarjetas": 3,
       "matriz": {
         "DOR": [
           0,
@@ -1463,31 +1463,81 @@
   "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
   "actividades": [
     {
-      "clave": "CJJ-326",
+      "clave": "CJJ-184",
       "titulo": "n/d",
-      "responsable": "Adrián",
-      "creada": "2026-05-27T09:21",
-      "estado": "QA",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:17",
+      "estado": "LEAD-REV",
       "tramos": [
         {
-          "etapa": "QA",
+          "etapa": "SAND",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-12T19:10"
+          "fin": "2026-10-13T13:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:20",
+          "fin": "2026-10-13T19:13"
         }
       ],
       "retrabajos": []
     },
     {
-      "clave": "CJJ-338",
+      "clave": "CJJ-201",
       "titulo": "n/d",
-      "responsable": "Samuel",
-      "creada": "2026-05-27T09:21",
-      "estado": "QA",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-08T20:18",
+      "estado": "LEAD-REV",
       "tramos": [
         {
-          "etapa": "QA",
+          "etapa": "SAND",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-12T19:10"
+          "fin": "2026-10-13T13:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:20",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-222",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-04-08T23:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:14"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:14",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-233",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:20",
+          "fin": "2026-10-13T19:13"
         }
       ],
       "retrabajos": []
@@ -1507,7 +1557,7 @@
         {
           "etapa": "RET",
           "inicio": "2026-10-12T13:39",
-          "fin": "2026-10-12T19:10"
+          "fin": "2026-10-13T19:13"
         }
       ],
       "retrabajos": [
@@ -1517,6 +1567,206 @@
           "categoria": "Conflicto con la rama principal"
         }
       ]
+    },
+    {
+      "clave": "CJJ-306",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:14"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:14",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-304",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:21"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:21",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-295",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:20",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:06"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:06",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-338",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-326",
+      "titulo": "n/d",
+      "responsable": "Manny",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-313",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-312",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-361",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-08T11:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:07"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:07",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-478",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-28T22:00",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:07"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:07",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-622",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-12T16:54",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:17"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:17",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-733",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-09-24T14:29",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-10-11T00:00",
+          "fin": "2026-10-13T13:08"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-13T13:08",
+          "fin": "2026-10-13T19:13"
+        }
+      ],
+      "retrabajos": []
     },
     {
       "clave": "CJJ-752",
@@ -1533,7 +1783,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-12T13:33",
-          "fin": "2026-10-12T19:10"
+          "fin": "2026-10-13T19:13"
         }
       ],
       "retrabajos": []
