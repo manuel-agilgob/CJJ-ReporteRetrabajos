@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-10-11 → 2026-10-17",
     "periodoInicio": "2026-10-11",
     "periodoFin": "2026-10-17",
-    "generado": "2026-10-14",
+    "generado": "2026-10-15",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.1"
@@ -1357,7 +1357,7 @@
     {
       "nombre": "Luis Fernando",
       "rol": "Desarrollador",
-      "tarjetas": 3,
+      "tarjetas": 4,
       "matriz": {
         "DOR": [
           0,
@@ -1477,7 +1477,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:20",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1497,7 +1497,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:20",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1517,7 +1517,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:14",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1537,7 +1537,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:20",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1557,7 +1557,7 @@
         {
           "etapa": "RET",
           "inicio": "2026-10-12T13:39",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": [
@@ -1583,7 +1583,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:14",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1603,7 +1603,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:21",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1623,7 +1623,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:06",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1638,7 +1638,7 @@
         {
           "etapa": "QA",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1653,7 +1653,7 @@
         {
           "etapa": "QA",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1668,7 +1668,7 @@
         {
           "etapa": "QA",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1683,7 +1683,7 @@
         {
           "etapa": "QA",
           "inicio": "2026-10-11T00:00",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1703,7 +1703,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:07",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1723,7 +1723,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:07",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1743,7 +1743,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:17",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1763,7 +1763,7 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-13T13:08",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1783,7 +1783,27 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-10-12T13:33",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-759",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-10-14T09:33",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-10-14T09:33",
+          "fin": "2026-10-15T10:16"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-15T10:16",
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
@@ -1803,7 +1823,7 @@
         {
           "etapa": "AI",
           "inicio": "2026-10-14T17:13",
-          "fin": "2026-10-14T19:11"
+          "fin": "2026-10-15T19:12"
         }
       ],
       "retrabajos": []
