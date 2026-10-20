@@ -1,0 +1,2543 @@
+{
+  "meta": {
+    "titulo": "Retrabajos del ciclo de entrega",
+    "subtitulo": "Transiciones a Retrabajo clasificadas por motivo según la taxonomía vigente, agrupadas por la etapa del flujo donde se detectaron.",
+    "etiquetaPeriodo": "2026-10-18 → 2026-10-24",
+    "periodoInicio": "2026-10-18",
+    "periodoFin": "2026-10-24",
+    "generado": "2026-10-20",
+    "responsable": "Ingeniería — Lead de entrega",
+    "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
+    "version": "v1.1"
+  },
+  "categorias": [
+    "El funcionamiento es incorrecto",
+    "No cubre todos los escenarios o escenarios borde",
+    "Regresión detectada en otra funcionalidad",
+    "No cumple lineamientos de UX/UI",
+    "El codigo produce un error (crash) en runtime o compilacion",
+    "Conflicto con la rama principal",
+    "Cambios solicitados por negocio después de entregar",
+    "No cumple definición de terminado (DoD)",
+    "No hay comentarios para categorizar",
+    "Error de QA - testing",
+    "OTRO, No se ajusta a ninguna categoria definida",
+    "Malas prácticas de programación"
+  ],
+  "etapaPorDefecto": "LEAD-REV",
+  "etapas": [
+    {
+      "key": "DOR",
+      "sub": "Listo para tomar",
+      "counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "DEV",
+      "sub": "Desarrollo",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "AI",
+      "sub": "Revisión asistida",
+      "counts": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "LEAD-REV",
+      "sub": "Revisión de lead",
+      "counts": [
+        0,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        7
+      ]
+    },
+    {
+      "key": "QA",
+      "sub": "Pruebas",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "MERGE",
+      "sub": "Integración",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "SAND",
+      "sub": "Sandbox",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nota": "Sandbox puede generar retrabajos cuando el despliegue revela un defecto antes de producción; es poco frecuente."
+    },
+    {
+      "key": "PROD",
+      "sub": "Producción",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sinRetrabajo": true,
+      "nota": "Producción no genera retrabajos: una corrección posterior al despliegue se registra como hotfix en la sección de hotfixes de despliegue, no como retorno de la actividad."
+    }
+  ],
+  "hotfixes": {
+    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta o por la etiqueta «hotfix», y se cuenta en el periodo en que se creó.",
+    "ambientes": [
+      {
+        "ambiente": "SAND",
+        "nombre": "Sandbox",
+        "total": 0,
+        "delta": "0",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      },
+      {
+        "ambiente": "PROD",
+        "nombre": "Producción",
+        "total": 0,
+        "delta": "0",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      }
+    ],
+    "detalle": []
+  },
+  "colaboradores": [
+    {
+      "nombre": "Manny",
+      "rol": "Revisor",
+      "tarjetas": 1,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Marck",
+      "rol": "Revisor",
+      "tarjetas": 6,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Rafael",
+      "rol": "Tech lead",
+      "tarjetas": 7,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Samuel",
+      "rol": "Desarrollador",
+      "tarjetas": 7,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Sebastián",
+      "rol": "Desarrollador",
+      "tarjetas": 4,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Manuel",
+      "rol": "QA",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Adrián",
+      "rol": "Desarrollador",
+      "tarjetas": 7,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Alfonso",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Karla",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Christian",
+      "rol": "Revisora",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Juan José",
+      "rol": "Tech lead",
+      "tarjetas": 7,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Luis Fernando",
+      "rol": "Desarrollador",
+      "tarjetas": 7,
+      "matriz": {
+        "DOR": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
+  "actividades": [
+    {
+      "clave": "CJJ-242",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-13T15:13",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:35"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T11:35",
+          "fin": "2026-10-19T15:46"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T15:46",
+          "fin": "2026-10-19T17:24"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:24",
+          "fin": "2026-10-19T17:28"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:28",
+          "fin": "2026-10-19T21:51"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T21:51",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-247",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-14T16:41",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T13:12"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T13:12",
+          "fin": "2026-10-19T23:11"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T23:11",
+          "fin": "2026-10-19T23:12"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T23:12",
+          "fin": "2026-10-19T23:18"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T23:18",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-292",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:20",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:15"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T11:15",
+          "fin": "2026-10-19T17:48"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:48",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-293",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T13:45"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T13:45",
+          "fin": "2026-10-19T13:51"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T13:51",
+          "fin": "2026-10-19T14:06"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T14:06",
+          "fin": "2026-10-19T14:14"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T14:14",
+          "fin": "2026-10-19T19:22"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T19:22",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T13:45",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-294",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T14:26"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T14:26",
+          "fin": "2026-10-19T14:27"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T14:27",
+          "fin": "2026-10-19T14:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T14:41",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T14:41",
+          "desde": "LEAD-REV",
+          "categoria": "No hay comentarios para categorizar"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-301",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T09:44"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T09:44",
+          "fin": "2026-10-19T12:18"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T12:18",
+          "fin": "2026-10-19T12:28"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T12:28",
+          "fin": "2026-10-19T12:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T12:41",
+          "fin": "2026-10-19T14:41"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T14:41",
+          "fin": "2026-10-19T14:50"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T14:50",
+          "fin": "2026-10-19T15:25"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T15:25",
+          "fin": "2026-10-19T15:34"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T15:34",
+          "fin": "2026-10-19T17:05"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T17:05",
+          "fin": "2026-10-19T17:20"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:20",
+          "fin": "2026-10-19T17:28"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:28",
+          "fin": "2026-10-19T17:40"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T17:40",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T12:28",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        },
+        {
+          "fecha": "2026-10-19T14:50",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto"
+        },
+        {
+          "fecha": "2026-10-19T17:05",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-303",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T14:12"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T14:12",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-312",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:34"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T11:34",
+          "fin": "2026-10-19T11:35"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T11:35",
+          "fin": "2026-10-19T16:14"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T16:14",
+          "fin": "2026-10-19T17:21"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:21",
+          "fin": "2026-10-19T17:22"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:22",
+          "fin": "2026-10-19T17:24"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:24",
+          "fin": "2026-10-19T17:25"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:25",
+          "fin": "2026-10-19T17:28"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:28",
+          "fin": "2026-10-19T17:33"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:33",
+          "fin": "2026-10-19T17:34"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:34",
+          "fin": "2026-10-19T21:44"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T21:44",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-313",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:35"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T11:35",
+          "fin": "2026-10-19T15:40"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T15:40",
+          "fin": "2026-10-19T17:23"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:23",
+          "fin": "2026-10-19T17:24"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:24",
+          "fin": "2026-10-19T21:43"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T21:43",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-314",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T12:57"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T12:57",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-317",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T10:10"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T10:10",
+          "fin": "2026-10-19T10:21"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T10:21",
+          "fin": "2026-10-19T10:37"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T10:37",
+          "fin": "2026-10-19T10:45"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T10:45",
+          "fin": "2026-10-19T11:35"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T11:35",
+          "fin": "2026-10-19T17:47"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:47",
+          "fin": "2026-10-19T17:48"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:48",
+          "fin": "2026-10-19T17:56"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:56",
+          "fin": "2026-10-19T18:03"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T18:03",
+          "fin": "2026-10-19T23:08"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T23:08",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T10:10",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-321",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T14:14"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T14:14",
+          "fin": "2026-10-19T23:11"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T23:11",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-326",
+      "titulo": "n/d",
+      "responsable": "Manny",
+      "creada": "2026-05-27T09:21",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:35"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-10-19T11:35",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-328",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T12:39"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T12:39",
+          "fin": "2026-10-19T13:25"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T13:25",
+          "fin": "2026-10-19T14:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T14:30",
+          "fin": "2026-10-19T14:43"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T14:43",
+          "fin": "2026-10-19T16:30"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T16:30",
+          "fin": "2026-10-19T17:01"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:01",
+          "fin": "2026-10-19T17:07"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:07",
+          "fin": "2026-10-19T17:30"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T17:30",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T12:39",
+          "desde": "LEAD-REV",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-10-19T16:30",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-338",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:34"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T11:34",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-399",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-18T14:22",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T10:34"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T10:34",
+          "fin": "2026-10-19T10:51"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T10:51",
+          "fin": "2026-10-19T13:06"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T13:06",
+          "fin": "2026-10-19T13:12"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T13:12",
+          "fin": "2026-10-19T15:40"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T15:40",
+          "fin": "2026-10-19T17:47"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:47",
+          "fin": "2026-10-19T17:48"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T17:48",
+          "fin": "2026-10-19T17:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:54",
+          "fin": "2026-10-19T18:02"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T18:02",
+          "fin": "2026-10-19T23:09"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T23:09",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T10:34",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-403",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-18T17:36",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T11:29"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T11:29",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T11:29",
+          "desde": "LEAD-REV",
+          "categoria": "Regresión detectada en otra funcionalidad"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-412",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-26T13:19",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T10:24"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T10:24",
+          "fin": "2026-10-19T10:27"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T10:27",
+          "fin": "2026-10-19T10:34"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T10:34",
+          "fin": "2026-10-19T10:43"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T10:43",
+          "fin": "2026-10-19T10:44"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T10:44",
+          "fin": "2026-10-19T10:49"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T10:49",
+          "fin": "2026-10-19T10:54"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T10:54",
+          "fin": "2026-10-19T13:33"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T13:33",
+          "fin": "2026-10-19T13:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T13:39",
+          "fin": "2026-10-19T16:16"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T16:16",
+          "fin": "2026-10-19T17:52"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T17:52",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T10:24",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        },
+        {
+          "fecha": "2026-10-19T10:43",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        },
+        {
+          "fecha": "2026-10-19T10:54",
+          "desde": "AI",
+          "categoria": "No cumple definición de terminado (DoD)"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-420",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-30T11:25",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T13:31"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T13:31",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-471",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-20T11:30",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T12:03"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T12:03",
+          "fin": "2026-10-19T12:21"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T12:21",
+          "fin": "2026-10-19T12:29"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T12:29",
+          "fin": "2026-10-19T12:37"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T12:37",
+          "fin": "2026-10-19T18:55"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-10-19T18:55",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T12:03",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-487",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-29T10:50",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T12:48"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T12:48",
+          "fin": "2026-10-19T23:11"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-10-19T23:11",
+          "fin": "2026-10-19T23:12"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T23:12",
+          "fin": "2026-10-19T23:17"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T23:17",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-642",
+      "titulo": "n/d",
+      "responsable": "Marck",
+      "creada": "2026-08-18T17:35",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T17:32"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T17:32",
+          "fin": "2026-10-19T18:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T18:30",
+          "fin": "2026-10-19T18:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T18:39",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T17:32",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-658",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-25T12:48",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T09:42"
+        },
+        {
+          "etapa": "DOR",
+          "inicio": "2026-10-19T09:42",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-667",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-31T13:26",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T13:21"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T13:21",
+          "fin": "2026-10-19T16:52"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T16:52",
+          "fin": "2026-10-19T16:57"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T16:57",
+          "fin": "2026-10-19T17:09"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:09",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T13:21",
+          "desde": "DOR",
+          "categoria": "El funcionamiento es incorrecto"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-668",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-31T13:26",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T13:17"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T13:17",
+          "fin": "2026-10-19T14:45"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-10-19T14:45",
+          "fin": "2026-10-19T16:51"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-10-19T16:51",
+          "fin": "2026-10-19T17:02"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-19T17:02",
+          "fin": "2026-10-19T18:33"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-10-19T18:33",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-10-19T13:17",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-10-19T18:33",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación"
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-762",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-10-14T17:08",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-10-18T00:00",
+          "fin": "2026-10-19T10:18"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-10-19T10:18",
+          "fin": "2026-10-20T09:24"
+        }
+      ],
+      "retrabajos": []
+    }
+  ]
+}
