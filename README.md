@@ -63,5 +63,5 @@ El modo A es autosuficiente (lee el sitio publicado); el modo B remite a `agente
 ## Relación con otros repositorios
 
 - **`ai-tools-documentation`**: el pipeline `generate-rework-report`, la vía A de extracción. Su mapa de etapas
-  (`src/tools/jira/reworkStage.ts`) todavía no tiene MERGE; ver `agente/etapas.md`.
+  (`src/tools/jira/reworkStage.ts`) todavía no tiene MERGE ni conoce `to do approved`; ver `agente/etapas.md`.
 - **Claude Design**: el proyecto «Plantilla reporte retrabajo», fuente de la plantilla. Ver `plantilla/ORIGEN.md`.

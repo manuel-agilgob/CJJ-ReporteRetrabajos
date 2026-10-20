@@ -232,4 +232,5 @@ Al terminar, o al detenerse, el agente informa en su respuesta (y en la descripc
 
 - Configurar la rutina: acceso a Jira (con la zona horaria de la cuenta), vía de extracción y destino del commit.
 - Llenar la lista de `colaboradores.md`: `accountId`, nombres publicados y roles.
-- Actualizar `reworkStage.ts` en `ai-tools-documentation` para que `Aprobado` vaya a MERGE (ver `etapas.md`).
+- Actualizar `reworkStage.ts` en `ai-tools-documentation` para que `Aprobado` y `to do approved` vayan a MERGE (ver
+  `etapas.md`).

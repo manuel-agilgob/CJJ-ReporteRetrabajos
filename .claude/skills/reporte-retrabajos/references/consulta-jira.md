@@ -36,7 +36,7 @@ project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND status CHANGED TO "Retrab
 | `AI` | `Finished` |
 | `LEAD-REV` | `Test`, `Finalizada` |
 | `QA` | `To Do QA Test`, `doing qa test`, `Finished qa test` |
-| `MERGE` | `Aprobado` |
+| `MERGE` | `to do approved`, `Aprobado` |
 | `SAND` | `liberadas sandbox`, `validación sandbox` |
 | `PROD` | `validación productivo`, `liberadas productivo` — **no cuenta como retrabajo**; es anomalía |
 
