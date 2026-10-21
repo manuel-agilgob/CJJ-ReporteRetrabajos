@@ -1,6 +1,6 @@
 ---
 name: reporte-retrabajos
-description: Consulta y consolida los datos del reporte quincenal de retrabajos de CJJ (retrabajos por etapa, categoría y colaborador, hotfixes y recorrido de actividades por tarjeta). Úsala para armar un dashboard o un análisis con esos datos, comparar periodos, o para consultar Jira con las mismas reglas con que se genera el reporte (periodo, etapa, categoría, responsable, hotfix). Disparadores - retrabajos, reporte de retrabajos, hotfixes CJJ, dashboard de retrabajos, tarjetas que regresaron a Retrabajo.
+description: Consulta y consolida los datos del reporte quincenal de retrabajos de CJJ (retrabajos por etapa, categoría y colaborador, hotfixes, recorrido de actividades por tarjeta y movimiento del tablero). Úsala para armar un dashboard o un análisis con esos datos, comparar periodos, o para consultar Jira con las mismas reglas con que se genera el reporte (periodo, etapa, categoría, responsable, hotfix). Disparadores - retrabajos, reporte de retrabajos, hotfixes CJJ, dashboard de retrabajos, tarjetas que regresaron a Retrabajo.
 ---
 
 # Reporte de retrabajos CJJ
@@ -27,7 +27,7 @@ Para llevar todo a tablas planas (listas para graficar o para cruzar con otros r
 python3 -I scripts/consolidar.py --tabla periodos          # una fila por periodo
 python3 -I scripts/consolidar.py --tabla retrabajos        # periodo × etapa × categoría
 python3 -I scripts/consolidar.py --tabla colaboradores --formato csv
-# también: hotfixes, actividades · --origen <carpeta local con indice.json> para leer sin red
+# también: hotfixes, actividades, movimiento, tablero · --origen <carpeta local con indice.json> para leer sin red
 ```
 
 Reglas para no equivocar la lectura:
@@ -35,8 +35,8 @@ Reglas para no equivocar la lectura:
 1. **Siempre empezar por `indice.json`**: es la lista de periodos publicados. No asumir fechas.
 2. Cada JSON trae su propia copia de `categorias`; el orden y el número pueden cambiar entre periodos (hoy 12). Comparar
    periodos **por el texto** de la categoría, nunca por la posición.
-3. Los periodos antiguos pueden no traer claves nuevas (por ejemplo `actividades` no existe en los anteriores a `v1.1`).
-   Tratar la ausencia como «sin dato», no como cero.
+3. Los periodos antiguos pueden no traer claves nuevas: `actividades` no existe antes de `v1.1` y `movimiento` no existe
+   antes de `v1.2`. Tratar la ausencia como «sin dato», no como cero.
 4. **Los periodos no siempre duran lo mismo** (el primero es de 14 días; 2026-09-27 → 2026-10-03 y 2026-10-04 →
    2026-10-10 son de 7). Calcular la duración con `periodoInicio`/`periodoFin`, y normalizar por días o avisar al comparar.
 5. `"n/d"` significa sin dato; no es 0 ni se promedia.

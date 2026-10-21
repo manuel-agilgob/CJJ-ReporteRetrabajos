@@ -38,22 +38,87 @@ a:hover{color:var(--color-accent-900)}
     <span>Reporte de retrabajos · {{ meta.etiquetaPeriodo }}</span>
     <span>Uso interno</span>
   </div>
-
+  
 
   <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:22px">
     <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-700)">§1 — Encabezado</span>
     <h1 style="font-size:42px;line-height:1.02;letter-spacing:-0.01em;margin:0;text-transform:uppercase;color:var(--color-text)">{{ meta.titulo }}</h1>
     <p style="font-size:16px;line-height:1.6;margin:8px 0 0;max-width:44em;color:var(--color-neutral-700)">{{ meta.subtitulo }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:6px;font-size:13px;color:var(--color-neutral-700)">
+      <span>Periodo: {{ meta.etiquetaPeriodo }}</span>
+      <span>Actualizado: {{ actualizado }}</span>
+    </div>
   </div>
 
-  <div class="blueprint" style="padding:14px 18px;margin-bottom:30px;break-inside:avoid">
-    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px 24px">
-      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Periodo</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.etiquetaPeriodo }}</span></div>
-      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Generado</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.generado }}</span></div>
-      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Responsable</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.responsable }}</span></div>
-      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Fuente de datos</span><span style="font-size:14.5px;color:var(--color-text)">{{ meta.fuente }}</span></div>
-    </div>
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Movimiento del tablero</h2>
+  <p style="font-size:15px;line-height:1.62;margin:0 0 14px">{{ mov.intro }}</p>
+  <div style="display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:14px;margin-bottom:30px;break-inside:avoid">
+    <figure class="blueprint" style="margin:0;padding:14px 16px 12px;display:flex;flex-direction:column;gap:10px;min-width:0">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Transiciones por día</span>
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.08em;color:var(--color-neutral-600)">{{ mov.totalText }}</span>
+      </div>
+      <div style="position:relative;display:flex;gap:3px;align-items:flex-end;height:168px;border-bottom:1px solid var(--color-neutral-400);background:repeating-linear-gradient(to top,transparent 0 41px,var(--color-neutral-200) 41px 42px)">
+        <sc-for list="{{ mov.dias }}" as="dia" hint-placeholder-count="16">
+          <div title="{{ dia.title }}" style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;height:100%">
+            <span style="text-align:center;font-family:var(--font-heading);font-size:9.5px;color:var(--color-neutral-700);padding-bottom:2px">{{ dia.totalText }}</span>
+            <div style="display:flex;flex-direction:column-reverse">
+              <sc-for list="{{ dia.segs }}" as="s" hint-placeholder-count="4">
+                <div title="{{ s.title }}" style="{{ s.style }}"></div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ mov.hayLinea }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="{{ mov.lineaViewBox }}" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:146px;overflow:visible;pointer-events:none">
+            <path d="{{ mov.lineaD }}" fill="none" stroke="var(--color-text)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+          </svg>
+          <sc-for list="{{ mov.lineaPuntos }}" as="p" hint-placeholder-count="16">
+            <span title="{{ p.title }}" style="{{ p.style }}"></span>
+          </sc-for>
+        </sc-if>
+      </div>
+      <div style="display:flex;gap:3px;margin-top:-6px">
+        <sc-for list="{{ mov.dias }}" as="dia" hint-placeholder-count="16">
+          <span style="{{ dia.labelStyle }}">{{ dia.label }}</span>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;padding-top:8px;border-top:1px solid var(--color-neutral-300)">
+        <sc-for list="{{ mov.series }}" as="s" hint-placeholder-count="10">
+          <div onClick="{{ s.select }}" title="{{ s.hint }}" style="{{ s.rowStyle }}">
+            <i style="{{ s.swatch }}"></i>
+            <span style="flex:1;min-width:0;font-size:11.5px;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.nombre }}</span>
+            <span style="font-family:var(--font-heading);font-size:12px;color:var(--color-neutral-700)">{{ s.total }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </figure>
+    <figure class="blueprint" style="margin:0;padding:14px 16px 12px;display:flex;flex-direction:column;gap:10px;min-width:0">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Fotografía del tablero</span>
+        <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.08em;color:var(--color-neutral-600)">{{ mov.tableroFecha }}</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:8px">
+        <span style="font-family:var(--font-heading);font-size:34px;line-height:1;color:var(--color-text)">{{ mov.tableroTotal }}</span>
+        <span style="font-size:12px;color:var(--color-neutral-600)">actividades abiertas en el tablero</span>
+      </div>
+      <div style="display:flex;height:10px;gap:1px">
+        <sc-for list="{{ mov.tablero }}" as="t" hint-placeholder-count="8">
+          <i title="{{ t.title }}" style="{{ t.stripStyle }}"></i>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <sc-for list="{{ mov.tablero }}" as="t" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) 64px 26px;gap:8px;align-items:center">
+            <span style="font-size:11.5px;color:var(--color-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.estado }}</span>
+            <span style="display:block;height:8px;background:var(--color-neutral-200)"><i style="{{ t.barStyle }}"></i></span>
+            <span style="text-align:right;font-family:var(--font-heading);font-size:12.5px;color:var(--color-text)">{{ t.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </figure>
   </div>
 
   <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Análisis por etapa y categoría de retrabajo</h2>
@@ -280,7 +345,7 @@ a:hover{color:var(--color-accent-900)}
   </div>
   <p style="font-size:12.5px;line-height:1.5;margin:0 0 30px;color:var(--color-neutral-600)">Figura 4 — Actividades del periodo ordenadas de más a menos retrabajos. Clic en una actividad despliega su cronograma por carriles, uno por etapa; el eje cuenta días desde la creación y pasar el cursor sobre un tramo muestra su duración.</p>
 
-
+  
 
 </doc-page>
 
@@ -303,6 +368,93 @@ class Component extends DCLogic {
       }, 60);
       setTimeout(() => clearInterval(t), 4000);
     }
+  }
+
+  buildMovimiento(d) {
+    const m = d.movimiento || {};
+    const fill = {
+      DOR: 'oklch(0.58 0.15 295)', DEV: 'oklch(0.60 0.15 258)', AI: 'oklch(0.72 0.12 222)',
+      'LEAD-REV': 'oklch(0.70 0.13 165)', QA: 'oklch(0.78 0.15 128)', MERGE: 'oklch(0.85 0.15 92)',
+      SAND: 'oklch(0.75 0.16 58)', PROD: 'oklch(0.36 0.03 260)', RET: 'oklch(0.58 0.22 27)',
+    };
+    const colorDe = s => s.fuente === 'github'
+      ? 'repeating-linear-gradient(-45deg,' + fill.MERGE + ' 0 2px,oklch(0.55 0.12 80) 2px 4px)'
+      : (fill[s.etapa] || 'var(--color-neutral-400)');
+    const series = m.series || [];
+    const dias = m.dias || [];
+    const solo = this.state.movSerie;
+    const gh = series.find(s => s.fuente === 'github');
+    const pila = series.filter(s => s.fuente !== 'github');
+    const vis = pila.filter(s => !solo || s.key === solo);
+    const verLinea = gh && (!solo || solo === gh.key);
+    const valLinea = x => gh ? ((x.valores || {})[gh.key] || 0) : 0;
+    const totDia = x => vis.reduce((a, s) => a + ((x.valores || {})[s.key] || 0), 0);
+    const max = Math.max(1, ...dias.map(totDia), ...(verLinea ? dias.map(valLinea) : []));
+    const H = 146;
+    const dow = x => new Date(x + 'T12:00').getDay();
+    const totalSerie = s => dias.reduce((a, x) => a + ((x.valores || {})[s.key] || 0), 0);
+    const jira = series.filter(s => s.fuente !== 'github');
+    const totJira = jira.reduce((a, s) => a + totalSerie(s), 0);
+    const ret = series.find(s => s.etapa === 'RET');
+    const tab = ((m.tablero || {}).estados || []);
+    const tabTot = tab.reduce((a, t) => a + t.n, 0);
+    const tabMax = Math.max(1, ...tab.map(t => t.n));
+    const pico = dias.reduce((b, x) => (totDia(x) > totDia(b || x) ? x : (b || x)), null);
+    const fmt = x => x.slice(8, 10) + '/' + x.slice(5, 7);
+    return {
+      intro: !dias.length
+        ? 'Sin transiciones registradas en el periodo.'
+        : totJira + ' transiciones de estado en Jira durante el periodo' +
+          (gh ? '; ' + totalSerie(gh) + ' tarjetas fusionadas a develop por la automatización (cruce Jira–GitHub, línea)' : '') +
+          '. ' + (ret ? totalSerie(ret) + ' de las transiciones fueron a Retrabajo. ' : '') +
+          (pico ? 'El día de mayor movimiento fue el ' + fmt(pico.fecha) + ', con ' + totDia(pico) + '. ' : '') +
+          'Clic en una serie de la leyenda la aísla. A la derecha, el estado del tablero al cierre.',
+      totalText: solo ? 'Mostrando: ' + (series.find(s => s.key === solo) || {}).nombre : 'Máx. ' + max + ' / día',
+      hayLinea: !!verLinea && dias.length > 0,
+      lineaViewBox: '0 0 ' + (dias.length || 1) + ' ' + H,
+      lineaD: dias.map((x, i) => (i ? 'L' : 'M') + (i + 0.5) + ' ' + (H - (valLinea(x) / max) * H)).join(' '),
+      lineaPuntos: dias.map((x, i) => ({
+        title: fmt(x.fecha) + ' · ' + (gh ? gh.nombre : '') + ': ' + valLinea(x),
+        style: 'position:absolute;width:7px;height:7px;margin:0 0 -3.5px -3.5px;background:var(--color-bg);border:1.5px solid var(--color-text);box-sizing:border-box;left:' +
+          ((i + 0.5) / dias.length) * 100 + '%;bottom:' + (valLinea(x) / max) * H + 'px',
+      })),
+      dias: dias.map(x => {
+        const t = totDia(x), wk = dow(x.fecha) === 0 || dow(x.fecha) === 6;
+        return {
+          totalText: t || '',
+          label: x.fecha.slice(8, 10),
+          labelStyle: 'flex:1 1 0;min-width:0;text-align:center;font-family:var(--font-heading);font-size:9.5px;color:' +
+            (wk ? 'var(--color-neutral-400)' : 'var(--color-neutral-600)'),
+          title: fmt(x.fecha) + ' · ' + t + ' transiciones' + (gh ? ' · ' + valLinea(x) + ' fusionadas a develop' : ''),
+          segs: vis.filter(s => (x.valores || {})[s.key]).map(s => ({
+            title: fmt(x.fecha) + ' · ' + s.nombre + ': ' + x.valores[s.key],
+            style: 'height:' + Math.max(1, (x.valores[s.key] / max) * H) + 'px;background:' + colorDe(s) +
+              ';border-top:1px solid var(--color-surface, #fff)',
+          })),
+        };
+      }),
+      series: series.map(s => {
+        const on = solo === s.key;
+        return {
+          nombre: s.nombre, total: totalSerie(s),
+          hint: (s.fuente === 'github' ? 'Fuente: GitHub. ' : 'Fuente: Jira. ') + (on ? 'Clic para ver todas' : 'Clic para aislar'),
+          select: () => this.setState({ movSerie: this.state.movSerie === s.key ? null : s.key }),
+          rowStyle: 'display:flex;align-items:center;gap:6px;cursor:pointer;padding:2px 4px;margin:0 -4px;' +
+            (on ? 'background:var(--color-accent-100);' : '') + (solo && !on ? 'opacity:.45;' : ''),
+          swatch: s.fuente === 'github'
+            ? 'flex:none;width:12px;height:1.5px;background:var(--color-text);box-shadow:0 0 0 0 transparent'
+            : 'flex:none;width:10px;height:10px;background:' + colorDe(s),
+        };
+      }),
+      tableroFecha: (m.tablero || {}).fecha ? 'Al ' + fmt(m.tablero.fecha) : '',
+      tableroTotal: tabTot,
+      tablero: tab.map(t => ({
+        estado: t.estado, n: t.n,
+        title: t.estado + ': ' + t.n,
+        stripStyle: 'display:block;flex:' + t.n + ' 1 0;background:' + (fill[t.etapa] || 'var(--color-neutral-400)'),
+        barStyle: 'display:block;height:100%;width:' + (t.n / tabMax) * 100 + '%;background:' + (fill[t.etapa] || 'var(--color-neutral-400)'),
+      })),
+    };
   }
 
   buildActividades(d) {
@@ -596,10 +748,12 @@ class Component extends DCLogic {
     };
 
     const act = this.buildActividades(d);
+    const mov = this.buildMovimiento(d);
 
     return {
-      hotfix, dev, act,
+      hotfix, dev, act, mov,
       meta: d.meta,
+      actualizado: (() => { const g = d.meta.generado || ''; const f = g.slice(8, 10) + '/' + g.slice(5, 7) + '/' + g.slice(0, 4); return g.length > 10 ? f + ' · ' + g.slice(11, 16) + ' h' : f; })(),
       stages, sel: { title: e.key + ' — ' + e.sub, total, rows, intro },
     };
   }

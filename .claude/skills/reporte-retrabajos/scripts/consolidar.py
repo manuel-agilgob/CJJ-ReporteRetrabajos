@@ -7,7 +7,7 @@ y emite una fila por hecho para alimentar un dashboard. Solo usa la biblioteca e
 Uso:
   consolidar.py [--origen URL_O_CARPETA] [--tabla TABLA] [--formato json|csv]
 
-Tablas: periodos, retrabajos, hotfixes, colaboradores, actividades
+Tablas: periodos, retrabajos, hotfixes, colaboradores, actividades, movimiento, tablero
 """
 import argparse
 import csv
@@ -74,8 +74,32 @@ def t_actividades(origen):
                    "tramos": json.dumps(a["tramos"], ensure_ascii=False)}
 
 
+def t_movimiento(origen):
+    for p, d in periodos(origen):
+        mov = d.get("movimiento")  # los periodos anteriores a v1.2 no la traen
+        if not mov:
+            continue
+        series = {s["key"]: s for s in mov["series"]}
+        for dia in mov["dias"]:
+            for key, n in dia["valores"].items():
+                s = series.get(key, {})
+                yield {"inicio": p["inicio"], "fecha": dia["fecha"], "serie": key,
+                       "nombre": s.get("nombre"), "etapa": s.get("etapa"),
+                       "fuente": s.get("fuente"), "n": n}
+
+
+def t_tablero(origen):
+    for p, d in periodos(origen):
+        mov = d.get("movimiento")
+        if not mov:
+            continue
+        for e in mov["tablero"]["estados"]:
+            yield {"inicio": p["inicio"], "fecha": mov["tablero"]["fecha"], **e}
+
+
 TABLAS = {"periodos": t_periodos, "retrabajos": t_retrabajos, "hotfixes": t_hotfixes,
-          "colaboradores": t_colaboradores, "actividades": t_actividades}
+          "colaboradores": t_colaboradores, "actividades": t_actividades,
+          "movimiento": t_movimiento, "tablero": t_tablero}
 
 
 def main():

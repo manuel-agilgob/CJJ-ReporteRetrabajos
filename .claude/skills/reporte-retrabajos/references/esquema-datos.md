@@ -6,7 +6,8 @@ Resumen para leer los JSON sin acceso al repositorio. La definición completa es
 
 | Clave | Contenido |
 |---|---|
-| `meta` | `periodoInicio`, `periodoFin` (sábado → viernes), `etiquetaPeriodo`, `generado`, `fuente`, `version` (de la plantilla). |
+| `meta` | `periodoInicio`, `periodoFin` (sábado → viernes), `etiquetaPeriodo`, `generado` (con hora desde `v1.2`), `fuente`, `version` (de la plantilla). |
+| `movimiento` | Desde `v1.2`. `series[]` (`key`, `nombre`, `etapa`, `fuente`: `jira` o `github`), `dias[]` (`fecha`, `valores` = `{key de serie: entero}`, solo las series con casos) y `tablero` (`fecha`, `estados[]` con `estado`, `etapa`, `n`). |
 | `categorias` | Arreglo de textos, longitud `N` (hoy 12). Es el eje de todos los `counts` y filas de `matriz`. |
 | `etapaPorDefecto` | Etapa con más retrabajos del periodo. |
 | `etapas` | 8 objetos `{key, sub, counts[N]}` en orden `DOR, DEV, AI, LEAD-REV, QA, MERGE, SAND, PROD`. `counts[i]` = retrabajos de esa etapa con la categoría `categorias[i]`. `PROD` siempre en ceros. |
@@ -32,3 +33,9 @@ Resumen para leer los JSON sin acceso al repositorio. La definición completa es
 - Días en una etapa = `fin − inicio` de cada tramo; los tramos están recortados al periodo, no son la vida completa de la
   tarjeta.
 - Carga por persona: `colaboradores[].tarjetas` frente a su suma de `matriz`.
+- Transiciones por día = `movimiento.dias[].valores`, con una serie por etapa destino más `RET`. La serie `RET` suma lo
+  mismo que todos los `counts`: son los retrabajos contados vistos por día. La serie con `fuente: "github"`
+  (`DEVELOP`) no son transiciones de Jira sino tarjetas fusionadas a `develop`, una por tarjeta y día; no sumarla con
+  las demás.
+- Tablero al generar = `movimiento.tablero.estados`, trabajo **abierto** por etapa: no incluye `PROD`, así que su total
+  no es el universo de tarjetas del periodo. `tablero.fecha` es el momento de generar, no el cierre del periodo.

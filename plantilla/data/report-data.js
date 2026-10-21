@@ -11,11 +11,314 @@ window.REPORT_DATA = {
     "etiquetaPeriodo": "Periodo de ejemplo (datos ficticios)",
     "periodoInicio": "2026-08-29",
     "periodoFin": "2026-09-11",
-    "generado": "2026-09-12",
+    "generado": "2026-09-12T09:40",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Datos ficticios de ejemplo",
-    "version": "v1.1"
+    "version": "v1.2"
   },
+    "movimiento": {
+      "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
+      "series": [
+        {
+          "key": "DOR",
+          "nombre": "Listo para tomar",
+          "etapa": "DOR",
+          "fuente": "jira"
+        },
+        {
+          "key": "DEV",
+          "nombre": "Desarrollo",
+          "etapa": "DEV",
+          "fuente": "jira"
+        },
+        {
+          "key": "AI",
+          "nombre": "Revisión asistida",
+          "etapa": "AI",
+          "fuente": "jira"
+        },
+        {
+          "key": "LEAD-REV",
+          "nombre": "Revisión de lead",
+          "etapa": "LEAD-REV",
+          "fuente": "jira"
+        },
+        {
+          "key": "QA",
+          "nombre": "Pruebas",
+          "etapa": "QA",
+          "fuente": "jira"
+        },
+        {
+          "key": "MERGE",
+          "nombre": "Integración",
+          "etapa": "MERGE",
+          "fuente": "jira"
+        },
+        {
+          "key": "DEVELOP",
+          "nombre": "Tarjetas fusionadas a develop",
+          "etapa": "MERGE",
+          "fuente": "github"
+        },
+        {
+          "key": "SAND",
+          "nombre": "Sandbox",
+          "etapa": "SAND",
+          "fuente": "jira"
+        },
+        {
+          "key": "PROD",
+          "nombre": "Producción",
+          "etapa": "PROD",
+          "fuente": "jira"
+        },
+        {
+          "key": "RET",
+          "nombre": "Retrabajo",
+          "etapa": "RET",
+          "fuente": "jira"
+        }
+      ],
+      "dias": [
+        {
+          "fecha": "2026-08-29",
+          "valores": {
+            "DOR": 1,
+            "AI": 1,
+            "LEAD-REV": 1,
+            "QA": 1,
+            "MERGE": 1
+          }
+        },
+        {
+          "fecha": "2026-08-30",
+          "valores": {
+            "DEV": 2,
+            "AI": 1,
+            "LEAD-REV": 1,
+            "QA": 2,
+            "MERGE": 1,
+            "RET": 4
+          }
+        },
+        {
+          "fecha": "2026-08-31",
+          "valores": {
+            "DOR": 6,
+            "DEV": 9,
+            "AI": 8,
+            "LEAD-REV": 7,
+            "QA": 7,
+            "MERGE": 4,
+            "DEVELOP": 5,
+            "SAND": 3,
+            "PROD": 2,
+            "RET": 20
+          }
+        },
+        {
+          "fecha": "2026-09-01",
+          "valores": {
+            "DOR": 5,
+            "DEV": 8,
+            "AI": 6,
+            "LEAD-REV": 4,
+            "QA": 5,
+            "MERGE": 3,
+            "DEVELOP": 4,
+            "SAND": 2,
+            "PROD": 1,
+            "RET": 16
+          }
+        },
+        {
+          "fecha": "2026-09-02",
+          "valores": {
+            "DOR": 5,
+            "DEV": 7,
+            "AI": 7,
+            "LEAD-REV": 5,
+            "QA": 6,
+            "MERGE": 4,
+            "DEVELOP": 4,
+            "SAND": 2,
+            "PROD": 2,
+            "RET": 15
+          }
+        },
+        {
+          "fecha": "2026-09-03",
+          "valores": {
+            "DOR": 5,
+            "DEV": 7,
+            "AI": 5,
+            "LEAD-REV": 4,
+            "QA": 3,
+            "MERGE": 3,
+            "DEVELOP": 2,
+            "SAND": 2,
+            "PROD": 2,
+            "RET": 9
+          }
+        },
+        {
+          "fecha": "2026-09-04",
+          "valores": {
+            "DOR": 7,
+            "DEV": 12,
+            "AI": 8,
+            "LEAD-REV": 7,
+            "QA": 8,
+            "MERGE": 4,
+            "DEVELOP": 5,
+            "SAND": 3,
+            "PROD": 2,
+            "RET": 20
+          }
+        },
+        {
+          "fecha": "2026-09-05",
+          "valores": {
+            "DOR": 1,
+            "AI": 2,
+            "LEAD-REV": 1,
+            "QA": 1,
+            "DEVELOP": 1
+          }
+        },
+        {
+          "fecha": "2026-09-06",
+          "valores": {
+            "DOR": 1,
+            "AI": 1,
+            "QA": 1,
+            "MERGE": 1,
+            "RET": 3
+          }
+        },
+        {
+          "fecha": "2026-09-07",
+          "valores": {
+            "DOR": 5,
+            "DEV": 9,
+            "AI": 6,
+            "LEAD-REV": 6,
+            "QA": 7,
+            "MERGE": 4,
+            "DEVELOP": 5,
+            "SAND": 2,
+            "PROD": 2,
+            "RET": 16
+          }
+        },
+        {
+          "fecha": "2026-09-08",
+          "valores": {
+            "DOR": 5,
+            "DEV": 7,
+            "AI": 6,
+            "LEAD-REV": 4,
+            "QA": 5,
+            "MERGE": 3,
+            "DEVELOP": 4,
+            "SAND": 3,
+            "PROD": 1,
+            "RET": 16
+          }
+        },
+        {
+          "fecha": "2026-09-09",
+          "valores": {
+            "DOR": 6,
+            "DEV": 9,
+            "AI": 7,
+            "LEAD-REV": 4,
+            "QA": 6,
+            "MERGE": 3,
+            "DEVELOP": 5,
+            "SAND": 2,
+            "PROD": 1,
+            "RET": 13
+          }
+        },
+        {
+          "fecha": "2026-09-10",
+          "valores": {
+            "DOR": 4,
+            "DEV": 6,
+            "AI": 4,
+            "LEAD-REV": 4,
+            "QA": 4,
+            "MERGE": 2,
+            "DEVELOP": 3,
+            "SAND": 2,
+            "PROD": 2,
+            "RET": 12
+          }
+        },
+        {
+          "fecha": "2026-09-11",
+          "valores": {
+            "DOR": 7,
+            "DEV": 10,
+            "AI": 9,
+            "LEAD-REV": 6,
+            "QA": 7,
+            "MERGE": 5,
+            "DEVELOP": 6,
+            "SAND": 3,
+            "PROD": 2,
+            "RET": 19
+          }
+        }
+      ],
+      "tablero": {
+        "fecha": "2026-09-12T09:40",
+        "estados": [
+          {
+            "estado": "Listo para tomar",
+            "etapa": "DOR",
+            "n": 21
+          },
+          {
+            "estado": "Desarrollo",
+            "etapa": "DEV",
+            "n": 13
+          },
+          {
+            "estado": "Revisión asistida",
+            "etapa": "AI",
+            "n": 5
+          },
+          {
+            "estado": "Revisión de lead",
+            "etapa": "LEAD-REV",
+            "n": 7
+          },
+          {
+            "estado": "Pruebas",
+            "etapa": "QA",
+            "n": 9
+          },
+          {
+            "estado": "Integración",
+            "etapa": "MERGE",
+            "n": 4
+          },
+          {
+            "estado": "Sandbox",
+            "etapa": "SAND",
+            "n": 6
+          },
+          {
+            "estado": "Retrabajo",
+            "etapa": "RET",
+            "n": 8
+          }
+        ]
+      }
+    },
   "categorias": [
     "El funcionamiento es incorrecto",
     "No cubre todos los escenarios o escenarios borde",

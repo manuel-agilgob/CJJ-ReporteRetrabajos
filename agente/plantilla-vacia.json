@@ -8,7 +8,36 @@
     "generado": "",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "",
-    "version": "v1.1"
+    "version": "v1.2"
+  },
+  "movimiento": {
+    "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
+    "series": [
+      { "key": "DOR", "nombre": "Listo para tomar", "etapa": "DOR", "fuente": "jira" },
+      { "key": "DEV", "nombre": "Desarrollo", "etapa": "DEV", "fuente": "jira" },
+      { "key": "AI", "nombre": "Revisión asistida", "etapa": "AI", "fuente": "jira" },
+      { "key": "LEAD-REV", "nombre": "Revisión de lead", "etapa": "LEAD-REV", "fuente": "jira" },
+      { "key": "QA", "nombre": "Pruebas", "etapa": "QA", "fuente": "jira" },
+      { "key": "MERGE", "nombre": "Integración", "etapa": "MERGE", "fuente": "jira" },
+      { "key": "DEVELOP", "nombre": "Tarjetas fusionadas a develop", "etapa": "MERGE", "fuente": "github" },
+      { "key": "SAND", "nombre": "Sandbox", "etapa": "SAND", "fuente": "jira" },
+      { "key": "PROD", "nombre": "Producción", "etapa": "PROD", "fuente": "jira" },
+      { "key": "RET", "nombre": "Retrabajo", "etapa": "RET", "fuente": "jira" }
+    ],
+    "dias": [],
+    "tablero": {
+      "fecha": "",
+      "estados": [
+        { "estado": "Listo para tomar", "etapa": "DOR", "n": 0 },
+        { "estado": "Desarrollo", "etapa": "DEV", "n": 0 },
+        { "estado": "Revisión asistida", "etapa": "AI", "n": 0 },
+        { "estado": "Revisión de lead", "etapa": "LEAD-REV", "n": 0 },
+        { "estado": "Pruebas", "etapa": "QA", "n": 0 },
+        { "estado": "Integración", "etapa": "MERGE", "n": 0 },
+        { "estado": "Sandbox", "etapa": "SAND", "n": 0 },
+        { "estado": "Retrabajo", "etapa": "RET", "n": 0 }
+      ]
+    }
   },
   "categorias": [
     "El funcionamiento es incorrecto",

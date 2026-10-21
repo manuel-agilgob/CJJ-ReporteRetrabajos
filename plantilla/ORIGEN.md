@@ -3,9 +3,22 @@
 Copia fiel del proyecto de Claude Design «Plantilla reporte retrabajo»:
 <https://claude.ai/design/p/c1920c29-3492-4d8c-90af-2d65b08be535?file=Plantilla+de+Reporte+Periodico.dc.html>
 
-Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de actividades») y el **2026-10-07**
-(detalle desplegable por tarjeta en esa sección; luego, columna «Estado» y fondo del detalle desplegado). Versión de plantilla:
-**v1.1** (el valor de `meta.version` en los JSON).
+Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de actividades»), el **2026-10-07**
+(detalle desplegable por tarjeta en esa sección; luego, columna «Estado» y fondo del detalle desplegado) y el
+**2026-10-21** (sección «Movimiento del tablero»). Versión de plantilla: **v1.2** (el valor de `meta.version` en los
+JSON).
+
+En la copia del 2026-10-21 solo cambió `reporte.dc.html`; `support.js`, `doc-page.js`, `styles.css` y `_ds_bundle.js`
+son idénticos a los de la copia anterior. El cambio:
+
+- **Se quitó** el recuadro de cuatro datos bajo el título (Periodo, Generado, Responsable, Fuente de datos). El periodo
+  y la fecha de generación pasaron a una línea bajo el subtítulo; **`meta.responsable` y `meta.fuente` ya no se ven en
+  ninguna parte de la página**, aunque se siguen llenando.
+- **Se agregó** la sección «Movimiento del tablero», con dos figuras: barras apiladas de transiciones por día (una
+  serie por etapa, más `RET`, con una línea encima para las tarjetas fusionadas a `develop`) y la «Fotografía del
+  tablero» al momento de generar. La alimenta la clave nueva `movimiento` (ver `agente/contrato-datos.md`).
+- **`meta.generado` ahora lleva hora** (`AAAA-MM-DDTHH:MM`): la plantilla la muestra como «Actualizado». Con una fecha
+  sin hora se sigue viendo bien, solo sin la hora.
 
 | En el diseño | En este repositorio |
 |---|---|
@@ -19,9 +32,13 @@ Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de a
 Los archivos son idénticos a los del diseño, salvo el nombre de la plantilla y `report-data.js`.
 
 `report-data.js` es el ejemplo del diseño ajustado al contrato vigente: marcado como ficticio en el título y en el periodo,
-solo con nombres de pila, las causas de hotfix dentro de las 11 categorías, `etapaPorDefecto` según la regla del contrato, y
-con un `actividades` ficticio generado para el periodo de ejemplo (nombres de pila, tramos recortados al periodo), y sin
-las claves heredadas de la versión anterior (`indicadores`, `serie`, `composicion`, `riesgos`), que la plantilla ya no lee.
+solo con nombres de pila, las causas de hotfix dentro de las 11 categorías, `etapaPorDefecto` según la regla del contrato,
+con un `actividades` ficticio generado para el periodo de ejemplo (nombres de pila, tramos recortados al periodo), con un
+`movimiento` ficticio cuya serie `RET` cuadra con la suma de los `counts`, y sin las claves heredadas de la versión
+anterior (`indicadores`, `serie`, `composicion`, `riesgos`), que la plantilla ya no lee.
+
+El ejemplo del diseño trae sus propias claves de ejemplo, distintas de las nuestras; de él se toma solo la **forma** de
+`movimiento`, no sus series ni sus estados.
 
 ## Qué no se copió
 
@@ -58,6 +75,17 @@ Vienen del diseño; se corrigen allá y se vuelve a copiar.
    (0) y con «el funcionamiento es incorrecto» como motivo dominante (0)». Pasa al dar clic en su tarjeta, o al abrir un
    periodo en que nadie tuvo retrabajos. Como todos los de la lista aparecen siempre, conviene que el diseño diga en ese
    caso «no tuvo retrabajos en el periodo».
+6. Un periodo anterior a `v1.2` no trae `movimiento`, así que «Movimiento del tablero» sale vacía y dice «Sin
+   transiciones registradas en el periodo», que es falso: en esos periodos sí las hubo, solo que no se midieron. Los
+   cinco periodos publicados hasta el 2026-10-21 se dejan así a propósito, porque un periodo ya publicado no se
+   reescribe y la fotografía del tablero de una fecha pasada no se puede reconstruir.
+7. `movimiento.nota` no se muestra en ninguna parte: el párrafo de entrada de la sección lo arma la plantilla con los
+   datos. Se conserva en el JSON como procedencia del dato.
+8. La plantilla dibuja como línea **la primera** serie con `fuente: "github"` y descarta las demás: una segunda no se
+   vería ni como línea ni como barra. Por eso el contrato fija una sola.
+9. El párrafo de «Movimiento del tablero» dice «el estado del tablero **al cierre**», pero la fotografía se toma al
+   generar: Jira no guarda el tablero de una fecha pasada. Coinciden cuando la rutina corre a su hora (el sábado 00:15,
+   horas después del cierre); en un periodo que se regenere tiempo después, no.
 
 ## Cómo volver a copiar después de un cambio en el diseño
 

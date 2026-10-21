@@ -29,6 +29,8 @@ persona; el agente las lee y no las edita.
   - acceso directo a Jira (API REST v3 o conector de Atlassian), necesario en cualquier vía (pasos 3 y 4);
   - que la cuenta de Jira con la que consulta tenga la zona horaria `America/Mexico_City` en su perfil: Jira interpreta las
     fechas del JQL en esa zona, y así coinciden con las del periodo;
+  - lectura en GitHub de los cuatro repositorios del expediente electrónico, para la serie «Tarjetas fusionadas a
+    develop» (paso 6). Basta un token con alcance `repo` o el `gh` de la máquina ya autenticado;
   - definir cómo publica: commit directo a `main` o PR para revisión.
 - **A mano:** también se puede pedir en una sesión, por ejemplo «genera el reporte del periodo 2026-09-12 → 2026-09-25».
 
@@ -56,7 +58,7 @@ Ese JQL encuentra las **tarjetas**, pero cada tarjeta trae **todas** sus transic
 anteriores. Hay que filtrar cada transición por su fecha; si no, se cuentan de nuevo retrabajos ya reportados.
 
 Se extrae por una de dos vías; `meta.fuente` declara cuál se usó. Las dos necesitan además el acceso directo a Jira para
-los colaboradores, los hotfixes y el recorrido de actividades.
+los colaboradores, los hotfixes, el recorrido de actividades y el movimiento del tablero.
 
 ### Vía A — pipeline `generate-rework-report`
 
@@ -190,16 +192,59 @@ durante el periodo y las veces que regresó a `Retrabajo`.
    como en el paso 3.
 6. **Estado:** la etapa del último tramo; si es `PROD`, `En producción`.
 
-## Paso 6 — Armar el JSON
+## Paso 6 — Movimiento del tablero
+
+Alimenta la sección «Movimiento del tablero»: cuántas transiciones hubo cada día, cuántas tarjetas se fusionaron a
+`develop` y cómo quedó el tablero. Reusa el changelog que ya se bajó en el paso 5; lo nuevo es GitHub y la fotografía.
+
+1. **Transiciones por día (las nueve series `jira`).** Sobre el mismo conjunto de tarjetas del paso 5, recorrer cada
+   cambio de `status` del changelog con fecha dentro del periodo y sumar uno al día de la transición (hora de la Ciudad
+   de México) en la serie del **estado destino** (`toString`), resuelto por id como en el paso 5:
+   - destino `Retrabajo` → serie `RET`, pero **solo con los retrabajos contados en el paso 2**. Los descartados (linode)
+     y los que salieron de PROD no se suman, para que la gráfica no contradiga la Figura 0.
+   - cualquier otro destino → la serie de la etapa que le asigna `etapas.md`.
+   - destino descartado (linode): no se cuenta.
+   - destino que no está en el mapa: **detener**, como en el paso 2.
+2. **Tarjetas fusionadas a develop (la serie `DEVELOP`, `fuente: "github"`).** En los cuatro repositorios del expediente
+   electrónico: `Agilgob/nilo-expediente-core`, `Agilgob/nilo-expediente-funcionario`,
+   `Agilgob/nilo-expediente-ciudadano` y `Agilgob/nilo-expediente-usuarios`.
+
+   ```bash
+   gh api -X GET search/issues --paginate \
+     -f q='repo:Agilgob/nilo-expediente-core is:pr is:merged base:develop merged:<inicio>T00:00:00-06:00..<fin>T23:59:59-06:00'
+   ```
+
+   - **El `-06:00` no se omite**: sin él GitHub lee las fechas en UTC y se cuelan PR de otro día. La Ciudad de México es
+     UTC−6 todo el año (no hay horario de verano desde 2022).
+   - De cada PR se saca la **clave de Jira** del nombre de la rama de origen (`head.ref`) o del título, sin distinguir
+     mayúsculas y tolerando las formas que usa el equipo: `CJJ-321`, `fix/cjj-321`, `Cjj 189`, `Feature/cjj 219 cors`.
+     Solo cuentan las claves de los dos proyectos del reporte.
+   - **Una tarjeta cuenta una vez por día**: si dos PR de la misma tarjeta se fusionan el mismo día, en uno o en varios
+     repositorios, es un solo caso; en días distintos, uno cada día.
+   - Un PR del que no sale la clave no se cuenta y se lista en el resumen de la corrida.
+   - Credenciales rechazadas o búsqueda truncada: **detener**, igual que con Jira.
+3. **Los días.** Un objeto por día natural del periodo, de `<inicio>` a `<fin>`, también los que quedan en cero: son las
+   columnas del eje. En `valores` solo van las series con casos; un día sin movimiento lleva `{}`.
+4. **La fotografía del tablero.** Al momento de generar, las tarjetas abiertas de los dos proyectos, por etapa:
+
+   ```text
+   project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND status IN (<estados de la etapa, según etapas.md>)
+   ```
+
+   Una consulta por etapa, o una sola agrupando por `status`. Van las siete etapas que admiten trabajo abierto (`DOR` a
+   `SAND`) y `Retrabajo`; **`PROD` no va**, porque lo liberado no es trabajo abierto (ver `contrato-datos.md`).
+   `tablero.fecha` es el momento de la consulta, el mismo valor que `meta.generado`.
+
+## Paso 7 — Armar el JSON
 
 Copiar `agente/plantilla-vacia.json` a `reportes/<inicio>.json` y llenarlo según `contrato-datos.md`.
 
-## Paso 7 — Verificar
+## Paso 8 — Verificar
 
 Comprobar todas las invariantes de `contrato-datos.md`. Si una falla, se corrige; si no se puede corregir, se detiene la
 generación.
 
-## Paso 8 — Publicar
+## Paso 9 — Publicar
 
 1. Agregar el periodo a `reportes/indice.json` como `{ "inicio": "<inicio>", "fin": "<fin>", "archivo": "<inicio>.json" }`,
    en orden ascendente por `inicio`. Las cifras de la portada (retrabajos, etapa dominante) las calcula `index.html` a partir
@@ -215,6 +260,7 @@ generación.
 - Una categoría que no está en `categorias.md`.
 - Un `accountId` de `colaboradores.md` que no existe en Jira.
 - Un resultado de Jira truncado o incompleto: límite alcanzado, paginación fallida o credenciales rechazadas.
+- Lo mismo en GitHub al buscar los PR fusionados a `develop` (paso 6).
 - Una invariante del contrato que no se cumple.
 - Un periodo que no es del ciclo, que no ha cerrado, o que ya está publicado y no se pidió regenerar.
 
@@ -225,12 +271,14 @@ En esos casos no se escribe nada en `reportes/`, y se informa qué falta y qué 
 Al terminar, o al detenerse, el agente informa en su respuesta (y en la descripción del PR, si abre uno):
 
 - el periodo, la vía de extracción usada, los retrabajos contados y los descartados (con el motivo) y los hotfixes;
-- las anomalías: transiciones desde PROD, hotfixes sin ambiente y responsables que cayeron en `Otros`;
+- las anomalías: transiciones desde PROD, hotfixes sin ambiente, responsables que cayeron en `Otros` y los PR
+  fusionados a `develop` de los que no se pudo sacar una clave de Jira;
 - las aproximaciones usadas, como el asignado actual en lugar del histórico.
 
 ## Pendientes de definir
 
-- Configurar la rutina: acceso a Jira (con la zona horaria de la cuenta), vía de extracción y destino del commit.
+- Configurar la rutina: acceso a Jira (con la zona horaria de la cuenta), acceso de lectura a los cuatro repositorios
+  de GitHub, vía de extracción y destino del commit.
 - Llenar la lista de `colaboradores.md`: `accountId`, nombres publicados y roles.
 - Actualizar `reworkStage.ts` en `ai-tools-documentation` para que `Aprobado` y `to do approved` vayan a MERGE (ver
   `etapas.md`).

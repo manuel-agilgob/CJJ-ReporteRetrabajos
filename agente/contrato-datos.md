@@ -9,7 +9,8 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 - **No se borra ninguna clave del esqueleto.** Un texto sin dato se escribe `"n/d"`; un conteo sin casos es `0`. Ningún
   texto queda como `""`.
 - Fechas en ISO 8601 (`AAAA-MM-DD`), en hora de la Ciudad de México (`America/Mexico_City`). Donde se pide fecha y hora
-  (solo en `actividades`), `AAAA-MM-DDTHH:MM`, también en hora de la Ciudad de México y sin zona.
+  (`meta.generado`, `movimiento.tablero.fecha` y las de `actividades`), `AAAA-MM-DDTHH:MM`, también en hora de la Ciudad
+  de México y sin zona.
 - Deltas con signo, y el negativo con el signo menos tipográfico `−` (U+2212), como en el diseño: `+1`, `−2`, `0`.
 - De las personas, solo el nombre de pila (ver `colaboradores.md`).
 
@@ -18,6 +19,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | Clave | En la plantilla |
 |---|---|
 | `meta` | §1 Encabezado y encabezado de cada página |
+| `movimiento` | «Movimiento del tablero»: barras de transiciones por día y fotografía del tablero |
 | `categorias` | Renglones del desglose por etapa y de la Tabla 2 |
 | `etapas`, `etapaPorDefecto` | Figura 0 y desglose por etapa |
 | `hotfixes` | «Hotfixes en ambientes de despliegue» y Tabla 1 |
@@ -32,10 +34,86 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | `subtitulo` | Fijo: `Transiciones a Retrabajo clasificadas por motivo según la taxonomía vigente, agrupadas por la etapa del flujo donde se detectaron.` |
 | `etiquetaPeriodo` | `<inicio> → <fin>`, por ejemplo `2026-09-12 → 2026-09-25`. Se repite en el encabezado de cada página. |
 | `periodoInicio`, `periodoFin` | El sábado en que empieza y el viernes en que termina el periodo. |
-| `generado` | Fecha en que se generó el JSON. |
-| `responsable` | Fijo: `Ingeniería — Lead de entrega`. |
+| `generado` | Fecha y **hora** en que se generó el JSON, `AAAA-MM-DDTHH:MM`. La plantilla la muestra como «Actualizado» bajo el subtítulo, y `movimiento.tablero.fecha` lleva el mismo valor. Hasta `v1.1` iba sin hora. |
+| `responsable` | Fijo: `Ingeniería — Lead de entrega`. Desde `v1.2` la plantilla ya no lo muestra (ver abajo). |
 | `fuente` | Según la vía de extracción (`INSTRUCCIONES.md`, paso 1). Vía A: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — pipeline generate-rework-report`. Vía B: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente`. |
-| `version` | Versión de la plantilla con que se generó, hoy `v1.1` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
+| `version` | Versión de la plantilla con que se generó, hoy `v1.2` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
+
+`responsable` y `fuente` **ya no se ven en la página**: el rediseño de `v1.2` quitó el recuadro de cuatro datos que los
+mostraba. Se siguen llenando igual, porque son la procedencia del periodo y ninguna clave del esqueleto se borra.
+
+## `movimiento`
+
+Alimenta la sección «Movimiento del tablero»: las barras de transiciones por día, la línea de tarjetas fusionadas a
+`develop` y la fotografía del tablero. Existe desde `v1.2`. Cómo se obtiene cada dato: `INSTRUCCIONES.md`, paso 6.
+
+| Clave | Valor |
+|---|---|
+| `nota` | Fija: `Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).` La plantilla no la muestra; queda en el JSON como procedencia del dato. |
+| `series` | Lista fija de diez series, en el orden de la tabla siguiente. |
+| `dias` | Un objeto por día natural del periodo, de `periodoInicio` a `periodoFin`, en orden ascendente. |
+| `tablero` | La fotografía del tablero al momento de generar. |
+
+### `series`
+
+Una serie por etapa del flujo, más `RET` y la de GitHub. La lista es **fija**: se copia tal cual, también cuando alguna
+serie queda en cero todo el periodo.
+
+| `key` | `nombre` | `etapa` | `fuente` |
+|---|---|---|---|
+| `DOR` | Listo para tomar | `DOR` | `jira` |
+| `DEV` | Desarrollo | `DEV` | `jira` |
+| `AI` | Revisión asistida | `AI` | `jira` |
+| `LEAD-REV` | Revisión de lead | `LEAD-REV` | `jira` |
+| `QA` | Pruebas | `QA` | `jira` |
+| `MERGE` | Integración | `MERGE` | `jira` |
+| `DEVELOP` | Tarjetas fusionadas a develop | `MERGE` | `github` |
+| `SAND` | Sandbox | `SAND` | `jira` |
+| `PROD` | Producción | `PROD` | `jira` |
+| `RET` | Retrabajo | `RET` | `jira` |
+
+- `key` es con lo que la serie aparece en `dias[].valores`; no se repite. `nombre` es lo que se lee en la leyenda y
+  `etapa` decide el color.
+- Las nueve series `jira` se dibujan como barras apiladas; la de `github` se dibuja encima como línea. **Solo puede haber
+  una serie `github`**: la plantilla toma la primera y las demás no se dibujarían ni como barra ni como línea.
+- El `nombre` de las ocho series de etapa es su `sub` de `etapas.md`, para que la leyenda y la Figura 0 llamen igual a
+  cada etapa; `RET` y `DEVELOP` no salen de ahí y llevan el texto de la tabla.
+
+### Cada objeto de `dias`
+
+| Clave | Valor |
+|---|---|
+| `fecha` | `AAAA-MM-DD`, **sin hora**: la plantilla le concatena `T12:00` para saber si cae en fin de semana. |
+| `valores` | Objeto `<key de serie>: <entero>`. Solo van las series con casos ese día; las que quedan en cero se omiten, y un día sin movimiento lleva `{}`. |
+
+Van **todos** los días naturales del periodo, incluidos los de cero: son las columnas del eje, y un día que falte corre
+las demás. Un periodo de 14 días lleva 14 objetos.
+
+### `tablero`
+
+| Clave | Valor |
+|---|---|
+| `fecha` | Momento en que se tomó la fotografía, `AAAA-MM-DDTHH:MM`: el mismo valor que `meta.generado`. |
+| `estados` | Ocho objetos `{ estado, etapa, n }`, en este orden: las siete etapas que admiten trabajo abierto y `Retrabajo` al final. |
+
+| `estado` | `etapa` |
+|---|---|
+| Listo para tomar | `DOR` |
+| Desarrollo | `DEV` |
+| Revisión asistida | `AI` |
+| Revisión de lead | `LEAD-REV` |
+| Pruebas | `QA` |
+| Integración | `MERGE` |
+| Sandbox | `SAND` |
+| Retrabajo | `RET` |
+
+- `n` es el entero de tarjetas de los dos proyectos cuyo estado en ese momento cae en esa etapa. Una entrada en cero se
+  conserva: la lista es fija.
+- **`PROD` no va.** La plantilla rotula el total «actividades abiertas en el tablero», y lo que ya se liberó no es
+  trabajo abierto. Es el mismo recorte que hace `colaboradores[].matriz`, aunque por otra razón: allá `PROD` sobra
+  porque no genera retrabajos, aquí porque no es trabajo abierto.
+- La fotografía es del momento de generar, no del cierre del periodo: Jira no guarda el tablero de una fecha pasada, así
+  que un periodo que se regenera tiempo después lleva el tablero del día en que se regeneró.
 
 ## `categorias`
 
@@ -165,5 +243,13 @@ las cumpla.
    enciman y caen dentro del periodo; cada `etapa` es una `key` de `etapas` o `RET`; `responsable` es un nombre de
    `colaboradores`, `Otros` o `Sin asignar`. La suma de todos los `retrabajos` es igual a la suma de todos los `counts`, y
    por cada etapa y categoría coincide con `counts`. Cada tarjeta con un retrabajo contado aparece aquí.
-9. Ningún texto quedó como `""`, y ninguna clave del esqueleto falta.
-10. Si se puede probar, la plantilla abre el JSON sin errores: `plantilla/reporte.dc.html?data=../reportes/<archivo>`.
+9. `movimiento.series` es la lista fija de diez entradas, en orden y con `key`, `nombre`, `etapa` y `fuente` exactos, y
+   una sola con `fuente: "github"`.
+10. `movimiento.dias` tiene un objeto por día natural del periodo, de `periodoInicio` a `periodoFin`, en orden, sin
+    huecos ni repetidos. Cada clave de `valores` es una `key` de `series` y cada valor un entero mayor que cero.
+11. La suma de la serie `RET` sobre todos los días es igual a la suma de todos los `counts`: son los mismos retrabajos
+    contados, vistos por día en vez de por etapa y categoría.
+12. `movimiento.tablero.fecha` es igual a `meta.generado`, y `estados` son las ocho entradas fijas, en orden, con `n`
+    entero no negativo.
+13. Ningún texto quedó como `""`, y ninguna clave del esqueleto falta.
+14. Si se puede probar, la plantilla abre el JSON sin errores: `plantilla/reporte.dc.html?data=../reportes/<archivo>`.
