@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-01 → 2026-11-07",
     "periodoInicio": "2026-11-01",
     "periodoFin": "2026-11-07",
-    "generado": "2026-11-05T19:06",
+    "generado": "2026-11-06T19:06",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.2"
@@ -135,7 +135,14 @@
       },
       {
         "fecha": "2026-11-06",
-        "valores": {}
+        "valores": {
+          "QA": 7,
+          "RET": 4,
+          "MERGE": 1,
+          "AI": 4,
+          "LEAD-REV": 1,
+          "DEV": 1
+        }
       },
       {
         "fecha": "2026-11-07",
@@ -143,32 +150,32 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-05T19:06",
+      "fecha": "2026-11-06T19:06",
       "estados": [
         {
           "estado": "Listo para tomar",
           "etapa": "DOR",
-          "n": 68
+          "n": 67
         },
         {
           "estado": "Desarrollo",
           "etapa": "DEV",
-          "n": 15
+          "n": 14
         },
         {
           "estado": "Revisión asistida",
           "etapa": "AI",
-          "n": 65
+          "n": 67
         },
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 61
+          "n": 59
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 10
+          "n": 9
         },
         {
           "estado": "Integración",
@@ -183,7 +190,7 @@
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 4
+          "n": 7
         }
       ]
     }
@@ -202,7 +209,7 @@
     "OTRO, No se ajusta a ninguna categoria definida",
     "Malas prácticas de programación"
   ],
-  "etapaPorDefecto": "AI",
+  "etapaPorDefecto": "LEAD-REV",
   "etapas": [
     {
       "key": "DOR",
@@ -245,7 +252,7 @@
       "sub": "Revisión asistida",
       "counts": [
         4,
-        1,
+        2,
         0,
         2,
         0,
@@ -263,13 +270,13 @@
       "sub": "Revisión de lead",
       "counts": [
         3,
-        0,
+        1,
         0,
         0,
         0,
         2,
         0,
-        4,
+        5,
         0,
         0,
         1,
@@ -281,7 +288,7 @@
       "sub": "Pruebas",
       "counts": [
         2,
-        1,
+        2,
         0,
         0,
         0,
@@ -832,7 +839,7 @@
         ],
         "AI": [
           2,
-          1,
+          2,
           0,
           2,
           0,
@@ -1430,7 +1437,7 @@
     {
       "nombre": "Juan José",
       "rol": "Tech lead",
-      "tarjetas": 4,
+      "tarjetas": 6,
       "matriz": {
         "DOR": [
           0,
@@ -1476,13 +1483,13 @@
         ],
         "LEAD-REV": [
           2,
+          1,
           0,
           0,
           0,
           0,
           0,
-          0,
-          0,
+          1,
           0,
           0,
           0,
@@ -1595,7 +1602,7 @@
         ],
         "QA": [
           1,
-          1,
+          2,
           0,
           0,
           0,
@@ -1792,7 +1799,7 @@
       "titulo": "n/d",
       "responsable": "Luis Fernando",
       "creada": "2026-05-27T09:20",
-      "estado": "LEAD-REV",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "AI",
@@ -1832,6 +1839,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-04T14:25",
+          "fin": "2026-11-06T18:21"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-06T18:21",
           "fin": "2026-11-08T00:00"
         }
       ],
@@ -1840,6 +1852,11 @@
           "fecha": "2026-11-03T16:26",
           "desde": "LEAD-REV",
           "categoria": "Malas prácticas de programación"
+        },
+        {
+          "fecha": "2026-11-06T18:21",
+          "desde": "LEAD-REV",
+          "categoria": "No cumple definición de terminado (DoD)"
         }
       ]
     },
@@ -2025,7 +2042,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-05-27T09:21",
-      "estado": "QA",
+      "estado": "AI",
       "tramos": [
         {
           "etapa": "QA",
@@ -2095,6 +2112,16 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-05T09:40",
+          "fin": "2026-11-06T17:09"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-06T17:09",
+          "fin": "2026-11-06T17:38"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-06T17:38",
           "fin": "2026-11-08T00:00"
         }
       ],
@@ -2311,7 +2338,7 @@
       "titulo": "n/d",
       "responsable": "Luis Fernando",
       "creada": "2026-06-30T11:27",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "LEAD-REV",
@@ -2376,6 +2403,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-04T20:52",
+          "fin": "2026-11-06T18:56"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-06T18:56",
           "fin": "2026-11-08T00:00"
         }
       ],
@@ -2898,7 +2930,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-08-19T17:39",
-      "estado": "DEV",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2933,6 +2965,16 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-05T12:44",
+          "fin": "2026-11-06T15:43"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-06T15:43",
+          "fin": "2026-11-06T16:02"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-06T16:02",
           "fin": "2026-11-08T00:00"
         }
       ],
@@ -2954,7 +2996,7 @@
       "titulo": "n/d",
       "responsable": "Luis Fernando",
       "creada": "2026-08-31T13:26",
-      "estado": "LEAD-REV",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "LEAD-REV",
@@ -2984,6 +3026,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-05T15:57",
+          "fin": "2026-11-06T19:04"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-06T19:04",
           "fin": "2026-11-08T00:00"
         }
       ],
@@ -2991,6 +3038,11 @@
         {
           "fecha": "2026-11-05T11:37",
           "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        },
+        {
+          "fecha": "2026-11-06T19:04",
+          "desde": "LEAD-REV",
           "categoria": "No cubre todos los escenarios o escenarios borde"
         }
       ]
@@ -3000,7 +3052,7 @@
       "titulo": "n/d",
       "responsable": "Luis Fernando",
       "creada": "2026-08-31T13:26",
-      "estado": "QA",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "RET",
@@ -3025,10 +3077,21 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-04T18:16",
+          "fin": "2026-11-06T17:25"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-06T17:25",
           "fin": "2026-11-08T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-06T17:25",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
     },
     {
       "clave": "CJJ-669",
@@ -3282,15 +3345,41 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-05T16:57",
-      "estado": "DOR",
+      "estado": "AI",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-05T16:57",
+          "fin": "2026-11-06T11:06"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-06T11:06",
+          "fin": "2026-11-06T16:15"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-06T16:15",
+          "fin": "2026-11-06T16:52"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-06T16:52",
+          "fin": "2026-11-06T16:55"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-06T16:55",
           "fin": "2026-11-08T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-06T16:52",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde"
+        }
+      ]
     }
   ]
 }
