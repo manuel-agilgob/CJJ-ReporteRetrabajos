@@ -117,7 +117,7 @@ las demás. Un periodo de 14 días lleva 14 objetos.
 
 ## `categorias`
 
-Copia de la columna *Categoría* de `categorias.md`, en el mismo orden y con el mismo texto. Su longitud, `N` (hoy 12), es
+Copia de la columna *Categoría* de `categorias.md`, en el mismo orden y con el mismo texto. Su longitud, `N` (hoy 13), es
 la de todos los `counts` y de cada renglón de `matriz`.
 
 ## `etapas`

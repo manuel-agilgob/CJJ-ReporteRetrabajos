@@ -6,7 +6,7 @@ Taxonomía única del reporte. La usan dos secciones:
 - **Hotfixes** (Tabla 1, columna *Causa*): la causa del defecto que corrigió el hotfix.
 
 El agente copia la columna **Categoría**, en este orden, al arreglo `categorias` del JSON de cada periodo. El número de fila
-es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts[0]`, la 12 es `counts[11]`.
+es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts[0]`, la 13 es `counts[12]`.
 
 | # | Categoría (texto exacto en el reporte) | Cuándo aplica |
 |---|---|---|
@@ -17,11 +17,12 @@ es la posición en `counts` y en cada renglón de `matriz`: la fila 1 es `counts
 | 5 | El codigo produce un error (crash) en runtime o compilacion | Excepción, pantalla de error, caída del servicio o build que no compila. |
 | 6 | Conflicto con la rama principal | Conflictos de merge o rama desactualizada respecto de la principal. |
 | 7 | Cambios solicitados por negocio después de entregar | Negocio cambió o amplió lo pedido después de la entrega; no es un defecto. |
-| 8 | No cumple definición de terminado (DoD) | Falta algo que exige la DoD: pruebas, evidencia, documentación, criterios de aceptación. |
+| 8 | No cumple definición de terminado (DoD) | Falta algo que exige la DoD que no son pruebas: evidencia, documentación, criterios de aceptación, listados o checklists de la tarjeta. Lo relacionado con pruebas va en la 13. |
 | 9 | No hay comentarios para categorizar | No hay texto del que se pueda sacar el motivo (ver criterios abajo). |
 | 10 | Error de QA - testing | El retorno se debió a un error de QA: prueba mal planteada, ambiente equivocado, falso positivo. |
 | 11 | OTRO, No se ajusta a ninguna categoria definida | Hay un motivo claro, pero no encaja en ninguna de las anteriores. |
 | 12 | Malas prácticas de programación | El código funciona, pero no sigue las buenas prácticas o los estándares del equipo: duplicación, nombres poco claros, código muerto o comentado, falta de manejo de errores, lógica en la capa equivocada. |
+| 13 | Fallan o faltan pruebas | El retorno se debe a las pruebas del código: pruebas unitarias o de integración que fallan, pruebas que faltan o no cubren el cambio, cobertura insuficiente, o pruebas automatizadas rotas o desactualizadas. Un fallo que QA encuentra al probar la funcionalidad a mano o con su suite de pruebas funcionales es 1 o 2; un error de la prueba de QA misma es 10. |
 
 > La columna «Cuándo aplica» es una primera versión, redactada para que la clasificación sea consistente entre periodos.
 > Se puede afinar cuando el equipo precise el criterio. Los textos de la columna *Categoría* no se tocan (ver reglas).
@@ -48,6 +49,7 @@ Cuando la categoría la asigna el agente (vía B de `INSTRUCCIONES.md`, y siempr
   prácticas. 12 es solo cuando el retorno se pide por la calidad del código y no por su comportamiento.
 - **Hotfix**: usar la descripción y los comentarios de la tarjeta del hotfix. Sin texto que explique la causa → 9. Texto
   sin una causa clara → 11.
+- **13 frente a 8, 1 y 10**: si lo que se reclama son pruebas del código (que fallan, que faltan o que no cubren el cambio), es 13 y no 8. Si el resultado de la funcionalidad es incorrecto es 1 o 2, aunque se haya descubierto al correr pruebas; si la prueba misma está mal planteada es 10.
 - Si caben varias, elegir la más específica. Una sola categoría por caso.
 
 ## Reglas
@@ -69,3 +71,4 @@ Cuando la categoría la asigna el agente (vía B de `INSTRUCCIONES.md`, y siempr
 - **2026-10-05** — Se agrega la 12, `Malas prácticas de programación`, al final. El enum `reworkReasons` del pipeline
   todavía no la tiene: hasta que se agregue, la vía A no puede asignarla y los periodos se extraen por la vía B. La
   plantilla sigue diciendo «once categorías» en sus textos (`plantilla/ORIGEN.md`, limitación 2).
+- **2026-11-09** — Se agrega la 13, `Fallan o faltan pruebas`, al final, para separar lo relacionado con pruebas de la 8 (DoD), que concentraba esos casos (por ejemplo «tras correr los test unitarios estos fallan»). La 8 queda para lo que no son pruebas. Los periodos ya publicados conservan su copia de 12 categorías y no se reclasifican. El enum `reworkReasons` del pipeline tampoco la tiene: se sigue usando la vía B.

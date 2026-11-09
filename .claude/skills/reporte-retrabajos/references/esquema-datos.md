@@ -8,7 +8,7 @@ Resumen para leer los JSON sin acceso al repositorio. La definición completa es
 |---|---|
 | `meta` | `periodoInicio`, `periodoFin` (sábado → viernes), `etiquetaPeriodo`, `generado` (con hora desde `v1.2`), `fuente`, `version` (de la plantilla). |
 | `movimiento` | Desde `v1.2`. `series[]` (`key`, `nombre`, `etapa`, `fuente`: `jira` o `github`), `dias[]` (`fecha`, `valores` = `{key de serie: entero}`, solo las series con casos) y `tablero` (`fecha`, `estados[]` con `estado`, `etapa`, `n`). |
-| `categorias` | Arreglo de textos, longitud `N` (hoy 12). Es el eje de todos los `counts` y filas de `matriz`. |
+| `categorias` | Arreglo de textos, longitud `N` (hoy 13). Es el eje de todos los `counts` y filas de `matriz`. |
 | `etapaPorDefecto` | Etapa con más retrabajos del periodo. |
 | `etapas` | 8 objetos `{key, sub, counts[N]}` en orden `DOR, DEV, AI, LEAD-REV, QA, MERGE, SAND, PROD`. `counts[i]` = retrabajos de esa etapa con la categoría `categorias[i]`. `PROD` siempre en ceros. |
 | `hotfixes` | `ambientes[]` (`SAND`/`PROD`: `total`, `delta`, `direccion`, `horasMedia`, `criticos`) y `detalle[]` (`clave`, `ambiente`, `titulo`, `causa`, `severidad`, `horas`, `fecha`). |
