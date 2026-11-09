@@ -33,7 +33,7 @@ python3 -I scripts/consolidar.py --tabla colaboradores --formato csv
 Reglas para no equivocar la lectura:
 
 1. **Siempre empezar por `indice.json`**: es la lista de periodos publicados. No asumir fechas.
-2. Cada JSON trae su propia copia de `categorias`; el orden y el número pueden cambiar entre periodos (hoy 12). Comparar
+2. Cada JSON trae su propia copia de `categorias`; el orden y el número pueden cambiar entre periodos (hoy 13). Comparar
    periodos **por el texto** de la categoría, nunca por la posición.
 3. Los periodos antiguos pueden no traer claves nuevas: `actividades` no existe antes de `v1.1` y `movimiento` no existe
    antes de `v1.2`. Tratar la ausencia como «sin dato», no como cero.

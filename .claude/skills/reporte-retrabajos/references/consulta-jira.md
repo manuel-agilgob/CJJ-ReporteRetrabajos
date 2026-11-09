@@ -45,7 +45,7 @@ se adivina:** detenerse y reportarlo.
 
 ## Categoría
 
-Se asigna con `agente/categorias.md` (12 categorías), con base **solo en el comentario** asociado a la transición: el del
+Se asigna con `agente/categorias.md` (13 categorías), con base **solo en el comentario** asociado a la transición: el del
 mismo autor más cercano dentro de ±10 minutos. Sin comentario → «No hay comentarios para categorizar»; comentario sin motivo
 claro → «OTRO, No se ajusta a ninguna categoria definida». Si el código falla es 1 o 5 aunque haya malas prácticas; «Malas
 prácticas de programación» solo cuando el retorno es por calidad y no por comportamiento. Los textos se copian letra por
