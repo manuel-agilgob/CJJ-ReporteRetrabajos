@@ -86,6 +86,10 @@ Vienen del diseño; se corrigen allá y se vuelve a copiar.
 9. El párrafo de «Movimiento del tablero» dice «el estado del tablero **al cierre**», pero la fotografía se toma al
    generar: Jira no guarda el tablero de una fecha pasada. Coinciden cuando la rutina corre a su hora (el sábado 00:15,
    horas después del cierre); en un periodo que se regenere tiempo después, no.
+10. Desde el periodo 2026-11-08, cada retrabajo trae `comentario` (el `id` del comentario de Jira con que se clasificó),
+    pero la plantilla todavía no lo muestra. Falta agregar en el diseño el enlace
+    `https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>` en la tabla de retrabajos del
+    detalle de cada tarjeta, sin enlace cuando vale `"n/d"` o no viene (periodos anteriores).
 
 ## Cómo volver a copiar después de un cambio en el diseño
 

@@ -1846,7 +1846,8 @@
         {
           "fecha": "2026-11-09T11:39",
           "desde": "AI",
-          "categoria": "El funcionamiento es incorrecto"
+          "categoria": "El funcionamiento es incorrecto",
+          "comentario": "37966"
         }
       ]
     },
@@ -1937,7 +1938,8 @@
         {
           "fecha": "2026-11-09T11:58",
           "desde": "LEAD-REV",
-          "categoria": "Conflicto con la rama principal"
+          "categoria": "Conflicto con la rama principal",
+          "comentario": "37968"
         }
       ]
     },
@@ -1968,7 +1970,8 @@
         {
           "fecha": "2026-11-09T15:34",
           "desde": "AI",
-          "categoria": "No cubre todos los escenarios o escenarios borde"
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "37983"
         }
       ]
     },
@@ -2044,12 +2047,14 @@
         {
           "fecha": "2026-11-09T11:46",
           "desde": "AI",
-          "categoria": "El codigo produce un error (crash) en runtime o compilacion"
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion",
+          "comentario": "37967"
         },
         {
           "fecha": "2026-11-09T13:42",
           "desde": "AI",
-          "categoria": "El funcionamiento es incorrecto"
+          "categoria": "El funcionamiento es incorrecto",
+          "comentario": "37977"
         }
       ]
     },
@@ -2105,7 +2110,8 @@
         {
           "fecha": "2026-11-09T17:38",
           "desde": "QA",
-          "categoria": "El codigo produce un error (crash) en runtime o compilacion"
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion",
+          "comentario": "37986"
         }
       ]
     },

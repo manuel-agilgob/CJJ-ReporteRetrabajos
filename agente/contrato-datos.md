@@ -220,6 +220,12 @@ Cada retrabajo:
 | `fecha` | Fecha y hora de la transición a `Retrabajo` (`AAAA-MM-DDTHH:MM`). |
 | `desde` | La etapa de origen, la misma con que se contó en `etapas`. |
 | `categoria` | Una de las `categorias`, la misma con que se contó. |
+| `comentario` | El `id` del comentario de Jira con que se clasificó (`INSTRUCCIONES.md`, paso 1), como texto (`"37966"`). `"n/d"` si la transición no tuvo comentario asociado. |
+
+`comentario` lleva **solo el identificador**, nunca el texto: el JSON es público y los comentarios pueden traer nombres,
+datos de expedientes o URLs internas. El enlace se arma en la plantilla como
+`https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>`, y solo lo abre quien tiene cuenta en
+ese Jira. Existe desde el periodo 2026-11-08; los periodos anteriores no lo traen y no se rellenan.
 
 ## Invariantes
 
@@ -242,7 +248,8 @@ las cumpla.
 8. En `actividades`: `clave` no se repite; cada entrada tiene al menos un tramo; los tramos están en orden, no se
    enciman y caen dentro del periodo; cada `etapa` es una `key` de `etapas` o `RET`; `responsable` es un nombre de
    `colaboradores`, `Otros` o `Sin asignar`. La suma de todos los `retrabajos` es igual a la suma de todos los `counts`, y
-   por cada etapa y categoría coincide con `counts`. Cada tarjeta con un retrabajo contado aparece aquí.
+   por cada etapa y categoría coincide con `counts`. Cada tarjeta con un retrabajo contado aparece aquí. Cada retrabajo
+   trae `comentario`: un `id` numérico de un comentario de esa tarjeta, o `"n/d"`.
 9. `movimiento.series` es la lista fija de diez entradas, en orden y con `key`, `nombre`, `etapa` y `fuente` exactos, y
    una sola con `fuente: "github"`.
 10. `movimiento.dias` tiene un objeto por día natural del periodo, de `periodoInicio` a `periodoFin`, en orden, sin

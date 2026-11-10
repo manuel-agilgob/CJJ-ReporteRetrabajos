@@ -82,6 +82,8 @@ npm run dev -- generate-rework-report \
   y `reworkCategory`.
 - **No usar la etapa que calcula el pipeline** (columna `Stage`): su mapa no tiene MERGE. La etapa se deriva en el paso 2.
 - Si el comando se detiene por estados desconocidos, la generación se detiene también y se reporta.
+- El `id` del comentario asociado (para `retrabajos[].comentario`) se toma con el mismo criterio de la vía B, punto 3,
+  sobre los comentarios de la tarjeta.
 
 ### Vía B — consulta directa a Jira (vigente mientras la vía A esté en pausa)
 
@@ -92,7 +94,8 @@ Cuando el entorno no tiene el pipeline:
 2. Cada entrada del changelog con un ítem `field = status` y `toString = Retrabajo` es una transición: fecha = `created` de
    la entrada, origen = `fromString`, autor = `author`.
 3. El comentario asociado es el del mismo autor más cercano en el tiempo, dentro de ±10 minutos de la transición (el mismo
-   criterio que usa el pipeline).
+   criterio que usa el pipeline). Se guarda su `id` para `retrabajos[].comentario` (paso 5); si no hay ninguno en esa
+   ventana, `"n/d"`.
 4. La categoría se asigna con `categorias.md`, con base **solo** en ese comentario.
 
 ## Paso 2 — Etapa y categoría de cada retrabajo
@@ -185,8 +188,9 @@ durante el periodo y las veces que regresó a `Retrabajo`.
    - Estados seguidos que caen en la misma etapa se juntan en un solo tramo.
    - **Se recorta al periodo:** un tramo que empezó antes de `<inicio> 00:00` empieza ahí, y el que sigue abierto al cierre
      termina en `<cierre> 00:00`. Lo que queda fuera del periodo no se dibuja.
-4. **Retrabajos de la fila:** los retrabajos **contados** de esa tarjeta en el paso 2, con su fecha, la etapa de origen y la
-   categoría. Los descartados y los de PROD no van.
+4. **Retrabajos de la fila:** los retrabajos **contados** de esa tarjeta en el paso 2, con su fecha, la etapa de origen, la
+   categoría y el `id` del comentario con que se clasificó (paso 1). Los descartados y los de PROD no van. Del comentario
+   se publica solo el `id`, nunca su texto.
 5. **Responsable:** el asignado de la tarjeta al cierre del periodo (`<cierre> 00:00`), con el nombre de pila de
    `colaboradores.md`; `Otros` si no está en la lista y `Sin asignar` si no tiene. Se obtiene del changelog de `assignee`
    como en el paso 3.
