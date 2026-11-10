@@ -20,7 +20,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 |---|---|
 | `meta` | §1 Encabezado y encabezado de cada página |
 | `movimiento` | «Movimiento del tablero»: barras de transiciones por día y fotografía del tablero |
-| `categorias` | Renglones del desglose por etapa y de la Tabla 2 |
+| `categorias` | Renglones del desglose por etapa (al pasar el cursor, los `resumen` de sus retrabajos) y de la Tabla 2 |
 | `etapas`, `etapaPorDefecto` | Figura 0 y desglose por etapa |
 | `hotfixes` | «Hotfixes en ambientes de despliegue» y Tabla 1 |
 | `colaboradores`, `colaboradoresNota` | «Retrabajos por colaborador» y Tabla 2 |
@@ -37,7 +37,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | `generado` | Fecha y **hora** en que se generó el JSON, `AAAA-MM-DDTHH:MM`. La plantilla la muestra como «Actualizado» bajo el subtítulo, y `movimiento.tablero.fecha` lleva el mismo valor. Hasta `v1.1` iba sin hora. |
 | `responsable` | Fijo: `Ingeniería — Lead de entrega`. Desde `v1.2` la plantilla ya no lo muestra (ver abajo). |
 | `fuente` | Según la vía de extracción (`INSTRUCCIONES.md`, paso 1). Vía A: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — pipeline generate-rework-report`. Vía B: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente`. |
-| `version` | Versión de la plantilla con que se generó, hoy `v1.2` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
+| `version` | Versión de la plantilla con que se generó, hoy `v1.3` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
 
 `responsable` y `fuente` **ya no se ven en la página**: el rediseño de `v1.2` quitó el recuadro de cuatro datos que los
 mostraba. Se siguen llenando igual, porque son la procedencia del periodo y ninguna clave del esqueleto se borra.
@@ -221,11 +221,21 @@ Cada retrabajo:
 | `desde` | La etapa de origen, la misma con que se contó en `etapas`. |
 | `categoria` | Una de las `categorias`, la misma con que se contó. |
 | `comentario` | El `id` del comentario de Jira con que se clasificó (`INSTRUCCIONES.md`, paso 1), como texto (`"37966"`). `"n/d"` si la transición no tuvo comentario asociado. |
+| `resumen` | Una oración, redactada por el agente, que dice qué se detectó según ese comentario. `"n/d"` si no hubo comentario. |
 
-`comentario` lleva **solo el identificador**, nunca el texto: el JSON es público y los comentarios pueden traer nombres,
-datos de expedientes o URLs internas. El enlace se arma en la plantilla como
-`https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>`, y solo lo abre quien tiene cuenta en
-ese Jira. Existe desde el periodo 2026-11-08; los periodos anteriores no lo traen y no se rellenan.
+**El texto del comentario nunca se publica.** El JSON es público y los comentarios traen nombres, correos, usuarios y
+contraseñas de prueba, URLs internas, ids de expedientes y rutas de código. Por eso:
+
+- `comentario` lleva solo el identificador. La plantilla lo convierte en enlace desde el Motivo de la tabla de
+  retrabajos de cada tarjeta: `https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>`, que
+  solo abre quien tiene cuenta en ese Jira.
+- `resumen` es una **paráfrasis**, no una cita: el problema funcional en lenguaje llano, en una oración de no más de unas
+  40 palabras, sin nombres de personas, correos, usuarios, contraseñas, URLs, ids de expedientes o tocas, nombres de
+  archivos, clases o métodos, ni números de PR. Si el comentario describe una vulnerabilidad, se dice solo el tipo de
+  defecto («validación de permisos incompleta»), sin cómo explotarla. La plantilla los lista al pasar el cursor sobre el
+  renglón de la categoría en el desglose por etapa: `• <clave> (<dd/mm>): <resumen>`.
+
+Las dos claves existen desde `v1.3` (periodo 2026-11-08); los periodos anteriores no las traen y no se rellenan.
 
 ## Invariantes
 
@@ -249,7 +259,8 @@ las cumpla.
    enciman y caen dentro del periodo; cada `etapa` es una `key` de `etapas` o `RET`; `responsable` es un nombre de
    `colaboradores`, `Otros` o `Sin asignar`. La suma de todos los `retrabajos` es igual a la suma de todos los `counts`, y
    por cada etapa y categoría coincide con `counts`. Cada tarjeta con un retrabajo contado aparece aquí. Cada retrabajo
-   trae `comentario`: un `id` numérico de un comentario de esa tarjeta, o `"n/d"`.
+   trae `comentario` (un `id` numérico de un comentario de esa tarjeta, o `"n/d"`) y `resumen` (`"n/d"` si y solo si
+   `comentario` es `"n/d"`); ningún `resumen` trae correos, URLs ni apellidos.
 9. `movimiento.series` es la lista fija de diez entradas, en orden y con `key`, `nombre`, `etapa` y `fuente` exactos, y
    una sola con `fuente: "github"`.
 10. `movimiento.dias` tiene un objeto por día natural del periodo, de `periodoInicio` a `periodoFin`, en orden, sin

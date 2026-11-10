@@ -189,8 +189,9 @@ durante el periodo y las veces que regresó a `Retrabajo`.
    - **Se recorta al periodo:** un tramo que empezó antes de `<inicio> 00:00` empieza ahí, y el que sigue abierto al cierre
      termina en `<cierre> 00:00`. Lo que queda fuera del periodo no se dibuja.
 4. **Retrabajos de la fila:** los retrabajos **contados** de esa tarjeta en el paso 2, con su fecha, la etapa de origen, la
-   categoría y el `id` del comentario con que se clasificó (paso 1). Los descartados y los de PROD no van. Del comentario
-   se publica solo el `id`, nunca su texto.
+   categoría, el `id` del comentario con que se clasificó (paso 1) y un `resumen` de una oración de lo que ese comentario
+   detectó. Los descartados y los de PROD no van. El texto del comentario **nunca** se copia: el `resumen` es una
+   paráfrasis con las reglas de `contrato-datos.md` (sin nombres, correos, credenciales, URLs, ids ni rutas de código).
 5. **Responsable:** el asignado de la tarjeta al cierre del periodo (`<cierre> 00:00`), con el nombre de pila de
    `colaboradores.md`; `Otros` si no está en la lista y `Sin asignar` si no tiene. Se obtiene del changelog de `assignee`
    como en el paso 3.

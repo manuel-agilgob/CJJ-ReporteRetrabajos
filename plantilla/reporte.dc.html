@@ -157,7 +157,7 @@ a:hover{color:var(--color-accent-900)}
     </div>
     <div style="display:flex;flex-direction:column;gap:9px">
       <sc-for list="{{ sel.rows }}" as="r" hint-placeholder-count="10">
-        <div style="display:grid;grid-template-columns:270px 1fr 30px 44px;align-items:center;gap:10px;font-size:12px">
+        <div title="{{ r.hint }}" style="display:grid;grid-template-columns:270px 1fr 30px 44px;align-items:center;gap:10px;font-size:12px">
           <span style="color:var(--color-neutral-700);line-height:1.3;text-wrap:pretty">{{ r.name }}</span>
           <span style="height:10px;background:var(--color-neutral-200);display:block"><span style="{{ r.barStyle }}"></span></span>
           <span style="text-align:right;font-family:var(--font-heading);font-size:15px;color:var(--color-text)">{{ r.count }}</span>
@@ -328,7 +328,7 @@ a:hover{color:var(--color-accent-900)}
                 </thead>
                 <tbody>
                   <sc-for list="{{ r.det.retrabajos }}" as="x" hint-placeholder-count="2">
-                    <tr><td>{{ x.n }}</td><td>{{ x.fecha }}</td><td>{{ x.desde }}</td><td>{{ x.categoria }}</td></tr>
+                    <tr><td>{{ x.n }}</td><td>{{ x.fecha }}</td><td>{{ x.desde }}</td><td><sc-if value="{{ x.hayLink }}" hint-placeholder-val="{{ false }}"><a href="{{ x.url }}" target="_blank" rel="noopener noreferrer" title="Ver el comentario en Jira (requiere cuenta)" onClick="{{ x.stop }}">{{ x.categoria }}</a></sc-if><sc-if value="{{ x.sinLink }}" hint-placeholder-val="{{ true }}">{{ x.categoria }}</sc-if></td></tr>
                   </sc-for>
                 </tbody>
               </table>
@@ -534,7 +534,16 @@ class Component extends DCLogic {
           }),
         })),
         hayRet: n > 0,
-        retrabajos: x.retrabajos.map((r, i) => ({ n: i + 1, fecha: fmt(r.fecha) + ' ' + r.fecha.slice(11, 16), desde: r.desde, categoria: r.categoria })),
+        retrabajos: x.retrabajos.map((r, i) => {
+          const cid = r.comentario == null ? '' : String(r.comentario).trim();
+          const ok = /^\d+$/.test(cid);
+          return {
+            n: i + 1, fecha: fmt(r.fecha) + ' ' + r.fecha.slice(11, 16), desde: r.desde, categoria: r.categoria,
+            hayLink: ok, sinLink: !ok,
+            url: ok ? 'https://agilgob-team.atlassian.net/browse/' + encodeURIComponent(x.clave) + '?focusedCommentId=' + cid : '',
+            stop: ev => { if (ev) ev.stopPropagation(); },
+          };
+        }),
       };
       row.det.gridSpan = totalDays;
       return row;
@@ -597,10 +606,21 @@ class Component extends DCLogic {
     const e = d.etapas.find(x => x.key === selKey) || d.etapas[0];
     const total = sum(e.counts);
     const maxC = Math.max(1, ...e.counts);
+    const fmtF = x => x.slice(8, 10) + '/' + x.slice(5, 7);
     const rows = d.categorias.map((name, i) => {
       const c = e.counts[i] || 0;
+      const coms = [];
+      (d.actividades || []).forEach(a => (a.retrabajos || []).forEach(r => {
+        if (r.desde === e.key && r.categoria === name) {
+          const res = r.resumen == null ? '' : String(r.resumen).trim();
+          coms.push('• ' + a.clave + ' (' + fmtF(r.fecha) + '): ' + (res || 'sin resumen del comentario'));
+        }
+      }));
       return {
         name, count: c,
+        hint: coms.length
+          ? 'Comentarios clasificados en esta categoría:\n' + coms.join('\n\n')
+          : (c ? 'Sin detalle de comentarios en las actividades del periodo' : 'Sin comentarios en esta categoría'),
         pct: total ? Math.round((c / total) * 100) + '%' : '0%',
         barStyle: 'display:block;height:10px;background:var(--color-accent);width:' + Math.round((c / maxC) * 100) + '%',
       };

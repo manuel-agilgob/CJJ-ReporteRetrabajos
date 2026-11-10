@@ -14,7 +14,7 @@ window.REPORT_DATA = {
     "generado": "2026-09-12T09:40",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Datos ficticios de ejemplo",
-    "version": "v1.2"
+    "version": "v1.3"
   },
     "movimiento": {
       "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
@@ -555,7 +555,9 @@ window.REPORT_DATA = {
         {
           "fecha": "2026-09-01T03:15",
           "desde": "LEAD-REV",
-          "categoria": "No hay comentarios para categorizar"
+          "categoria": "No hay comentarios para categorizar",
+          "comentario": "n/d",
+          "resumen": "n/d"
         },
         {
           "fecha": "2026-09-04T06:55",
@@ -641,7 +643,9 @@ window.REPORT_DATA = {
         {
           "fecha": "2026-09-02T11:17",
           "desde": "QA",
-          "categoria": "No cubre todos los escenarios o escenarios borde"
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "10001",
+          "resumen": "Ejemplo ficticio: en pruebas, el filtro por fecha no considera el último día del rango."
         }
       ]
     },

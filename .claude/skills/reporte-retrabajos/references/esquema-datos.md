@@ -13,7 +13,7 @@ Resumen para leer los JSON sin acceso al repositorio. La definición completa es
 | `etapas` | 8 objetos `{key, sub, counts[N]}` en orden `DOR, DEV, AI, LEAD-REV, QA, MERGE, SAND, PROD`. `counts[i]` = retrabajos de esa etapa con la categoría `categorias[i]`. `PROD` siempre en ceros. |
 | `hotfixes` | `ambientes[]` (`SAND`/`PROD`: `total`, `delta`, `direccion`, `horasMedia`, `criticos`) y `detalle[]` (`clave`, `ambiente`, `titulo`, `causa`, `severidad`, `horas`, `fecha`). |
 | `colaboradores` | `{nombre, rol, tarjetas, matriz}`; `matriz[etapa]` = arreglo de `N` enteros (sin `PROD`). Incluye a toda la lista fija; `Otros` y `Sin asignar` solo si tuvieron retrabajos. |
-| `actividades` | Una por tarjeta con cambio de estado: `clave`, `responsable`, `creada`, `estado`, `tramos[]` (`etapa`, `inicio`, `fin`) y `retrabajos[]` (`fecha`, `desde`, `categoria`). Ausente en periodos anteriores a `v1.1`. `titulo` siempre es `"n/d"`. |
+| `actividades` | Una por tarjeta con cambio de estado: `clave`, `responsable`, `creada`, `estado`, `tramos[]` (`etapa`, `inicio`, `fin`) y `retrabajos[]` (`fecha`, `desde`, `categoria` y, desde `v1.3`, `comentario` —id del comentario de Jira o `"n/d"`— y `resumen` —paráfrasis de una oración—). Ausente en periodos anteriores a `v1.1`. `titulo` siempre es `"n/d"`. |
 
 ## Vocabulario
 

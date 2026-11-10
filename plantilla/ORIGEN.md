@@ -1,12 +1,30 @@
 # Origen de la plantilla
 
-Copia fiel del proyecto de Claude Design «Plantilla reporte retrabajo»:
-<https://claude.ai/design/p/c1920c29-3492-4d8c-90af-2d65b08be535?file=Plantilla+de+Reporte+Periodico.dc.html>
+Copia fiel del diseño «Plantilla reporte retrabajo». Desde el 2026-11-10 vive como artifact de diseño dentro de un
+proyecto de Claude (la app independiente de Claude Design cierra el 2026-12-14):
+
+- Proyecto: <https://claude.ai/cowork/project/01a1c613-61df-74d9-a308-1fa2f91b3b65>
+- Artifact: <https://claude.ai/artifact/Tf56N6wT6hu8YrQ3exLzAN> (los archivos del diseño están bajo `project/`)
+- Origen anterior, hasta la copia del 2026-10-21:
+  <https://claude.ai/design/p/c1920c29-3492-4d8c-90af-2d65b08be535?file=Plantilla+de+Reporte+Periodico.dc.html>
 
 Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de actividades»), el **2026-10-07**
 (detalle desplegable por tarjeta en esa sección; luego, columna «Estado» y fondo del detalle desplegado) y el
-**2026-10-21** (sección «Movimiento del tablero»). Versión de plantilla: **v1.2** (el valor de `meta.version` en los
-JSON).
+**2026-10-21** (sección «Movimiento del tablero») y el **2026-11-10** (comentario de Jira de cada retrabajo). Versión
+de plantilla: **v1.3** (el valor de `meta.version` en los JSON).
+
+En la copia del 2026-11-10 solo cambió `reporte.dc.html`; `support.js`, `doc-page.js`, `styles.css` y `_ds_bundle.js`
+son idénticos a los de la copia anterior. El cambio lee dos claves nuevas de cada retrabajo, `comentario` y `resumen`
+(ver `agente/contrato-datos.md`):
+
+- **Hover del desglose por etapa:** cada renglón de categoría muestra, al pasar el cursor, la lista de sus retrabajos
+  como `• <clave> (<dd/mm>): <resumen>`. Si un retrabajo no trae `resumen`, dice «sin resumen del comentario».
+- **Enlace en el detalle de cada tarjeta:** en la tabla de retrabajos de «Recorrido de actividades», el Motivo abre el
+  comentario en Jira (`https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>`, pestaña
+  nueva) cuando `comentario` es numérico; si es `"n/d"` o no viene, queda como texto.
+
+Los periodos anteriores a `v1.3` no traen esas claves: el hover dice «sin resumen del comentario» y el Motivo no es
+enlace. No se rellenan.
 
 En la copia del 2026-10-21 solo cambió `reporte.dc.html`; `support.js`, `doc-page.js`, `styles.css` y `_ds_bundle.js`
 son idénticos a los de la copia anterior. El cambio:
@@ -22,12 +40,12 @@ son idénticos a los de la copia anterior. El cambio:
 
 | En el diseño | En este repositorio |
 |---|---|
-| `Plantilla de Reporte Periodico.dc.html` | `plantilla/reporte.dc.html` (renombrada para que la URL no lleve espacios) |
-| `support.js` | `plantilla/support.js` |
-| `doc-page.js` | `plantilla/doc-page.js` |
-| `_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css` | misma ruta bajo `plantilla/` |
-| `_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/_ds_bundle.js` | misma ruta bajo `plantilla/` |
-| `data/report-data.js` | `plantilla/data/report-data.js`, adaptado (ver abajo) |
+| `project/Plantilla de Reporte Periodico.dc.html` | `plantilla/reporte.dc.html` (renombrada para que la URL no lleve espacios) |
+| `project/support.js` | `plantilla/support.js` |
+| `project/doc-page.js` | `plantilla/doc-page.js` |
+| `project/_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css` | `plantilla/_ds/…/styles.css` (misma ruta sin `project/`) |
+| `project/_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/_ds_bundle.js` | `plantilla/_ds/…/_ds_bundle.js` (misma ruta sin `project/`) |
+| `project/data/report-data.js` | `plantilla/data/report-data.js`, adaptado (ver abajo) |
 
 Los archivos son idénticos a los del diseño, salvo el nombre de la plantilla y `report-data.js`.
 
@@ -35,7 +53,8 @@ Los archivos son idénticos a los del diseño, salvo el nombre de la plantilla y
 solo con nombres de pila, las causas de hotfix dentro de las 11 categorías, `etapaPorDefecto` según la regla del contrato,
 con un `actividades` ficticio generado para el periodo de ejemplo (nombres de pila, tramos recortados al periodo), con un
 `movimiento` ficticio cuya serie `RET` cuadra con la suma de los `counts`, y sin las claves heredadas de la versión
-anterior (`indicadores`, `serie`, `composicion`, `riesgos`), que la plantilla ya no lee.
+anterior (`indicadores`, `serie`, `composicion`, `riesgos`), que la plantilla ya no lee. Desde `v1.3`, dos retrabajos de ejemplo traen
+`comentario` y `resumen` (uno con id ficticio y otro con `"n/d"`), para ver el enlace y el hover en sus dos casos.
 
 El ejemplo del diseño trae sus propias claves de ejemplo, distintas de las nuestras; de él se toma solo la **forma** de
 `movimiento`, no sus series ni sus estados.
@@ -86,16 +105,12 @@ Vienen del diseño; se corrigen allá y se vuelve a copiar.
 9. El párrafo de «Movimiento del tablero» dice «el estado del tablero **al cierre**», pero la fotografía se toma al
    generar: Jira no guarda el tablero de una fecha pasada. Coinciden cuando la rutina corre a su hora (el sábado 00:15,
    horas después del cierre); en un periodo que se regenere tiempo después, no.
-10. Desde el periodo 2026-11-08, cada retrabajo trae `comentario` (el `id` del comentario de Jira con que se clasificó),
-    pero la plantilla todavía no lo muestra. Falta agregar en el diseño el enlace
-    `https://agilgob-team.atlassian.net/browse/<clave>?focusedCommentId=<comentario>` en la tabla de retrabajos del
-    detalle de cada tarjeta, sin enlace cuando vale `"n/d"` o no viene (periodos anteriores).
 
 ## Cómo volver a copiar después de un cambio en el diseño
 
-1. Leer los archivos de la tabla desde el proyecto: con la herramienta DesignSync de Claude Code (después de
-   `/design-login`) o descargando el proyecto.
+1. Leer los archivos de la tabla desde el artifact de diseño: con la herramienta Artifact de Claude Code
+   (`action: "read"` con `paths`) o descargándolos. DesignSync ya no sirve: solo ve proyectos de la app independiente.
 2. Reemplazarlos aquí con el mismo mapeo, sin editarlos a mano.
 3. Si el cambio altera secciones o claves, actualizar `agente/contrato-datos.md` y `agente/plantilla-vacia.json`, subir la
-   versión (`v1.1`…) en el esqueleto y en esta nota.
+   versión (`v1.4`…) en el esqueleto y en esta nota.
 4. Abrir un periodo publicado y el ejemplo para confirmar que se ven bien.

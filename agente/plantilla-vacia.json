@@ -8,7 +8,7 @@
     "generado": "",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "",
-    "version": "v1.2"
+    "version": "v1.3"
   },
   "movimiento": {
     "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",

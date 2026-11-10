@@ -8,7 +8,7 @@
     "generado": "2026-11-09T19:05",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
-    "version": "v1.2"
+    "version": "v1.3"
   },
   "movimiento": {
     "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
@@ -1847,7 +1847,8 @@
           "fecha": "2026-11-09T11:39",
           "desde": "AI",
           "categoria": "El funcionamiento es incorrecto",
-          "comentario": "37966"
+          "comentario": "37966",
+          "resumen": "La revisión asistida detectó que, con el formulario vacío, se muestra la validación genérica de fechas en lugar del aviso de seleccionar al menos un filtro, y que sin resultados no aparece el mensaje de que no hay actuaciones."
         }
       ]
     },
@@ -1939,7 +1940,8 @@
           "fecha": "2026-11-09T11:58",
           "desde": "LEAD-REV",
           "categoria": "Conflicto con la rama principal",
-          "comentario": "37968"
+          "comentario": "37968",
+          "resumen": "El QA técnico encontró un conflicto con develop en la firma de documentos y una prueba de integración que falla en la rama y pasa en develop, porque el nuevo tipado de la firma truena cuando llega un dato nulo."
         }
       ]
     },
@@ -1971,7 +1973,8 @@
           "fecha": "2026-11-09T15:34",
           "desde": "AI",
           "categoria": "No cubre todos los escenarios o escenarios borde",
-          "comentario": "37983"
+          "comentario": "37983",
+          "resumen": "La revisión asistida señaló que, si falla la preparación del historial al liberar el toca, el error no se maneja ni se notifica al funcionario y la liberación se interrumpe."
         }
       ]
     },
@@ -2048,13 +2051,15 @@
           "fecha": "2026-11-09T11:46",
           "desde": "AI",
           "categoria": "El codigo produce un error (crash) en runtime o compilacion",
-          "comentario": "37967"
+          "comentario": "37967",
+          "resumen": "La revisión asistida detectó que la búsqueda en Turnado Externo, por partes o por número de expediente, truena en el servidor porque la respuesta no coincide con el tipo declarado."
         },
         {
           "fecha": "2026-11-09T13:42",
           "desde": "AI",
           "categoria": "El funcionamiento es incorrecto",
-          "comentario": "37977"
+          "comentario": "37977",
+          "resumen": "La revisión asistida encontró que, al cambiar de página después de buscar por nombre, se pierde el término de búsqueda y se recarga el listado general; ya se había señalado en la revisión anterior."
         }
       ]
     },
@@ -2111,7 +2116,8 @@
           "fecha": "2026-11-09T17:38",
           "desde": "QA",
           "categoria": "El codigo produce un error (crash) en runtime o compilacion",
-          "comentario": "37986"
+          "comentario": "37986",
+          "resumen": "En pruebas, el detalle de cualquier expediente o toca en el portal funcionario truena en el frontend con la pantalla de error 500; con funcionario en develop los mismos expedientes cargan bien."
         }
       ]
     },
