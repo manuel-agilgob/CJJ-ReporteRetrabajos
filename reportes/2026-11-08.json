@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-08 → 2026-11-14",
     "periodoInicio": "2026-11-08",
     "periodoFin": "2026-11-14",
-    "generado": "2026-11-09T19:05",
+    "generado": "2026-11-10T19:08",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.3"
@@ -88,13 +88,20 @@
           "QA": 17,
           "MERGE": 6,
           "DOR": 2,
-          "RET": 6,
-          "DEVELOP": 3
+          "RET": 8,
+          "DEVELOP": 4
         }
       },
       {
         "fecha": "2026-11-10",
-        "valores": {}
+        "valores": {
+          "PROD": 2,
+          "QA": 4,
+          "DEV": 6,
+          "RET": 4,
+          "AI": 7,
+          "LEAD-REV": 5
+        }
       },
       {
         "fecha": "2026-11-11",
@@ -114,12 +121,12 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-09T19:05",
+      "fecha": "2026-11-10T19:08",
       "estados": [
         {
           "estado": "Listo para tomar",
           "etapa": "DOR",
-          "n": 68
+          "n": 67
         },
         {
           "estado": "Desarrollo",
@@ -139,7 +146,7 @@
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 11
+          "n": 12
         },
         {
           "estado": "Integración",
@@ -149,12 +156,12 @@
         {
           "estado": "Sandbox",
           "etapa": "SAND",
-          "n": 65
+          "n": 64
         },
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 7
+          "n": 6
         }
       ]
     }
@@ -207,7 +214,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -219,10 +226,10 @@
       "sub": "Revisión asistida",
       "counts": [
         2,
-        1,
+        2,
         0,
         0,
-        1,
+        2,
         0,
         0,
         0,
@@ -237,7 +244,7 @@
       "key": "LEAD-REV",
       "sub": "Revisión de lead",
       "counts": [
-        0,
+        1,
         0,
         0,
         0,
@@ -245,10 +252,10 @@
         1,
         0,
         0,
+        1,
         0,
         0,
-        0,
-        0,
+        1,
         0
       ]
     },
@@ -339,8 +346,8 @@
         "ambiente": "SAND",
         "nombre": "Sandbox",
         "total": 0,
-        "delta": "0",
-        "direccion": "flat",
+        "delta": "−1",
+        "direccion": "down",
         "horasMedia": "n/d",
         "criticos": 0
       },
@@ -472,7 +479,7 @@
     {
       "nombre": "Marck",
       "rol": "Revisor",
-      "tarjetas": 3,
+      "tarjetas": 7,
       "matriz": {
         "DOR": [
           0,
@@ -528,7 +535,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -584,7 +591,7 @@
     {
       "nombre": "Rafael",
       "rol": "Tech lead",
-      "tarjetas": 0,
+      "tarjetas": 2,
       "matriz": {
         "DOR": [
           0,
@@ -755,7 +762,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0
         ],
         "QA": [
@@ -808,7 +815,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 7,
+      "tarjetas": 9,
       "matriz": {
         "DOR": [
           0,
@@ -842,10 +849,10 @@
         ],
         "AI": [
           1,
+          2,
+          0,
+          0,
           1,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -1032,7 +1039,7 @@
     {
       "nombre": "Adrián",
       "rol": "Desarrollador",
-      "tarjetas": 4,
+      "tarjetas": 6,
       "matriz": {
         "DOR": [
           0,
@@ -1058,7 +1065,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -1256,7 +1263,7 @@
     {
       "nombre": "Karla",
       "rol": "Scrum Master",
-      "tarjetas": 1,
+      "tarjetas": 2,
       "matriz": {
         "DOR": [
           0,
@@ -1304,7 +1311,7 @@
           0
         ],
         "LEAD-REV": [
-          0,
+          1,
           0,
           0,
           0,
@@ -1480,7 +1487,7 @@
     {
       "nombre": "Juan José",
       "rol": "Tech lead",
-      "tarjetas": 2,
+      "tarjetas": 3,
       "matriz": {
         "DOR": [
           0,
@@ -1592,7 +1599,7 @@
     {
       "nombre": "Luis Fernando",
       "rol": "Desarrollador",
-      "tarjetas": 9,
+      "tarjetas": 10,
       "matriz": {
         "DOR": [
           0,
@@ -1705,11 +1712,31 @@
   "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
   "actividades": [
     {
+      "clave": "CJJ-106",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-02-20T15:17",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-08T00:00",
+          "fin": "2026-11-10T17:42"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-10T17:42",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-172",
       "titulo": "n/d",
-      "responsable": "Marck",
+      "responsable": "Karla",
       "creada": "2026-04-02T14:07",
-      "estado": "LEAD-REV",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "DOR",
@@ -1734,6 +1761,34 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-09T12:29",
+          "fin": "2026-11-09T19:54"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-09T19:54",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-09T19:54",
+          "desde": "LEAD-REV",
+          "categoria": "El funcionamiento es incorrecto",
+          "comentario": "37989",
+          "resumen": "La revisión de lead encontró que en el portal ciudadano no se muestran los documentos de tipo Promoción que pide la tarjeta, que siguen pendientes observaciones del PR y que las pruebas no cubren los casos especificados."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-251",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-24T16:49",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-08T00:00",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1758,6 +1813,39 @@
         }
       ],
       "retrabajos": []
+    },
+    {
+      "clave": "CJJ-299",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-08T00:00",
+          "fin": "2026-11-10T12:40"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T12:40",
+          "fin": "2026-11-10T12:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-10T12:41",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-10T12:41",
+          "desde": "DEV",
+          "categoria": "No hay comentarios para categorizar",
+          "comentario": "n/d",
+          "resumen": "n/d"
+        }
+      ]
     },
     {
       "clave": "CJJ-337",
@@ -1807,7 +1895,7 @@
     {
       "clave": "CJJ-363",
       "titulo": "n/d",
-      "responsable": "Sebastián",
+      "responsable": "Rafael",
       "creada": "2026-06-08T23:02",
       "estado": "LEAD-REV",
       "tramos": [
@@ -1839,6 +1927,26 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-09T14:30",
+          "fin": "2026-11-10T12:11"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-10T12:11",
+          "fin": "2026-11-10T12:14"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T12:14",
+          "fin": "2026-11-10T12:26"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T12:26",
+          "fin": "2026-11-10T12:44"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-10T12:44",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1849,6 +1957,13 @@
           "categoria": "El funcionamiento es incorrecto",
           "comentario": "37966",
           "resumen": "La revisión asistida detectó que, con el formulario vacío, se muestra la validación genérica de fechas en lugar del aviso de seleccionar al menos un filtro, y que sin resultados no aparece el mensaje de que no hay actuaciones."
+        },
+        {
+          "fecha": "2026-11-10T12:11",
+          "desde": "LEAD-REV",
+          "categoria": "No hay comentarios para categorizar",
+          "comentario": "n/d",
+          "resumen": "n/d"
         }
       ]
     },
@@ -1948,9 +2063,9 @@
     {
       "clave": "CJJ-474",
       "titulo": "n/d",
-      "responsable": "Sebastián",
+      "responsable": "Marck",
       "creada": "2026-07-24T17:26",
-      "estado": "RET",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
@@ -1965,6 +2080,46 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-09T15:34",
+          "fin": "2026-11-10T09:20"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T09:20",
+          "fin": "2026-11-10T09:44"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T09:44",
+          "fin": "2026-11-10T10:01"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-10T10:01",
+          "fin": "2026-11-10T10:30"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T10:30",
+          "fin": "2026-11-10T11:01"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T11:01",
+          "fin": "2026-11-10T11:17"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-10T11:17",
+          "fin": "2026-11-10T11:33"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T11:33",
+          "fin": "2026-11-10T11:46"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-10T11:46",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1975,6 +2130,20 @@
           "categoria": "No cubre todos los escenarios o escenarios borde",
           "comentario": "37983",
           "resumen": "La revisión asistida señaló que, si falla la preparación del historial al liberar el toca, el error no se maneja ni se notifica al funcionario y la liberación se interrumpe."
+        },
+        {
+          "fecha": "2026-11-10T10:01",
+          "desde": "AI",
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion",
+          "comentario": "37994",
+          "resumen": "La revisión asistida detectó que la consulta del historial de permisos falla en ejecución por una referencia mal escrita, de modo que el documento no se genera al crear el toca."
+        },
+        {
+          "fecha": "2026-11-10T11:17",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "37998",
+          "resumen": "La revisión asistida señaló que los usuarios dados de baja siguen apareciendo sin nombre ni correo en el historial de permisos, porque el servicio de usuarios ignora la opción de incluir inactivos."
         }
       ]
     },
@@ -2003,7 +2172,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-07-29T10:57",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2043,6 +2212,26 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-09T14:22",
+          "fin": "2026-11-09T21:18"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-09T21:18",
+          "fin": "2026-11-10T09:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T09:30",
+          "fin": "2026-11-10T09:47"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-10T09:47",
+          "fin": "2026-11-10T16:27"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-10T16:27",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2060,6 +2249,13 @@
           "categoria": "El funcionamiento es incorrecto",
           "comentario": "37977",
           "resumen": "La revisión asistida encontró que, al cambiar de página después de buscar por nombre, se pierde el término de búsqueda y se recarga el listado general; ya se había señalado en la revisión anterior."
+        },
+        {
+          "fecha": "2026-11-09T21:18",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación",
+          "comentario": "37990",
+          "resumen": "La revisión de lead pidió corregir el tipado y los valores de retorno, un problema de consultas N+1 y código repetido, además de cubrir con pruebas varios casos especificados en la tarjeta."
         }
       ]
     },
@@ -2098,7 +2294,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-08-19T17:39",
-      "estado": "RET",
+      "estado": "DEV",
       "tramos": [
         {
           "etapa": "QA",
@@ -2108,6 +2304,11 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-09T17:38",
+          "fin": "2026-11-10T12:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T12:41",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2126,7 +2327,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-08-31T13:26",
-      "estado": "DEV",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "RET",
@@ -2136,6 +2337,16 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-09T16:41",
+          "fin": "2026-11-10T12:40"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T12:40",
+          "fin": "2026-11-10T12:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-10T12:54",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2172,15 +2383,50 @@
       "retrabajos": []
     },
     {
+      "clave": "CJJ-796",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-05T16:57",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-08T00:00",
+          "fin": "2026-11-10T15:08"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-10T15:08",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-798",
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-09T17:37",
-      "estado": "DOR",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-09T17:37",
+          "fin": "2026-11-10T09:47"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-10T09:47",
+          "fin": "2026-11-10T10:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-10T10:30",
+          "fin": "2026-11-10T10:51"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-10T10:51",
           "fin": "2026-11-15T00:00"
         }
       ],
