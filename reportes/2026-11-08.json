@@ -5,10 +5,10 @@
     "etiquetaPeriodo": "2026-11-08 → 2026-11-14",
     "periodoInicio": "2026-11-08",
     "periodoFin": "2026-11-14",
-    "generado": "2026-11-12T15:25",
+    "generado": "2026-11-12T15:40",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
-    "version": "v1.3"
+    "version": "v1.4"
   },
   "movimiento": {
     "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
@@ -120,11 +120,11 @@
         "fecha": "2026-11-12",
         "valores": {
           "DOR": 2,
-          "DEV": 3,
-          "AI": 5,
+          "DEV": 4,
+          "AI": 6,
           "LEAD-REV": 3,
           "QA": 4,
-          "RET": 2
+          "RET": 3
         }
       },
       {
@@ -137,7 +137,7 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-12T15:25",
+      "fecha": "2026-11-12T15:40",
       "estados": [
         {
           "estado": "Listo para tomar",
@@ -152,7 +152,7 @@
         {
           "estado": "Revisión asistida",
           "etapa": "AI",
-          "n": 67
+          "n": 68
         },
         {
           "estado": "Revisión de lead",
@@ -172,15 +172,47 @@
         {
           "estado": "Sandbox",
           "etapa": "SAND",
-          "n": 69
+          "n": 68
         },
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 4
+          "n": 5
         }
       ]
-    }
+    },
+    "abiertas": {
+      "inicio": {
+        "fecha": "2026-11-09T06:00",
+        "n": 489
+      },
+      "cierre": {
+        "fecha": "2026-11-12T15:40",
+        "n": 491
+      }
+    },
+    "fusionadas": [
+      {
+        "clave": "CJJ-796",
+        "fecha": "2026-11-09",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-337",
+        "fecha": "2026-11-09",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-298",
+        "fecha": "2026-11-09",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-424",
+        "fecha": "2026-11-09",
+        "repositorio": "nilo-expediente-core"
+      }
+    ]
   },
   "categorias": [
     "El funcionamiento es incorrecto",
@@ -323,7 +355,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -607,7 +639,7 @@
     {
       "nombre": "Rafael",
       "rol": "Tech lead",
-      "tarjetas": 2,
+      "tarjetas": 3,
       "matriz": {
         "DOR": [
           0,
@@ -719,7 +751,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 4,
+      "tarjetas": 5,
       "matriz": {
         "DOR": [
           0,
@@ -818,7 +850,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -2360,6 +2392,34 @@
       ]
     },
     {
+      "clave": "CJJ-476",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-27T17:33",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-08T00:00",
+          "fin": "2026-11-12T15:30"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-12T15:30",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-12T15:30",
+          "desde": "SAND",
+          "categoria": "Cambios solicitados por negocio después de entregar",
+          "comentario": "38063",
+          "resumen": "Negocio aclaró que un archivo auxiliar no debe descargarse como documento del expediente al leer el código QR y pidió ajustar la descripción y los criterios de aceptación."
+        }
+      ]
+    },
+    {
       "clave": "CJJ-485",
       "titulo": "n/d",
       "responsable": "Sebastián",
@@ -2986,60 +3046,25 @@
       "retrabajos": []
     },
     {
-      "clave": "CJJ-803",
-      "titulo": "n/d",
-      "responsable": "Sin asignar",
-      "creada": "2026-11-12T12:13",
-      "estado": "DOR",
-      "tramos": [
-        {
-          "etapa": "DOR",
-          "inicio": "2026-11-12T12:13",
-          "fin": "2026-11-15T00:00"
-        }
-      ],
-      "retrabajos": []
-    },
-    {
-      "clave": "CJJ-804",
-      "titulo": "n/d",
-      "responsable": "Sin asignar",
-      "creada": "2026-11-12T12:36",
-      "estado": "DOR",
-      "tramos": [
-        {
-          "etapa": "DOR",
-          "inicio": "2026-11-12T12:36",
-          "fin": "2026-11-15T00:00"
-        }
-      ],
-      "retrabajos": []
-    },
-    {
-      "clave": "CJJ-805",
-      "titulo": "n/d",
-      "responsable": "Sin asignar",
-      "creada": "2026-11-12T12:37",
-      "estado": "DOR",
-      "tramos": [
-        {
-          "etapa": "DOR",
-          "inicio": "2026-11-12T12:37",
-          "fin": "2026-11-15T00:00"
-        }
-      ],
-      "retrabajos": []
-    },
-    {
       "clave": "CJJ-806",
       "titulo": "n/d",
-      "responsable": "Sin asignar",
+      "responsable": "Rafael",
       "creada": "2026-11-12T15:16",
-      "estado": "DOR",
+      "estado": "AI",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-12T15:16",
+          "fin": "2026-11-12T15:25"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-12T15:25",
+          "fin": "2026-11-12T15:36"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T15:36",
           "fin": "2026-11-15T00:00"
         }
       ],

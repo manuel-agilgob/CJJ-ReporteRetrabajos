@@ -8,7 +8,7 @@ tienen las mismas secciones y el mismo formato.
 
 | Ruta | Qué es | ¿Va al sitio? |
 |---|---|---|
-| `index.html` | Portada: lista los periodos publicados y enlaza a cada reporte. Es la entrada del sitio. | Sí |
+| `index.html` | Entrada del sitio: redirige a la portada, `plantilla/index.dc.html`, que lista los periodos publicados y enlaza a cada reporte. | Sí |
 | `plantilla/` | Esqueleto del diseño, copia fiel del proyecto de Claude Design. No se edita por periodo. Ver `plantilla/ORIGEN.md`. | Sí |
 | `reportes/` | Un JSON por periodo (`<AAAA-MM-DD>.json`, con la fecha de inicio) e `indice.json`, la lista de periodos publicados. | Sí |
 | `agente/` | Todo lo que consulta el agente que genera los reportes: instrucciones, contrato de datos, categorías, etapas, la lista de colaboradores y el esqueleto del JSON. | No |
@@ -17,7 +17,7 @@ tienen las mismas secciones y el mismo formato.
 
 ## Cómo se ve un reporte
 
-- Portada: `index.html`.
+- Portada: `plantilla/index.dc.html` (`index.html` redirige ahí).
 - Un periodo: `plantilla/reporte.dc.html?data=../reportes/<AAAA-MM-DD>.json`.
 - La plantilla con datos ficticios: `plantilla/reporte.dc.html`, sin `?data=`.
 

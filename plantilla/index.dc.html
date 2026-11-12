@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reportes de retrabajo — CJJ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css">
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 64px 32px 96px; }
+  .wrap h1, .wrap h2 { font-family: var(--font-heading); }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  .tabla-periodos { margin: 14px 0 40px; }
+  .tabla-periodos td.num, .tabla-periodos th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tabla-periodos tbody tr.fila { position: relative; }
+  .tabla-periodos tbody tr.fila:hover { background: var(--color-neutral-100); }
+  .fila-link { color: var(--color-text); text-decoration: none; font-weight: 600; }
+  .fila-link::after { content: ""; position: absolute; inset: 0; }
+  .fila:hover .fila-link, .fila-link:focus-visible { color: var(--color-accent-700); text-decoration: underline; }
+  .fila-link:focus-visible { outline: none; }
+  .fila:focus-within { outline: 2px solid var(--color-accent-700); outline-offset: -2px; }
+  .corte { display: block; margin-top: 2px; font-size: 12px; color: var(--color-neutral-600); }
+  .corte b { font-weight: 600; color: var(--color-accent-700); }
+  .col { position: relative; display: inline-block; cursor: help; border-bottom: 1px dotted var(--color-neutral-500); }
+  .col:focus-visible { outline: 2px solid var(--color-accent-700); outline-offset: 2px; }
+  .tip { display: none; position: absolute; top: calc(100% + 8px); left: 0; z-index: 10; width: 320px; padding: 10px 12px;
+         background: var(--color-text); color: var(--color-bg); font-family: var(--font-body); font-size: 12.5px; line-height: 1.5;
+         font-weight: 400; letter-spacing: 0; text-transform: none; text-align: left; white-space: normal; border-radius: 4px;
+         box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  th.num .tip { left: auto; right: 0; }
+  .col:hover .tip, .col:focus .tip { display: block; }
+  .tip p { margin: 0; }
+  .tip p + p { margin-top: 6px; }
+  .tip b { font-weight: 600; }
+  .marca { color: var(--color-neutral-600); }
+  @media (max-width: 700px) {
+    .tabla-periodos { overflow-x: auto; }
+    .tip { width: 220px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 16px 64px; }
+    .wrap h1 { font-size: 34px !important; }
+  }
+</style>
+</helmet>
+<div class="wrap">
+  <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-700)">Reporte cada dos semanas · Proyectos CJJ</span>
+  <h1 style="font-size:44px;line-height:1.02;margin:8px 0 0;text-transform:uppercase">Retrabajos del ciclo de entrega</h1>
+  <p style="font-size:16px;line-height:1.6;margin:12px 0 40px;max-width:44em;color:var(--color-neutral-700)">Transiciones a <em>Retrabajo</em> clasificadas por motivo y agrupadas por la etapa desde la que se originaron. Un periodo por publicación; las categorías no cambian entre periodos, de modo que las cifras son comparables.</p>
+
+  <h2 style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 6px;padding-bottom:6px;border-bottom:1px solid var(--color-neutral-300)">Periodos publicados</h2>
+  <div class="tabla-periodos">
+    <table class="table" style="width:100%;font-size:14px">
+      <thead>
+        <tr>
+          <th><span class="col" tabindex="0" aria-describedby="tip-periodo">Periodo<span class="tip" role="tooltip" id="tip-periodo"><p>Semana que cubre el reporte, de sábado a viernes.</p><p>Debajo va la <b>fecha del corte</b>: el momento en que se generó el JSON. No siempre coincide con el cierre de la semana; «antes del cierre» lo advierte y «en curso» indica que la semana todavía no termina.</p><p>Da clic en el renglón para abrir el reporte completo.</p></span></span></th>
+          <th class="num"><span class="col" tabindex="0" aria-describedby="tip-abiertas">Tarjetas abiertas<span class="tip" role="tooltip" id="tip-abiertas"><p><b>Tarjetas de Jira</b> (no PR) de CJJ y CJJ-ExpedienteElectronico-2025 en trabajo activo: Tareas por hacer, pendiente, Desarrollo, Revisión asistida, Revisión de lead, Pruebas, Integración o Retrabajo. No cuentan Análisis y documentación (aún no son activas) ni Sandbox o Producción (ya se entregaron).</p><p>Se muestran dos cifras: <b>inicio | cierre</b>. El inicio es el tablero del <b>lunes a las 6:00</b> y no cambia en el resto de la semana. El cierre es el tablero del <b>viernes a las 19:00</b>; mientras la semana no termina, es el del momento del corte. Supongamos «210 | 199»: la semana empezó con 210 tarjetas activas y cerró con 199. Al principio de la semana es normal ver «199 | 199».</p><p><span class="marca">*</span> Periodos generados antes de este criterio: no tienen el inicio, y el cierre es el tablero al momento de generar sin separar Análisis y documentación, así que viene inflado.</p></span></span></th>
+          <th class="num"><span class="col" tabindex="0" aria-describedby="tip-develop">A develop<span class="tip" role="tooltip" id="tip-develop"><p><b>Tarjetas de Jira distintas</b> con al menos un PR fusionado a <code>develop</code> en la semana, en los repositorios del expediente (core, funcionario, ciudadano y usuarios). La clave sale de la rama o del título del PR; un PR sin clave no cuenta.</p><p><b>Máximo 1 por tarjeta en cada semana.</b> Supongamos que CJJ-321 se fusiona el martes, se va a Retrabajo y se vuelve a fusionar el jueves: cuenta 1. Si vuelve a fusionarse en otra semana, cuenta 1 en esa semana también.</p><p>Es la cifra que se usa como «entregas». <span class="marca">*</span> Periodos generados antes de este criterio: cuentan una vez por tarjeta y por día, así que pueden venir inflados.</p></span></span></th>
+          <th class="num"><span class="col" tabindex="0" aria-describedby="tip-retrabajos">Retrabajos<span class="tip" role="tooltip" id="tip-retrabajos"><p>Veces que una tarjeta regresó a Retrabajo durante la semana, desde cualquier etapa.</p><p>Entre paréntesis, cuántas tarjetas distintas fueron: una tarjeta que regresó dos veces suma 2 retrabajos y 1 tarjeta.</p></span></span></th>
+          <th class="num"><span class="col" tabindex="0" aria-describedby="tip-tasa">Tasa de retrabajo<span class="tip" role="tooltip" id="tip-tasa"><p>De las tarjetas que cambiaron de estado en la semana, qué porcentaje regresó a Retrabajo al menos una vez.</p><p>Por ejemplo, 19 tarjetas con retrabajo de 37 con movimiento dan 51%.</p></span></span></th>
+          <th class="num"><span class="col" tabindex="0" aria-describedby="tip-porentrega">Retrabajo por entrega<span class="tip" role="tooltip" id="tip-porentrega"><p>Retrabajos de la semana entre tarjetas fusionadas a develop.</p><p>Por ejemplo, 32 retrabajos y 10 entregas dan 3.2: por cada tarjeta entregada hubo 3.2 regresos.</p><p>No es un porcentaje y puede pasar de 1: el retrabajo cuenta tarjetas en cualquier etapa y la entrega solo las que llegaron a develop.</p></span></span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-if value="{{ hayAviso }}" hint-placeholder-val="{{ false }}">
+          <tr><td colspan="6" style="color:var(--color-neutral-600)">{{ aviso }}</td></tr>
+        </sc-if>
+        <sc-for list="{{ filas }}" as="fila" hint-placeholder-count="6">
+          <tr class="fila">
+            <td>
+              <a class="fila-link" href="{{ fila.enlace }}" aria-label="{{ fila.etiquetaEnlace }}">{{ fila.periodo }}</a>
+              <span class="corte">{{ fila.corte }} <b>{{ fila.estado }}</b></span>
+            </td>
+            <td class="num">{{ fila.abiertas }}</td>
+            <td class="num">{{ fila.develop }}</td>
+            <td class="num">{{ fila.retrabajos }}</td>
+            <td class="num">{{ fila.tasa }}</td>
+            <td class="num">{{ fila.porEntrega }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="blueprint" style="padding:18px 20px">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">Cómo se agrega un periodo</span>
+    <ol style="font-size:14px;line-height:1.6;margin:10px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px">
+      <li>Cada dos semanas, al cerrar el viernes, el agente genera <code>reportes/&lt;AAAA-MM-DD&gt;.json</code> siguiendo <code>agente/INSTRUCCIONES.md</code>.</li>
+      <li>Agrega el periodo a <code>reportes/indice.json</code>. Las cifras de esta tabla se calculan del propio JSON; no se escriben a mano.</li>
+      <li>La plantilla no se modifica: es la misma para todos los periodos. <a href="{{ plantilla }}">Ver la plantilla con datos de ejemplo →</a></li>
+    </ol>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+// Rutas: en el repositorio esta página vive en plantilla/index.dc.html y los datos en reportes/ (un nivel arriba);
+// en el diseño vive en project/index.dc.html con una copia de los datos en project/reportes/.
+// La plantilla del reporte se llama reporte.dc.html en el repositorio y «Plantilla de Reporte Periodico.dc.html» en el diseño.
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filas: [], aviso: 'Cargando periodos…' };
+  }
+
+  componentDidMount() {
+    const enRepo = /\/plantilla\//.test(location.pathname);
+    const datos = enRepo ? '../reportes/' : 'reportes/';
+    const plantilla = enRepo ? 'reporte.dc.html' : 'Plantilla de Reporte Periodico.dc.html';
+    this.plantilla = plantilla;
+    const suma = (a) => a.reduce((x, y) => x + y, 0);
+
+    const ND = 'n/d';
+    const dosDigitos = (n) => String(n).padStart(2, '0');
+    // «2026-11-11T19:07» → «11/11 19:07»; una fecha sin hora queda «11/11».
+    const fechaCorta = (f) => {
+      if (!f) return ND;
+      const [d, h] = f.split('T');
+      const [, mm, dd] = d.split('-');
+      return dd + '/' + mm + (h ? ' ' + h : '');
+    };
+
+    // Cifras de un periodo. Lo que el JSON no trae (periodos anteriores a v1.2 o a v1.1) queda «n/d», nunca 0.
+    const resumir = (d) => {
+      const m = d.meta || {};
+      const retrabajos = suma(d.etapas.map((e) => suma(e.counts)));
+      const mov = d.movimiento;
+      const serie = (k) => mov ? suma(mov.dias.map((x) => (x.valores && x.valores[k]) || 0)) : null;
+      // Tarjetas abiertas «inicio | cierre»: movimiento.abiertas.inicio (lunes 6:00, fijo) y .cierre (viernes 19:00, o el
+      // corte si la semana no ha terminado), ya con el criterio de trabajo activo. Periodos sin ese dato: «n/d | <tablero
+      // sin Sandbox>*», que todavía incluye Análisis y documentación.
+      const ab = mov && mov.abiertas;
+      const num = (x) => (x && typeof x.n === 'number' ? String(x.n) : ND);
+      const tablero = mov && mov.tablero;
+      const abiertas = ab
+        ? num(ab.inicio) + ' | ' + num(ab.cierre)
+        : tablero ? ND + ' | ' + suma(tablero.estados.filter((e) => e.etapa !== 'SAND').map((e) => e.n)) + '*' : null;
+      // A develop: tarjetas distintas de movimiento.fusionadas (máximo 1 por tarjeta en el periodo). Los periodos
+      // generados antes de ese criterio solo traen la serie diaria DEVELOP (una vez por tarjeta y día): se marcan con *.
+      const fusionadas = mov && Array.isArray(mov.fusionadas) ? mov.fusionadas : null;
+      const develop = fusionadas ? new Set(fusionadas.map((f) => f.clave)).size : serie('DEVELOP');
+      const developViejo = !fusionadas && develop != null;
+      const acts = Array.isArray(d.actividades) ? d.actividades : null;
+      const conRet = acts ? acts.filter((a) => a.retrabajos && a.retrabajos.length).length : null;
+
+      const generado = m.generado || '';
+      const fin = m.periodoFin || '';
+      const hoy = new Date();
+      const hoyTxt = hoy.getFullYear() + '-' + dosDigitos(hoy.getMonth() + 1) + '-' + dosDigitos(hoy.getDate());
+      let estado = '';
+      if (fin && hoyTxt <= fin) estado = '· en curso';
+      // Sin hora (periodos hasta v1.1) solo se marca si se generó antes del último día.
+      else if (fin && generado && (generado.includes('T') ? generado.slice(0, 10) <= fin : generado < fin)) estado = '· antes del cierre';
+
+      return {
+        abiertas: abiertas == null ? ND : abiertas,
+        develop: develop == null ? ND : String(develop) + (developViejo ? '*' : ''),
+        retrabajos: String(retrabajos) + (conRet == null ? '' : ' (' + conRet + ')'),
+        tasa: acts && acts.length ? Math.round((conRet / acts.length) * 100) + '%' : ND,
+        porEntrega: develop ? (retrabajos / develop).toFixed(1) : (develop === 0 ? '—' : ND),
+        corte: 'Corte ' + fechaCorta(generado),
+        estado,
+      };
+    };
+
+    const leer = (ruta) => fetch(ruta, { cache: 'no-cache' }).then((r) => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+
+    leer(datos + 'indice.json')
+      .then((indice) => {
+        const periodos = (indice.periodos || []).slice().sort((a, b) => b.inicio.localeCompare(a.inicio));
+        if (!periodos.length) {
+          this.setState({ filas: [], aviso: 'Aún no hay periodos publicados.' });
+          return;
+        }
+        return Promise.all(periodos.map((p) =>
+          leer(datos + p.archivo).catch(() => null).then((d) => ({ p, d }))
+        )).then((lista) => {
+          const filas = lista.map(({ p, d }) => {
+            const vacio = { abiertas: ND, develop: ND, retrabajos: ND, tasa: ND, porEntrega: ND,
+              corte: 'No se pudo leer el JSON', estado: '' };
+            const r = d ? resumir(d) : vacio;
+            const periodo = (d && d.meta && d.meta.etiquetaPeriodo) || p.inicio + ' → ' + p.fin;
+            return Object.assign({}, r, {
+              periodo,
+              etiquetaEnlace: 'Abrir el reporte del periodo ' + periodo,
+              enlace: plantilla + '?data=' + datos + p.archivo,
+            });
+          });
+          this.setState({ filas, aviso: '' });
+        });
+      })
+      .catch(() => this.setState({
+        filas: [],
+        aviso: 'No se pudo leer reportes/indice.json. Abre la portada por HTTP (GitHub Pages o python3 -m http.server).',
+      }));
+  }
+
+  renderVals() {
+    return {
+      filas: this.state.filas,
+      aviso: this.state.aviso,
+      hayAviso: !!this.state.aviso,
+      plantilla: this.plantilla || 'Plantilla de Reporte Periodico.dc.html',
+    };
+  }
+}
+</script>
+</body>
+</html>

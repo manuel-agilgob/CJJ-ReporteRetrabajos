@@ -10,8 +10,27 @@ proyecto de Claude (la app independiente de Claude Design cierra el 2026-12-14):
 
 Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de actividades»), el **2026-10-07**
 (detalle desplegable por tarjeta en esa sección; luego, columna «Estado» y fondo del detalle desplegado) y el
-**2026-10-21** (sección «Movimiento del tablero») y el **2026-11-10** (comentario de Jira de cada retrabajo). Versión
-de plantilla: **v1.3** (el valor de `meta.version` en los JSON).
+**2026-10-21** (sección «Movimiento del tablero»), el **2026-11-10** (comentario de Jira de cada retrabajo) y el
+**2026-11-12** (portada `index.dc.html`). Versión de plantilla: **v1.4** (el valor de `meta.version` en los JSON).
+
+En la copia del 2026-11-12 se agregó la **portada** del diseño, `project/index.dc.html`, que reemplaza a la antigua
+`index.html` escrita a mano; `index.html` de la raíz solo redirige a `plantilla/index.dc.html`. Los demás archivos son
+idénticos a los de la copia anterior. La portada lista los periodos con seis columnas, cada una con su definición en un
+tooltip del encabezado; `agente/contrato-datos.md` y `INSTRUCCIONES.md` (paso 6) siguen esas definiciones:
+
+| Columna | De dónde sale |
+|---|---|
+| Periodo | `meta.etiquetaPeriodo`, con el corte (`meta.generado`) y «en curso» / «antes del cierre». |
+| Tarjetas abiertas | `movimiento.abiertas` (`inicio | cierre`), nueva en `v1.4`. Sin ella: «n/d | <tablero sin SAND>*». |
+| A develop | Tarjetas distintas de `movimiento.fusionadas`, nueva en `v1.4`. Sin ella: suma de la serie `DEVELOP` con «*». |
+| Retrabajos | Suma de `etapas[].counts`; entre paréntesis, tarjetas de `actividades` con retrabajos. |
+| Tasa de retrabajo | Tarjetas de `actividades` con retrabajo entre todas las de `actividades`: por eso `actividades` lleva solo las tarjetas que **cambiaron de estado** en el periodo, no las que solo se crearon. |
+| Retrabajo por entrega | Retrabajos entre «A develop». |
+
+La portada detecta si está en el repositorio (`/plantilla/` en la ruta) para leer `../reportes/` y enlazar a
+`reporte.dc.html`; en el diseño lee la copia `project/reportes/` y enlaza a «Plantilla de Reporte Periodico.dc.html».
+Esa copia de `project/reportes/` es solo para previsualizar en el diseño y no se trae: la fuente de los datos es
+`reportes/` de este repositorio.
 
 En la copia del 2026-11-10 solo cambió `reporte.dc.html`; `support.js`, `doc-page.js`, `styles.css` y `_ds_bundle.js`
 son idénticos a los de la copia anterior. El cambio lee dos claves nuevas de cada retrabajo, `comentario` y `resumen`
@@ -41,6 +60,7 @@ son idénticos a los de la copia anterior. El cambio:
 | En el diseño | En este repositorio |
 |---|---|
 | `project/Plantilla de Reporte Periodico.dc.html` | `plantilla/reporte.dc.html` (renombrada para que la URL no lleve espacios) |
+| `project/index.dc.html` | `plantilla/index.dc.html` (la portada del sitio; `index.html` redirige aquí) |
 | `project/support.js` | `plantilla/support.js` |
 | `project/doc-page.js` | `plantilla/doc-page.js` |
 | `project/_ds/industry-ef1cee18-0177-46ea-a7d2-c026ebb35136/styles.css` | `plantilla/_ds/…/styles.css` (misma ruta sin `project/`) |
@@ -66,6 +86,8 @@ El ejemplo del diseño trae sus propias claves de ejemplo, distintas de las nues
   muestra esas secciones; las reglas se reescribieron en `agente/` sobre la plantilla real.
 - `README.md` y `github.md` del diseño: los sustituyen `README.md` y `agente/`.
 - `data/2026-08-16.json`: el mismo ejemplo que `report-data.js`.
+- `reportes/` y `screenshots/`: copia de los periodos para previsualizar la portada en el diseño, y capturas de trabajo.
+- `compat.json`: metadatos de la migración del diseño a artifact.
 - `_ds/…/readme.md`, `_ds/…/_ds_manifest.json`, `_ds/…/_adherence.oxlintrc.json` y `.thumbnail`: metadatos del editor que
   la página no usa.
 

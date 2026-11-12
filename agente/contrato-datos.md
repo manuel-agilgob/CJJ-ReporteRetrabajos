@@ -37,7 +37,7 @@ Un archivo por periodo: `reportes/<AAAA-MM-DD>.json`, con la fecha de **inicio**
 | `generado` | Fecha y **hora** en que se generó el JSON, `AAAA-MM-DDTHH:MM`. La plantilla la muestra como «Actualizado» bajo el subtítulo, y `movimiento.tablero.fecha` lleva el mismo valor. Hasta `v1.1` iba sin hora. |
 | `responsable` | Fijo: `Ingeniería — Lead de entrega`. Desde `v1.2` la plantilla ya no lo muestra (ver abajo). |
 | `fuente` | Según la vía de extracción (`INSTRUCCIONES.md`, paso 1). Vía A: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — pipeline generate-rework-report`. Vía B: `Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente`. |
-| `version` | Versión de la plantilla con que se generó, hoy `v1.3` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
+| `version` | Versión de la plantilla con que se generó, hoy `v1.4` (ver `plantilla/ORIGEN.md`). No es la versión del reporte. |
 
 `responsable` y `fuente` **ya no se ven en la página**: el rediseño de `v1.2` quitó el recuadro de cuatro datos que los
 mostraba. Se siguen llenando igual, porque son la procedencia del periodo y ninguna clave del esqueleto se borra.
@@ -53,6 +53,8 @@ Alimenta la sección «Movimiento del tablero»: las barras de transiciones por 
 | `series` | Lista fija de diez series, en el orden de la tabla siguiente. |
 | `dias` | Un objeto por día natural del periodo, de `periodoInicio` a `periodoFin`, en orden ascendente. |
 | `tablero` | La fotografía del tablero al momento de generar. |
+| `abiertas` | Tarjetas en trabajo activo al inicio y al cierre de la semana (desde `v1.4`). La lee la portada, columna «Tarjetas abiertas». |
+| `fusionadas` | Tarjetas fusionadas a `develop` en el periodo, una entrada por tarjeta (desde `v1.4`). La lee la portada, columnas «A develop» y «Retrabajo por entrega». |
 
 ### `series`
 
@@ -114,6 +116,35 @@ las demás. Un periodo de 14 días lleva 14 objetos.
   porque no genera retrabajos, aquí porque no es trabajo abierto.
 - La fotografía es del momento de generar, no del cierre del periodo: Jira no guarda el tablero de una fecha pasada, así
   que un periodo que se regenera tiempo después lleva el tablero del día en que se regeneró.
+
+### `abiertas`
+
+Alimenta la columna «Tarjetas abiertas» de la portada (`plantilla/index.dc.html`), que la muestra como «inicio | cierre».
+
+| Clave | Valor |
+|---|---|
+| `inicio` | `{ fecha, n }`: el tablero del **lunes a las 06:00** de la semana del periodo. `fecha` es `AAAA-MM-DDTHH:MM` y `n` el entero de tarjetas. No cambia en el resto de la semana. |
+| `cierre` | `{ fecha, n }`: el tablero del **viernes a las 19:00**; mientras la semana no llega a ese momento, el del corte (`fecha` = `meta.generado`). |
+
+- **Trabajo activo** son las tarjetas de los dos proyectos en `Tareas por hacer`, `pendiente`, `En curso`, `Finished`,
+  `Test`, `Finalizada`, `To Do QA Test`, `doing qa test`, `Finished qa test`, `to do approved`, `Aprobado` o `Retrabajo`.
+  No cuentan `Análisis y documentación` (aún no es trabajo activo) ni los estados de SAND, PROD o linode (ya se entregó).
+- Es distinto de `tablero`: aquí sí entra `Tareas por hacer` y no entra `Análisis y documentación`.
+- Periodos anteriores a `v1.4` no la traen; la portada muestra entonces «n/d | <tablero sin SAND>*». No se rellenan.
+
+### `fusionadas`
+
+Alimenta las columnas «A develop» y «Retrabajo por entrega» de la portada. Una entrada por **tarjeta distinta** con al
+menos un PR fusionado a `develop` en el periodo (máximo una por tarjeta, aunque se haya fusionado varios días):
+
+| Clave | Valor |
+|---|---|
+| `clave` | Clave de Jira de la tarjeta, sacada como en la serie `DEVELOP` (`INSTRUCCIONES.md`, paso 6). Única dentro del periodo. |
+| `fecha` | Día (`AAAA-MM-DD`) de la primera fusión de la tarjeta en el periodo. |
+| `repositorio` | Repositorio de esa primera fusión, sin el dueño (`nilo-expediente-core`). |
+
+La serie diaria `DEVELOP` se conserva igual (una vez por tarjeta y por día). `[]` si no hubo fusiones. Periodos anteriores
+a `v1.4` no la traen y la portada usa la serie `DEVELOP` marcada con «*».
 
 ## `categorias`
 
@@ -192,7 +223,8 @@ las ordena por total al mostrarlas.
 
 ## `actividades`
 
-Una entrada por tarjeta que cambió de estado en el periodo, con retrabajo o sin él; ordenadas por `creada` ascendente (la
+Una entrada por tarjeta que cambió de estado en el periodo, con retrabajo o sin él (una tarjeta que solo se creó y no
+cambió de estado **no** va: la portada usa `actividades` como denominador de la «Tasa de retrabajo»); ordenadas por `creada` ascendente (la
 plantilla las reordena de más a menos retrabajos y despliega la primera). `[]` si ninguna se movió. Cómo se obtiene
 cada dato: `INSTRUCCIONES.md`, paso 5.
 
@@ -271,3 +303,5 @@ las cumpla.
     entero no negativo.
 13. Ningún texto quedó como `""`, y ninguna clave del esqueleto falta.
 14. Si se puede probar, la plantilla abre el JSON sin errores: `plantilla/reporte.dc.html?data=../reportes/<archivo>`.
+15. `movimiento.abiertas.inicio` y `.cierre` traen `fecha` y `n` entero no negativo; `movimiento.fusionadas` no repite
+    `clave`, y sus claves son las mismas tarjetas que aparecen en la serie `DEVELOP` del periodo.
