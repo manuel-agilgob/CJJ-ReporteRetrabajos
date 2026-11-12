@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-08 → 2026-11-14",
     "periodoInicio": "2026-11-08",
     "periodoFin": "2026-11-14",
-    "generado": "2026-11-11T19:07",
+    "generado": "2026-11-12T15:25",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.3"
@@ -107,8 +107,8 @@
         "fecha": "2026-11-11",
         "valores": {
           "DOR": 7,
-          "DEV": 5,
-          "AI": 8,
+          "DEV": 6,
+          "AI": 9,
           "LEAD-REV": 7,
           "QA": 28,
           "MERGE": 5,
@@ -118,7 +118,14 @@
       },
       {
         "fecha": "2026-11-12",
-        "valores": {}
+        "valores": {
+          "DOR": 2,
+          "DEV": 3,
+          "AI": 5,
+          "LEAD-REV": 3,
+          "QA": 4,
+          "RET": 2
+        }
       },
       {
         "fecha": "2026-11-13",
@@ -130,12 +137,12 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-11T19:07",
+      "fecha": "2026-11-12T15:25",
       "estados": [
         {
           "estado": "Listo para tomar",
           "etapa": "DOR",
-          "n": 72
+          "n": 69
         },
         {
           "estado": "Desarrollo",
@@ -145,17 +152,17 @@
         {
           "estado": "Revisión asistida",
           "etapa": "AI",
-          "n": 66
+          "n": 67
         },
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 53
+          "n": 55
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 13
+          "n": 15
         },
         {
           "estado": "Integración",
@@ -170,7 +177,7 @@
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 6
+          "n": 4
         }
       ]
     }
@@ -190,7 +197,7 @@
     "Malas prácticas de programación",
     "Fallan o faltan pruebas"
   ],
-  "etapaPorDefecto": "LEAD-REV",
+  "etapaPorDefecto": "AI",
   "etapas": [
     {
       "key": "DOR",
@@ -235,7 +242,7 @@
       "sub": "Revisión asistida",
       "counts": [
         2,
-        2,
+        4,
         0,
         1,
         2,
@@ -488,7 +495,7 @@
     {
       "nombre": "Marck",
       "rol": "Revisor",
-      "tarjetas": 11,
+      "tarjetas": 13,
       "matriz": {
         "DOR": [
           0,
@@ -824,7 +831,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 11,
+      "tarjetas": 12,
       "matriz": {
         "DOR": [
           0,
@@ -858,7 +865,7 @@
         ],
         "AI": [
           1,
-          2,
+          4,
           0,
           0,
           1,
@@ -1813,7 +1820,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-04-24T16:49",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "QA",
@@ -1848,6 +1855,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-11T18:22",
+          "fin": "2026-11-12T11:55"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-12T11:55",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1871,7 +1883,7 @@
     {
       "clave": "CJJ-299",
       "titulo": "n/d",
-      "responsable": "Adrián",
+      "responsable": "Marck",
       "creada": "2026-05-27T09:20",
       "estado": "LEAD-REV",
       "tramos": [
@@ -2504,7 +2516,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-08-11T12:09",
-      "estado": "RET",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "QA",
@@ -2514,6 +2526,16 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-11T15:55",
+          "fin": "2026-11-12T14:01"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T14:01",
+          "fin": "2026-11-12T14:29"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-12T14:29",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2725,7 +2747,7 @@
       "titulo": "n/d",
       "responsable": "Juan José",
       "creada": "2026-10-13T16:04",
-      "estado": "DEV",
+      "estado": "AI",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2735,6 +2757,11 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-11T18:44",
+          "fin": "2026-11-11T20:42"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-11T20:42",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2765,11 +2792,16 @@
       "titulo": "n/d",
       "responsable": "Juan José",
       "creada": "2026-11-06T16:20",
-      "estado": "DOR",
+      "estado": "DEV",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-08T00:00",
+          "fin": "2026-11-11T20:43"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-11T20:43",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2780,7 +2812,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-09T17:37",
-      "estado": "RET",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2805,6 +2837,11 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-11T13:46",
+          "fin": "2026-11-12T09:04"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-12T09:04",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2838,11 +2875,26 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T16:46",
-      "estado": "DOR",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-11T16:46",
+          "fin": "2026-11-12T09:17"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-12T09:17",
+          "fin": "2026-11-12T11:15"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T11:15",
+          "fin": "2026-11-12T11:38"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-12T11:38",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2851,17 +2903,72 @@
     {
       "clave": "CJJ-801",
       "titulo": "n/d",
-      "responsable": "Sin asignar",
+      "responsable": "Sebastián",
       "creada": "2026-11-11T17:56",
-      "estado": "DOR",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
           "inicio": "2026-11-11T17:56",
+          "fin": "2026-11-12T11:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-12T11:41",
+          "fin": "2026-11-12T12:48"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T12:48",
+          "fin": "2026-11-12T13:10"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-12T13:10",
+          "fin": "2026-11-12T13:12"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T13:12",
+          "fin": "2026-11-12T13:28"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-12T13:28",
+          "fin": "2026-11-12T13:30"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-12T13:30",
+          "fin": "2026-11-12T13:44"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-12T13:44",
+          "fin": "2026-11-12T14:01"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-12T14:01",
           "fin": "2026-11-15T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-12T13:10",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38059",
+          "resumen": "La revisión asistida detectó que al confirmar el cambio de correo no se sincronizan las copias del correo ni se limpia la caché, así que el correo anterior podría seguir usándose en envíos."
+        },
+        {
+          "fecha": "2026-11-12T13:28",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38060",
+          "resumen": "Persiste el incumplimiento: si falla la sincronización del correo nuevo, el error solo se registra y el cambio se da por concluido, dejando datos con el correo anterior."
+        }
+      ]
     },
     {
       "clave": "CJJ-802",
@@ -2873,6 +2980,66 @@
         {
           "etapa": "DOR",
           "inicio": "2026-11-11T18:08",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-803",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-12T12:13",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-12T12:13",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-804",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-12T12:36",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-12T12:36",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-805",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-12T12:37",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-12T12:37",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-806",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-12T15:16",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-12T15:16",
           "fin": "2026-11-15T00:00"
         }
       ],
