@@ -126,11 +126,16 @@ Alimenta la columna «Tarjetas abiertas» de la portada (`plantilla/index.dc.htm
 | `inicio` | `{ fecha, n }`: el tablero del **lunes a las 06:00** de la semana del periodo. `fecha` es `AAAA-MM-DDTHH:MM` y `n` el entero de tarjetas. No cambia en el resto de la semana. |
 | `cierre` | `{ fecha, n }`: el tablero del **viernes a las 19:00**; mientras la semana no llega a ese momento, el del corte (`fecha` = `meta.generado`). |
 
-- **Trabajo activo** son las tarjetas de los dos proyectos en `Tareas por hacer`, `pendiente`, `En curso`, `Finished`,
-  `Test`, `Finalizada`, `To Do QA Test`, `doing qa test`, `Finished qa test`, `to do approved`, `Aprobado` o `Retrabajo`.
-  No cuentan `Análisis y documentación` (aún no es trabajo activo) ni los estados de SAND, PROD o linode (ya se entregó).
-- Es distinto de `tablero`: aquí sí entra `Tareas por hacer` y no entra `Análisis y documentación`.
-- Periodos anteriores a `v1.4` no la traen; la portada muestra entonces «n/d | <tablero sin SAND>*». No se rellenan.
+- **Trabajo activo** es, por ahora, este criterio (definido el 2026-11-12), solo del proyecto `CJJ`:
+
+  ```text
+  project in (CJJ) and status in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved")
+  ```
+
+  No cuentan los demás estados (`Tareas por hacer`, `pendiente`, `Análisis y documentación`, `En curso`, `Aprobado`,
+  Sandbox, Producción) ni las tarjetas de `CJJ-ExpedienteElectronico-2025`. Es distinto del criterio de `tablero`.
+- Periodos anteriores a `v1.4` no la traen y la portada muestra «n/d»: no se estima con `tablero` ni con otro criterio.
+  Tampoco se rellena después: si un dato no se midió en su momento, queda «n/d».
 
 ### `fusionadas`
 

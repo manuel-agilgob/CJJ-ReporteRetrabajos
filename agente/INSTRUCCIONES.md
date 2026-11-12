@@ -242,17 +242,15 @@ Alimenta la sección «Movimiento del tablero»: cuántas transiciones hubo cada
 
 5. **Tarjetas fusionadas (`movimiento.fusionadas`).** De los mismos PR del punto 2, una entrada por tarjeta distinta,
    con el día y el repositorio de su primera fusión en el periodo (`contrato-datos.md`).
-6. **Tarjetas abiertas (`movimiento.abiertas`).** Con los ids de estado, porque los nombres repetidos (`En curso`,
-   `Aprobado`) hacen que `status IN (<nombres>)` devuelva cero sin avisar. Ids: `Tareas por hacer` 10003, `pendiente`
-   10033, `En curso` 3, `Finished` 10009, `Test` 10010, `To Do QA Test` 10011, `doing qa test` 10027, `Finished qa
-   test` 10013, `to do approved` 10156, `Aprobado` 10014, `Retrabajo` 10008.
+6. **Tarjetas abiertas (`movimiento.abiertas`).** Con el criterio de `contrato-datos.md`, tal cual:
 
    ```text
-   inicio: project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND status WAS IN (<ids>) ON "<lunes> 06:00"
-   cierre: project IN (CJJ, "CJJ-ExpedienteElectronico-2025") AND status WAS IN (<ids>) ON "<viernes> 19:00"
+   inicio: project in (CJJ) and status was in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved") ON "<lunes> 06:00"
+   cierre: project in (CJJ) and status was in (<los mismos estados>) ON "<viernes> 19:00"
    ```
 
-   Mientras no llega el viernes 19:00, el cierre es `status IN (<ids>)` al momento del corte.
+   Mientras no llega el viernes 19:00, el cierre se toma con `ON "<corte>"` (la hora de `meta.generado`). Si una de las
+   dos no se pudo consultar, su `n` no se inventa: el periodo se detiene como cualquier consulta fallida de Jira.
 
 ## Paso 7 — Armar el JSON
 

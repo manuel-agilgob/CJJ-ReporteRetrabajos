@@ -15,13 +15,14 @@ Copiada el **2026-09-23**, de nuevo el **2026-10-05** (sección «Recorrido de a
 
 En la copia del 2026-11-12 se agregó la **portada** del diseño, `project/index.dc.html`, que reemplaza a la antigua
 `index.html` escrita a mano; `index.html` de la raíz solo redirige a `plantilla/index.dc.html`. Los demás archivos son
-idénticos a los de la copia anterior. La portada lista los periodos con seis columnas, cada una con su definición en un
+idénticos a los de la copia anterior. El mismo día se cambió en el diseño el criterio de «Tarjetas abiertas» (tooltip y
+«n/d» para los periodos sin el dato) y se volvió a copiar. La portada lista los periodos con seis columnas, cada una con su definición en un
 tooltip del encabezado; `agente/contrato-datos.md` y `INSTRUCCIONES.md` (paso 6) siguen esas definiciones:
 
 | Columna | De dónde sale |
 |---|---|
 | Periodo | `meta.etiquetaPeriodo`, con el corte (`meta.generado`) y «en curso» / «antes del cierre». |
-| Tarjetas abiertas | `movimiento.abiertas` (`inicio | cierre`), nueva en `v1.4`. Sin ella: «n/d | <tablero sin SAND>*». |
+| Tarjetas abiertas | `movimiento.abiertas` (`inicio | cierre`), nueva en `v1.4`, con el criterio de `contrato-datos.md` (solo `CJJ`, ocho estados). Sin ella: «n/d». |
 | A develop | Tarjetas distintas de `movimiento.fusionadas`, nueva en `v1.4`. Sin ella: suma de la serie `DEVELOP` con «*». |
 | Retrabajos | Suma de `etapas[].counts`; entre paréntesis, tarjetas de `actividades` con retrabajos. |
 | Tasa de retrabajo | Tarjetas de `actividades` con retrabajo entre todas las de `actividades`: por eso `actividades` lleva solo las tarjetas que **cambiaron de estado** en el periodo, no las que solo se crearon. |
