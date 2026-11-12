@@ -22,7 +22,7 @@ tooltip del encabezado; `agente/contrato-datos.md` y `INSTRUCCIONES.md` (paso 6)
 | Columna | De dónde sale |
 |---|---|
 | Periodo | `meta.etiquetaPeriodo`, con el corte (`meta.generado`) y «en curso» / «antes del cierre». |
-| Tarjetas abiertas | `movimiento.abiertas` (`inicio | cierre`), nueva en `v1.4`, con el criterio de `contrato-datos.md` (solo `CJJ`, ocho estados). Sin ella: «n/d». |
+| Tarjetas abiertas | `movimiento.abiertas` (`inicio | cierre`), nueva en `v1.4`, con el criterio de `contrato-datos.md` (solo `CJJ`, ocho estados, sprint 535, sin épicas). Sin ella: «n/d». |
 | A develop | Tarjetas distintas de `movimiento.fusionadas`, nueva en `v1.4`. Sin ella: suma de la serie `DEVELOP` con «*». |
 | Retrabajos | Suma de `etapas[].counts`; entre paréntesis, tarjetas de `actividades` con retrabajos. |
 | Tasa de retrabajo | Tarjetas de `actividades` con retrabajo entre todas las de `actividades`: por eso `actividades` lleva solo las tarjetas que **cambiaron de estado** en el periodo, no las que solo se crearon. |

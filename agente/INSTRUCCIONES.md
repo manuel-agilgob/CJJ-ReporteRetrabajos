@@ -245,12 +245,14 @@ Alimenta la sección «Movimiento del tablero»: cuántas transiciones hubo cada
 6. **Tarjetas abiertas (`movimiento.abiertas`).** Con el criterio de `contrato-datos.md`, tal cual:
 
    ```text
-   inicio: project in (CJJ) and status was in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved") ON "<lunes> 06:00"
-   cierre: project in (CJJ) and status was in (<los mismos estados>) ON "<viernes> 19:00"
+   inicio: project in (CJJ) and status was in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved") ON "<lunes> 06:00" and Sprint = 535 and "Epic Name" = EMPTY
+   cierre: la misma consulta con ON "<viernes> 19:00"
    ```
 
-   Mientras no llega el viernes 19:00, el cierre se toma con `ON "<corte>"` (la hora de `meta.generado`). Si una de las
-   dos no se pudo consultar, su `n` no se inventa: el periodo se detiene como cualquier consulta fallida de Jira.
+   Mientras no llega el viernes 19:00, el cierre se toma con `ON "<corte>"` (la hora de `meta.generado`). El estado se
+   evalúa en esa fecha, pero `Sprint` y `Epic Name` se evalúan con su valor actual: Jira no permite `WAS` en esos campos.
+   Si una de las dos no se pudo consultar, su `n` no se inventa: el periodo se detiene como cualquier consulta fallida de
+   Jira.
 
 ## Paso 7 — Armar el JSON
 

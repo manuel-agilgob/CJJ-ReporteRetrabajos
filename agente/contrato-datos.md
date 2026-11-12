@@ -126,14 +126,17 @@ Alimenta la columna «Tarjetas abiertas» de la portada (`plantilla/index.dc.htm
 | `inicio` | `{ fecha, n }`: el tablero del **lunes a las 06:00** de la semana del periodo. `fecha` es `AAAA-MM-DDTHH:MM` y `n` el entero de tarjetas. No cambia en el resto de la semana. |
 | `cierre` | `{ fecha, n }`: el tablero del **viernes a las 19:00**; mientras la semana no llega a ese momento, el del corte (`fecha` = `meta.generado`). |
 
-- **Trabajo activo** es, por ahora, este criterio (definido el 2026-11-12), solo del proyecto `CJJ`:
+- **Trabajo activo** es, por ahora, este criterio (definido el 2026-11-12), solo del proyecto `CJJ`, del sprint 535
+  (`CJJ-Expe Sprint 1`) y sin épicas:
 
   ```text
-  project in (CJJ) and status in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved")
+  project in (CJJ) and status in (Retrabajo, doing, Finished, Test, "To Do QA Test", "Doign QA Test", "Finished qa test", "to do approved") and Sprint = 535 and "Epic Name" = EMPTY
   ```
 
   No cuentan los demás estados (`Tareas por hacer`, `pendiente`, `Análisis y documentación`, `En curso`, `Aprobado`,
-  Sandbox, Producción) ni las tarjetas de `CJJ-ExpedienteElectronico-2025`. Es distinto del criterio de `tablero`.
+  Sandbox, Producción), las tarjetas fuera del sprint 535, las épicas ni las tarjetas de `CJJ-ExpedienteElectronico-2025`.
+  Es distinto del criterio de `tablero`. Si cambia el sprint, se cambia aquí, en `INSTRUCCIONES.md` y en el tooltip del
+  diseño.
 - Periodos anteriores a `v1.4` no la traen y la portada muestra «n/d»: no se estima con `tablero` ni con otro criterio.
   Tampoco se rellena después: si un dato no se midió en su momento, queda «n/d».
 
