@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-08 → 2026-11-14",
     "periodoInicio": "2026-11-08",
     "periodoFin": "2026-11-14",
-    "generado": "2026-11-12T15:40",
+    "generado": "2026-11-12T19:05",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.4"
@@ -122,9 +122,9 @@
           "DOR": 2,
           "DEV": 4,
           "AI": 6,
-          "LEAD-REV": 3,
-          "QA": 4,
-          "RET": 3
+          "LEAD-REV": 4,
+          "QA": 14,
+          "RET": 4
         }
       },
       {
@@ -137,7 +137,7 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-12T15:40",
+      "fecha": "2026-11-12T19:05",
       "estados": [
         {
           "estado": "Listo para tomar",
@@ -152,17 +152,17 @@
         {
           "estado": "Revisión asistida",
           "etapa": "AI",
-          "n": 68
+          "n": 67
         },
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 55
+          "n": 52
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 15
+          "n": 18
         },
         {
           "estado": "Integración",
@@ -177,7 +177,7 @@
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 5
+          "n": 6
         }
       ]
     },
@@ -187,7 +187,7 @@
         "n": 89
       },
       "cierre": {
-        "fecha": "2026-11-12T15:40",
+        "fecha": "2026-11-12T19:05",
         "n": 89
       }
     },
@@ -299,7 +299,7 @@
         0,
         1,
         0,
-        0,
+        1,
         1,
         0,
         0,
@@ -527,7 +527,7 @@
     {
       "nombre": "Marck",
       "rol": "Revisor",
-      "tarjetas": 13,
+      "tarjetas": 14,
       "matriz": {
         "DOR": [
           0,
@@ -639,7 +639,7 @@
     {
       "nombre": "Rafael",
       "rol": "Tech lead",
-      "tarjetas": 3,
+      "tarjetas": 5,
       "matriz": {
         "DOR": [
           0,
@@ -1142,7 +1142,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -1915,9 +1915,9 @@
     {
       "clave": "CJJ-299",
       "titulo": "n/d",
-      "responsable": "Marck",
+      "responsable": "Adrián",
       "creada": "2026-05-27T09:20",
-      "estado": "LEAD-REV",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "RET",
@@ -1947,6 +1947,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-11T17:06",
+          "fin": "2026-11-12T17:12"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-12T17:12",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1957,6 +1962,13 @@
           "categoria": "No hay comentarios para categorizar",
           "comentario": "n/d",
           "resumen": "n/d"
+        },
+        {
+          "fecha": "2026-11-12T17:12",
+          "desde": "LEAD-REV",
+          "categoria": "No cumple definición de terminado (DoD)",
+          "comentario": "38067",
+          "resumen": "La revisión de lead encontró que falta el listado de auditoría de modelos y tablas con datos personales que pide un criterio de aceptación, y que no existe la prueba de un caso límite especificado en la tarjeta."
         }
       ]
     },
@@ -2576,7 +2588,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-08-11T12:09",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "QA",
@@ -2596,6 +2608,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-12T14:29",
+          "fin": "2026-11-12T18:14"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-12T18:14",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2935,7 +2952,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T16:46",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2955,6 +2972,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-12T11:38",
+          "fin": "2026-11-12T17:28"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-12T17:28",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2965,7 +2987,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T17:56",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "DOR",
@@ -3010,6 +3032,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-12T14:01",
+          "fin": "2026-11-12T16:31"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-12T16:31",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -3050,7 +3077,7 @@
       "titulo": "n/d",
       "responsable": "Rafael",
       "creada": "2026-11-12T15:16",
-      "estado": "AI",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
@@ -3065,6 +3092,11 @@
         {
           "etapa": "AI",
           "inicio": "2026-11-12T15:36",
+          "fin": "2026-11-12T15:55"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-12T15:55",
           "fin": "2026-11-15T00:00"
         }
       ],
