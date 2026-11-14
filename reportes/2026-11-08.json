@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-08 → 2026-11-14",
     "periodoInicio": "2026-11-08",
     "periodoFin": "2026-11-14",
-    "generado": "2026-11-12T19:05",
+    "generado": "2026-11-13T19:07",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.4"
@@ -123,13 +123,22 @@
           "DEV": 4,
           "AI": 6,
           "LEAD-REV": 4,
-          "QA": 14,
+          "QA": 30,
           "RET": 4
         }
       },
       {
         "fecha": "2026-11-13",
-        "valores": {}
+        "valores": {
+          "DOR": 4,
+          "DEV": 5,
+          "AI": 7,
+          "LEAD-REV": 4,
+          "QA": 3,
+          "MERGE": 2,
+          "DEVELOP": 1,
+          "RET": 3
+        }
       },
       {
         "fecha": "2026-11-14",
@@ -137,12 +146,12 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-12T19:05",
+      "fecha": "2026-11-13T19:07",
       "estados": [
         {
           "estado": "Listo para tomar",
           "etapa": "DOR",
-          "n": 69
+          "n": 71
         },
         {
           "estado": "Desarrollo",
@@ -157,17 +166,17 @@
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 52
+          "n": 56
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 18
+          "n": 16
         },
         {
           "estado": "Integración",
           "etapa": "MERGE",
-          "n": 5
+          "n": 7
         },
         {
           "estado": "Sandbox",
@@ -177,7 +186,7 @@
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 6
+          "n": 5
         }
       ]
     },
@@ -187,8 +196,8 @@
         "n": 89
       },
       "cierre": {
-        "fecha": "2026-11-12T19:05",
-        "n": 89
+        "fecha": "2026-11-13T19:00",
+        "n": 90
       }
     },
     "fusionadas": [
@@ -211,6 +220,11 @@
         "clave": "CJJ-424",
         "fecha": "2026-11-09",
         "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-800",
+        "fecha": "2026-11-13",
+        "repositorio": "nilo-expediente-usuarios"
       }
     ]
   },
@@ -274,8 +288,8 @@
       "sub": "Revisión asistida",
       "counts": [
         2,
-        4,
-        0,
+        6,
+        1,
         1,
         2,
         0,
@@ -393,10 +407,10 @@
       {
         "ambiente": "SAND",
         "nombre": "Sandbox",
-        "total": 0,
-        "delta": "−1",
-        "direccion": "down",
-        "horasMedia": "n/d",
+        "total": 3,
+        "delta": "+2",
+        "direccion": "up",
+        "horasMedia": "1.0",
         "criticos": 0
       },
       {
@@ -409,7 +423,35 @@
         "criticos": 0
       }
     ],
-    "detalle": []
+    "detalle": [
+      {
+        "clave": "CJJ-809",
+        "ambiente": "SAND",
+        "titulo": "Administrador – Reportes / Reporte de sentencias – No descarga cuando la fecha inicial y final son el mismo día o días consecutivos",
+        "causa": "No cubre todos los escenarios o escenarios borde",
+        "severidad": "Mayor",
+        "horas": "1.2",
+        "fecha": "2026-11-13"
+      },
+      {
+        "clave": "CJJ-810",
+        "ambiente": "SAND",
+        "titulo": "Sistema – Reportes en segundo plano – Reportes generados en el mismo segundo se sobrescriben y un usuario puede descargar el reporte de otro",
+        "causa": "No cubre todos los escenarios o escenarios borde",
+        "severidad": "Mayor",
+        "horas": "n/d",
+        "fecha": "2026-11-13"
+      },
+      {
+        "clave": "CJJ-811",
+        "ambiente": "SAND",
+        "titulo": "Funcionario – Reportes de sentencias y estadística – Archivo temporal con nombre por día: descargas simultáneas se sobrescriben o fallan y un funcionario puede recibir el reporte de otro juzgado",
+        "causa": "No cubre todos los escenarios o escenarios borde",
+        "severidad": "Mayor",
+        "horas": "0.8",
+        "fecha": "2026-11-13"
+      }
+    ]
   },
   "colaboradores": [
     {
@@ -751,7 +793,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 5,
+      "tarjetas": 8,
       "matriz": {
         "DOR": [
           0,
@@ -785,8 +827,8 @@
         ],
         "AI": [
           1,
-          0,
-          0,
+          1,
+          1,
           0,
           1,
           0,
@@ -1121,7 +1163,7 @@
         ],
         "AI": [
           0,
-          0,
+          1,
           0,
           1,
           0,
@@ -1952,6 +1994,21 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-12T17:12",
+          "fin": "2026-11-13T15:08"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-13T15:08",
+          "fin": "2026-11-13T16:27"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T16:27",
+          "fin": "2026-11-13T16:48"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-13T16:48",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -1969,6 +2026,13 @@
           "categoria": "No cumple definición de terminado (DoD)",
           "comentario": "38067",
           "resumen": "La revisión de lead encontró que falta el listado de auditoría de modelos y tablas con datos personales que pide un criterio de aceptación, y que no existe la prueba de un caso límite especificado en la tarjeta."
+        },
+        {
+          "fecha": "2026-11-13T16:48",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38090",
+          "resumen": "La revisión asistida encontró que la protección de datos personales no se aplicó a todos los modelos identificados en la auditoría y que un endpoint sigue exponiendo esos datos sin la lista explícita de campos exigida."
         }
       ]
     },
@@ -2408,7 +2472,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-07-27T17:33",
-      "estado": "RET",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "SAND",
@@ -2418,6 +2482,31 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-12T15:30",
+          "fin": "2026-11-13T09:52"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-13T09:52",
+          "fin": "2026-11-13T10:55"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T10:55",
+          "fin": "2026-11-13T11:25"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-13T11:25",
+          "fin": "2026-11-13T11:54"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T11:54",
+          "fin": "2026-11-13T14:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-13T14:39",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2428,6 +2517,13 @@
           "categoria": "Cambios solicitados por negocio después de entregar",
           "comentario": "38063",
           "resumen": "Negocio aclaró que un archivo auxiliar no debe descargarse como documento del expediente al leer el código QR y pidió ajustar la descripción y los criterios de aceptación."
+        },
+        {
+          "fecha": "2026-11-13T11:25",
+          "desde": "AI",
+          "categoria": "Regresión detectada en otra funcionalidad",
+          "comentario": "38081",
+          "resumen": "La revisión asistida detectó que el cambio quitó el mecanismo de autenticación del enlace de descarga de manuales de usuario, que debía quedar intacto, sin demostrar que la descarga siga funcionando."
         }
       ]
     },
@@ -2952,7 +3048,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T16:46",
-      "estado": "QA",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2977,6 +3073,11 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-12T17:28",
+          "fin": "2026-11-13T12:21"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-13T12:21",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -2987,7 +3088,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T17:56",
-      "estado": "QA",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "DOR",
@@ -3037,6 +3138,11 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-12T16:31",
+          "fin": "2026-11-13T09:23"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-13T09:23",
           "fin": "2026-11-15T00:00"
         }
       ],
@@ -3101,6 +3207,139 @@
         }
       ],
       "retrabajos": []
+    },
+    {
+      "clave": "CJJ-807",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-13T10:45",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-13T10:45",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-808",
+      "titulo": "n/d",
+      "responsable": "Sin asignar",
+      "creada": "2026-11-13T11:08",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-13T11:08",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-809",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T11:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-13T11:22",
+          "fin": "2026-11-13T12:21"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-13T12:21",
+          "fin": "2026-11-13T13:57"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T13:57",
+          "fin": "2026-11-13T14:25"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-13T14:25",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-810",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T13:43",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-13T13:43",
+          "fin": "2026-11-13T13:57"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T13:57",
+          "fin": "2026-11-13T14:10"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-13T14:10",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-811",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T15:54",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-13T15:54",
+          "fin": "2026-11-13T16:05"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T16:05",
+          "fin": "2026-11-13T16:22"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-13T16:22",
+          "fin": "2026-11-13T16:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-13T16:41",
+          "fin": "2026-11-13T16:50"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-13T16:50",
+          "fin": "2026-11-13T17:06"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-13T17:06",
+          "fin": "2026-11-15T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-13T16:22",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38089",
+          "resumen": "La revisión asistida señaló que, ante un error al generar el reporte de sentencias, la API no responde con un error explícito ni lo registra en el log, y las pruebas no cubren ese caso."
+        }
+      ]
     }
   ]
 }
