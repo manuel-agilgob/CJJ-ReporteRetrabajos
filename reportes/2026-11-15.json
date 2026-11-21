@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-15 → 2026-11-21",
     "periodoInicio": "2026-11-15",
     "periodoFin": "2026-11-21",
-    "generado": "2026-11-18T19:05",
+    "generado": "2026-11-20T19:08",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.4"
@@ -98,8 +98,8 @@
         "fecha": "2026-11-18",
         "valores": {
           "MERGE": 14,
-          "QA": 12,
-          "RET": 7,
+          "QA": 13,
+          "RET": 8,
           "AI": 8,
           "LEAD-REV": 7,
           "DEV": 5,
@@ -110,11 +110,25 @@
       },
       {
         "fecha": "2026-11-19",
-        "valores": {}
+        "valores": {
+          "DOR": 2,
+          "QA": 24,
+          "RET": 4,
+          "LEAD-REV": 5,
+          "DEV": 3,
+          "AI": 5,
+          "MERGE": 1
+        }
       },
       {
         "fecha": "2026-11-20",
-        "valores": {}
+        "valores": {
+          "DEV": 3,
+          "AI": 5,
+          "LEAD-REV": 5,
+          "QA": 14,
+          "RET": 1
+        }
       },
       {
         "fecha": "2026-11-21",
@@ -122,7 +136,7 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-18T19:05",
+      "fecha": "2026-11-20T19:08",
       "estados": [
         {
           "estado": "Listo para tomar",
@@ -137,22 +151,22 @@
         {
           "estado": "Revisión asistida",
           "etapa": "AI",
-          "n": 70
+          "n": 68
         },
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 56
+          "n": 54
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 12
+          "n": 19
         },
         {
           "estado": "Integración",
           "etapa": "MERGE",
-          "n": 13
+          "n": 0
         },
         {
           "estado": "Sandbox",
@@ -162,7 +176,7 @@
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 6
+          "n": 4
         }
       ]
     },
@@ -172,8 +186,8 @@
         "n": 90
       },
       "cierre": {
-        "fecha": "2026-11-18T19:05",
-        "n": 91
+        "fecha": "2026-11-20T19:00",
+        "n": 92
       }
     },
     "fusionadas": [
@@ -268,8 +282,8 @@
       "key": "AI",
       "sub": "Revisión asistida",
       "counts": [
-        0,
-        0,
+        1,
+        1,
         0,
         1,
         0,
@@ -292,7 +306,7 @@
         0,
         0,
         0,
-        3,
+        5,
         0,
         0,
         0,
@@ -309,8 +323,8 @@
         0,
         0,
         0,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0,
@@ -522,7 +536,7 @@
     {
       "nombre": "Marck",
       "rol": "Revisor",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -746,7 +760,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 6,
+      "tarjetas": 7,
       "matriz": {
         "DOR": [
           0,
@@ -799,7 +813,7 @@
           0,
           0,
           0,
-          1,
+          2,
           0,
           0,
           0,
@@ -858,7 +872,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 10,
+      "tarjetas": 12,
       "matriz": {
         "DOR": [
           0,
@@ -924,8 +938,8 @@
           0,
           0,
           0,
-          0,
-          0,
+          1,
+          1,
           0,
           0,
           0,
@@ -1116,7 +1130,7 @@
         ],
         "AI": [
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -1530,7 +1544,7 @@
     {
       "nombre": "Juan José",
       "rol": "Tech lead",
-      "tarjetas": 8,
+      "tarjetas": 10,
       "matriz": {
         "DOR": [
           0,
@@ -1583,7 +1597,7 @@
           0,
           0,
           0,
-          2,
+          3,
           0,
           0,
           0,
@@ -1675,7 +1689,7 @@
           0
         ],
         "AI": [
-          0,
+          1,
           0,
           0,
           0,
@@ -1865,6 +1879,21 @@
       "retrabajos": []
     },
     {
+      "clave": "CJJ-464",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-14T11:15",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-15T00:00",
+          "fin": "2026-11-22T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-474",
       "titulo": "n/d",
       "responsable": "Sebastián",
@@ -1874,6 +1903,59 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-15T00:00",
+          "fin": "2026-11-18T19:55"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-18T19:55",
+          "fin": "2026-11-19T12:01"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-19T12:01",
+          "fin": "2026-11-19T12:26"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-19T12:26",
+          "fin": "2026-11-19T12:40"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-19T12:40",
+          "fin": "2026-11-19T16:51"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T16:51",
+          "fin": "2026-11-22T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-18T19:55",
+          "desde": "QA",
+          "categoria": "No cumple lineamientos de UX/UI",
+          "comentario": "38165",
+          "resumen": "El documento del historial de permisos funciona y cumple los criterios, pero el texto, el título y el sello salen mucho más pequeños que en los demás acuses y se lee con dificultad."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-476",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-27T17:33",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-15T00:00",
+          "fin": "2026-11-18T20:04"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-18T20:04",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -1909,6 +1991,26 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-15T00:00",
+          "fin": "2026-11-19T11:48"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-19T11:48",
+          "fin": "2026-11-19T12:06"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-19T12:06",
+          "fin": "2026-11-19T12:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-19T12:54",
+          "fin": "2026-11-19T17:09"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T17:09",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -1939,7 +2041,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-08-19T17:39",
-      "estado": "RET",
+      "estado": "DEV",
       "tramos": [
         {
           "etapa": "QA",
@@ -1954,6 +2056,11 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-18T18:08",
+          "fin": "2026-11-20T14:24"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-20T14:24",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2030,7 +2137,7 @@
       "titulo": "n/d",
       "responsable": "Luis Fernando",
       "creada": "2026-10-14T09:34",
-      "estado": "AI",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DEV",
@@ -2040,10 +2147,33 @@
         {
           "etapa": "AI",
           "inicio": "2026-11-18T16:48",
+          "fin": "2026-11-20T15:22"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-20T15:22",
+          "fin": "2026-11-20T16:45"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-20T16:45",
+          "fin": "2026-11-20T17:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-20T17:20",
           "fin": "2026-11-22T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-20T15:22",
+          "desde": "AI",
+          "categoria": "El funcionamiento es incorrecto",
+          "comentario": "38213",
+          "resumen": "La revisión automática detectó que la tarjeta pide retirar un acceso de respaldo con credencial genérica, pero el código y la configuración heredada aún lo permiten."
+        }
+      ]
     },
     {
       "clave": "CJJ-797",
@@ -2070,7 +2200,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-09T17:37",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "QA",
@@ -2090,6 +2220,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-18T17:59",
+          "fin": "2026-11-19T09:07"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T09:07",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2100,7 +2235,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-11-11T18:08",
-      "estado": "DEV",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2110,10 +2245,38 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-17T17:34",
+          "fin": "2026-11-19T17:30"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-19T17:30",
+          "fin": "2026-11-19T17:52"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-19T17:52",
+          "fin": "2026-11-20T14:24"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-20T14:24",
+          "fin": "2026-11-20T14:46"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-20T14:46",
           "fin": "2026-11-22T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-19T17:52",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38190",
+          "resumen": "La revisión automática detectó que el filtro de plantillas por cuenta se entrega activo sin reasignar las plantillas existentes a su cuenta correcta, y una carga de datos sigue ligando plantillas a otra cuenta."
+        }
+      ]
     },
     {
       "clave": "CJJ-803",
@@ -2195,6 +2358,31 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-18T17:15",
+          "fin": "2026-11-19T17:00"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-19T17:00",
+          "fin": "2026-11-20T11:22"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-20T11:22",
+          "fin": "2026-11-20T11:42"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-20T11:42",
+          "fin": "2026-11-20T11:57"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-20T11:57",
+          "fin": "2026-11-20T12:35"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-20T12:35",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2205,6 +2393,13 @@
           "categoria": "No cubre todos los escenarios o escenarios borde",
           "comentario": "38146",
           "resumen": "El reporte de bitácora no valida en el servidor las fechas, el rango ni el usuario: sin filtros o con datos inválidos responde con error interno y con rango invertido no avisa del error de validación."
+        },
+        {
+          "fecha": "2026-11-19T17:00",
+          "desde": "QA",
+          "categoria": "El codigo produce un error (crash) en runtime o compilacion",
+          "comentario": "38187",
+          "resumen": "En las pruebas de QA el reporte de bitácora del administrador responde con error de servidor para un usuario al consultar un rango amplio de fechas; el resto de los casos pasa."
         }
       ]
     },
@@ -2213,7 +2408,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-13T11:08",
-      "estado": "RET",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2238,6 +2433,26 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-18T17:41",
+          "fin": "2026-11-19T11:11"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-19T11:11",
+          "fin": "2026-11-19T11:42"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-19T11:42",
+          "fin": "2026-11-19T11:54"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-19T11:54",
+          "fin": "2026-11-19T17:28"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T17:28",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2256,7 +2471,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-11-13T11:22",
-      "estado": "AI",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "LEAD-REV",
@@ -2296,6 +2511,36 @@
         {
           "etapa": "AI",
           "inicio": "2026-11-18T16:47",
+          "fin": "2026-11-19T12:18"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-19T12:18",
+          "fin": "2026-11-19T12:24"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-19T12:24",
+          "fin": "2026-11-19T12:38"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-19T12:38",
+          "fin": "2026-11-19T13:23"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-19T13:23",
+          "fin": "2026-11-19T13:38"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-19T13:38",
+          "fin": "2026-11-19T16:35"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T16:35",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2313,15 +2558,22 @@
           "categoria": "OTRO, No se ajusta a ninguna categoria definida",
           "comentario": "38149",
           "resumen": "La tarjeta quedó aprobada; se regresó a retrabajo solo para que el desarrollador la mueva a terminado y se cumpla el flujo, tras un ajuste ya subido, sin cambios pendientes."
+        },
+        {
+          "fecha": "2026-11-19T12:24",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal",
+          "comentario": "38175",
+          "resumen": "La solicitud de cambio tiene conflictos con la rama principal de desarrollo desde el día anterior; hay que actualizar la rama y volver a pasarla a revisión automática."
         }
       ]
     },
     {
       "clave": "CJJ-810",
       "titulo": "n/d",
-      "responsable": "Juan José",
+      "responsable": "Samuel",
       "creada": "2026-11-13T13:43",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "LEAD-REV",
@@ -2346,6 +2598,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-18T15:31",
+          "fin": "2026-11-19T16:38"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-19T16:38",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2362,9 +2619,9 @@
     {
       "clave": "CJJ-811",
       "titulo": "n/d",
-      "responsable": "Juan José",
+      "responsable": "Samuel",
       "creada": "2026-11-13T15:54",
-      "estado": "LEAD-REV",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "LEAD-REV",
@@ -2389,6 +2646,26 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-18T15:12",
+          "fin": "2026-11-19T16:41"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-19T16:41",
+          "fin": "2026-11-20T10:31"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-20T10:31",
+          "fin": "2026-11-20T10:47"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-20T10:47",
+          "fin": "2026-11-20T12:22"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-20T12:22",
           "fin": "2026-11-22T00:00"
         }
       ],
@@ -2399,6 +2676,13 @@
           "categoria": "Conflicto con la rama principal",
           "comentario": "38132",
           "resumen": "La funcionalidad cumple, pero la rama salió de la rama de release y arrastra cambios ajenos; debe recrearse desde la rama de desarrollo con un solo commit, y falta tipar dos métodos."
+        },
+        {
+          "fecha": "2026-11-19T16:41",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal",
+          "comentario": "38182",
+          "resumen": "El código está aprobado, pero la solicitud de cambio entra en conflicto con la rama principal de desarrollo, lo que impide fusionarla."
         }
       ]
     },
@@ -2457,6 +2741,41 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-18T18:14",
+          "fin": "2026-11-22T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-837",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-19T12:53",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-19T12:53",
+          "fin": "2026-11-20T12:11"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-20T12:11",
+          "fin": "2026-11-20T12:39"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-20T12:39",
+          "fin": "2026-11-20T12:58"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-20T12:58",
+          "fin": "2026-11-20T14:31"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-20T14:31",
           "fin": "2026-11-22T00:00"
         }
       ],
