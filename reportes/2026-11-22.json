@@ -1,0 +1,1979 @@
+{
+  "meta": {
+    "titulo": "Retrabajos del ciclo de entrega",
+    "subtitulo": "Transiciones a Retrabajo clasificadas por motivo según la taxonomía vigente, agrupadas por la etapa del flujo donde se detectaron.",
+    "etiquetaPeriodo": "2026-11-22 → 2026-11-28",
+    "periodoInicio": "2026-11-22",
+    "periodoFin": "2026-11-28",
+    "generado": "2026-11-23T19:03",
+    "responsable": "Ingeniería — Lead de entrega",
+    "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
+    "version": "v1.4"
+  },
+  "movimiento": {
+    "nota": "Transiciones de estado del changelog de Jira contadas por el día del estado destino; «Tarjetas fusionadas a develop» viene de los PR de GitHub con base develop fusionados ese día, cruzados con la clave de Jira (una tarjeta cuenta una vez por día).",
+    "series": [
+      {
+        "key": "DOR",
+        "nombre": "Listo para tomar",
+        "etapa": "DOR",
+        "fuente": "jira"
+      },
+      {
+        "key": "DEV",
+        "nombre": "Desarrollo",
+        "etapa": "DEV",
+        "fuente": "jira"
+      },
+      {
+        "key": "AI",
+        "nombre": "Revisión asistida",
+        "etapa": "AI",
+        "fuente": "jira"
+      },
+      {
+        "key": "LEAD-REV",
+        "nombre": "Revisión de lead",
+        "etapa": "LEAD-REV",
+        "fuente": "jira"
+      },
+      {
+        "key": "QA",
+        "nombre": "Pruebas",
+        "etapa": "QA",
+        "fuente": "jira"
+      },
+      {
+        "key": "MERGE",
+        "nombre": "Integración",
+        "etapa": "MERGE",
+        "fuente": "jira"
+      },
+      {
+        "key": "DEVELOP",
+        "nombre": "Tarjetas fusionadas a develop",
+        "etapa": "MERGE",
+        "fuente": "github"
+      },
+      {
+        "key": "SAND",
+        "nombre": "Sandbox",
+        "etapa": "SAND",
+        "fuente": "jira"
+      },
+      {
+        "key": "PROD",
+        "nombre": "Producción",
+        "etapa": "PROD",
+        "fuente": "jira"
+      },
+      {
+        "key": "RET",
+        "nombre": "Retrabajo",
+        "etapa": "RET",
+        "fuente": "jira"
+      }
+    ],
+    "dias": [
+      {
+        "fecha": "2026-11-22",
+        "valores": {}
+      },
+      {
+        "fecha": "2026-11-23",
+        "valores": {
+          "DOR": 1,
+          "DEV": 2,
+          "AI": 4,
+          "LEAD-REV": 3,
+          "QA": 8,
+          "SAND": 5,
+          "RET": 2
+        }
+      },
+      {
+        "fecha": "2026-11-24",
+        "valores": {}
+      },
+      {
+        "fecha": "2026-11-25",
+        "valores": {}
+      },
+      {
+        "fecha": "2026-11-26",
+        "valores": {}
+      },
+      {
+        "fecha": "2026-11-27",
+        "valores": {}
+      },
+      {
+        "fecha": "2026-11-28",
+        "valores": {}
+      }
+    ],
+    "tablero": {
+      "fecha": "2026-11-23T19:03",
+      "estados": [
+        {
+          "estado": "Listo para tomar",
+          "etapa": "DOR",
+          "n": 71
+        },
+        {
+          "estado": "Desarrollo",
+          "etapa": "DEV",
+          "n": 14
+        },
+        {
+          "estado": "Revisión asistida",
+          "etapa": "AI",
+          "n": 68
+        },
+        {
+          "estado": "Revisión de lead",
+          "etapa": "LEAD-REV",
+          "n": 57
+        },
+        {
+          "estado": "Pruebas",
+          "etapa": "QA",
+          "n": 15
+        },
+        {
+          "estado": "Integración",
+          "etapa": "MERGE",
+          "n": 0
+        },
+        {
+          "estado": "Sandbox",
+          "etapa": "SAND",
+          "n": 74
+        },
+        {
+          "estado": "Retrabajo",
+          "etapa": "RET",
+          "n": 4
+        }
+      ]
+    },
+    "abiertas": {
+      "inicio": {
+        "fecha": "2026-11-23T06:00",
+        "n": 92
+      },
+      "cierre": {
+        "fecha": "2026-11-23T19:03",
+        "n": 89
+      }
+    },
+    "fusionadas": []
+  },
+  "categorias": [
+    "El funcionamiento es incorrecto",
+    "No cubre todos los escenarios o escenarios borde",
+    "Regresión detectada en otra funcionalidad",
+    "No cumple lineamientos de UX/UI",
+    "El codigo produce un error (crash) en runtime o compilacion",
+    "Conflicto con la rama principal",
+    "Cambios solicitados por negocio después de entregar",
+    "No cumple definición de terminado (DoD)",
+    "No hay comentarios para categorizar",
+    "Error de QA - testing",
+    "OTRO, No se ajusta a ninguna categoria definida",
+    "Malas prácticas de programación",
+    "Fallan o faltan pruebas"
+  ],
+  "etapaPorDefecto": "AI",
+  "etapas": [
+    {
+      "key": "DOR",
+      "sub": "Listo para tomar",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "DEV",
+      "sub": "Desarrollo",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "AI",
+      "sub": "Revisión asistida",
+      "counts": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "LEAD-REV",
+      "sub": "Revisión de lead",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "QA",
+      "sub": "Pruebas",
+      "counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "MERGE",
+      "sub": "Integración",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "SAND",
+      "sub": "Sandbox",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nota": "Sandbox puede generar retrabajos cuando el despliegue revela un defecto antes de producción; es poco frecuente."
+    },
+    {
+      "key": "PROD",
+      "sub": "Producción",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sinRetrabajo": true,
+      "nota": "Producción no genera retrabajos: una corrección posterior al despliegue se registra como hotfix en la sección de hotfixes de despliegue, no como retorno de la actividad."
+    }
+  ],
+  "hotfixes": {
+    "nota": "Un hotfix es una corrección desplegada fuera del flujo normal para resolver un defecto ya liberado. No cuenta como retrabajo: la actividad no regresó a una etapa anterior, se abrió trabajo nuevo. Se identifica por el término «hotfix» en el nombre de la tarjeta o por la etiqueta «hotfix», y se cuenta en el periodo en que se creó.",
+    "ambientes": [
+      {
+        "ambiente": "SAND",
+        "nombre": "Sandbox",
+        "total": 0,
+        "delta": "0",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      },
+      {
+        "ambiente": "PROD",
+        "nombre": "Producción",
+        "total": 0,
+        "delta": "0",
+        "direccion": "flat",
+        "horasMedia": "n/d",
+        "criticos": 0
+      }
+    ],
+    "detalle": []
+  },
+  "colaboradores": [
+    {
+      "nombre": "Manny",
+      "rol": "Revisor",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Marck",
+      "rol": "Revisor",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Rafael",
+      "rol": "Tech lead",
+      "tarjetas": 1,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Samuel",
+      "rol": "Desarrollador",
+      "tarjetas": 4,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Sebastián",
+      "rol": "Desarrollador",
+      "tarjetas": 6,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Manuel",
+      "rol": "QA",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Adrián",
+      "rol": "Desarrollador",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Alfonso",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Karla",
+      "rol": "Scrum Master",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Christian",
+      "rol": "Revisora",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Juan José",
+      "rol": "Tech lead",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "nombre": "Luis Fernando",
+      "rol": "Desarrollador",
+      "tarjetas": 0,
+      "matriz": {
+        "DOR": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "DEV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "AI": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "LEAD-REV": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "QA": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "MERGE": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "SAND": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
+  "actividades": [
+    {
+      "clave": "CJJ-363",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-08T23:02",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-476",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-27T17:33",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:16"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-800",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-11T16:46",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:22"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-23T15:22",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-801",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-11T17:56",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:22"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-23T15:22",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-809",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T11:22",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T13:59"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-23T13:59",
+          "fin": "2026-11-23T14:41"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-23T14:41",
+          "fin": "2026-11-23T15:14"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-23T15:14",
+          "fin": "2026-11-23T15:26"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-23T15:26",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-23T13:59",
+          "desde": "QA",
+          "categoria": "El funcionamiento es incorrecto",
+          "comentario": "38231",
+          "resumen": "Tras descargar un reporte que sí tenía datos, el sistema mostraba un aviso falso de «sin información», además de un aviso de error falso al cargar la pantalla de reportes."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-810",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T13:43",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-831",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-17T14:29",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:16"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-833",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-17T18:14",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:05"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-23T15:05",
+          "fin": "2026-11-23T16:02"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-23T16:02",
+          "fin": "2026-11-23T16:36"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-23T16:36",
+          "fin": "2026-11-23T16:40"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-23T16:40",
+          "fin": "2026-11-23T17:04"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-23T17:04",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-23T16:36",
+          "desde": "AI",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38238",
+          "resumen": "Cuando una red social no tiene enlace configurado, el pie de página de los portales de ciudadano y funcionario sigue mostrando su icono en lugar de ocultarlo."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-837",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-19T12:53",
+      "estado": "SAND",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T15:16"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-862",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-20T19:48",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-23T18:11"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-23T18:11",
+          "fin": "2026-11-23T18:30"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-23T18:30",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-863",
+      "titulo": "n/d",
+      "responsable": "Rafael",
+      "creada": "2026-11-23T10:16",
+      "estado": "DOR",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-23T10:16",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    }
+  ]
+}
