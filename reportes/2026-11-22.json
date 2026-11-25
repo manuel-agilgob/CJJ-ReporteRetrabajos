@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-22 → 2026-11-28",
     "periodoInicio": "2026-11-22",
     "periodoFin": "2026-11-28",
-    "generado": "2026-11-23T19:03",
+    "generado": "2026-11-24T19:06",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.4"
@@ -93,7 +93,15 @@
       },
       {
         "fecha": "2026-11-24",
-        "valores": {}
+        "valores": {
+          "DEV": 3,
+          "AI": 1,
+          "LEAD-REV": 5,
+          "QA": 15,
+          "SAND": 1,
+          "PROD": 3,
+          "RET": 4
+        }
       },
       {
         "fecha": "2026-11-25",
@@ -113,7 +121,7 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-23T19:03",
+      "fecha": "2026-11-24T19:06",
       "estados": [
         {
           "estado": "Listo para tomar",
@@ -123,7 +131,7 @@
         {
           "estado": "Desarrollo",
           "etapa": "DEV",
-          "n": 14
+          "n": 16
         },
         {
           "estado": "Revisión asistida",
@@ -133,12 +141,12 @@
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 57
+          "n": 56
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 15
+          "n": 14
         },
         {
           "estado": "Integración",
@@ -148,12 +156,12 @@
         {
           "estado": "Sandbox",
           "etapa": "SAND",
-          "n": 74
+          "n": 69
         },
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 4
+          "n": 6
         }
       ]
     },
@@ -163,8 +171,8 @@
         "n": 92
       },
       "cierre": {
-        "fecha": "2026-11-23T19:03",
-        "n": 89
+        "fecha": "2026-11-24T19:06",
+        "n": 91
       }
     },
     "fusionadas": []
@@ -184,7 +192,7 @@
     "Malas prácticas de programación",
     "Fallan o faltan pruebas"
   ],
-  "etapaPorDefecto": "AI",
+  "etapaPorDefecto": "LEAD-REV",
   "etapas": [
     {
       "key": "DOR",
@@ -248,6 +256,7 @@
       "sub": "Revisión de lead",
       "counts": [
         0,
+        1,
         0,
         0,
         0,
@@ -257,8 +266,7 @@
         0,
         0,
         0,
-        0,
-        0,
+        1,
         0
       ]
     },
@@ -267,7 +275,7 @@
       "sub": "Pruebas",
       "counts": [
         1,
-        0,
+        1,
         0,
         0,
         0,
@@ -314,7 +322,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0
       ],
@@ -706,7 +714,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 4,
+      "tarjetas": 5,
       "matriz": {
         "DOR": [
           0,
@@ -765,12 +773,12 @@
           0,
           0,
           0,
-          0,
+          1,
           0
         ],
         "QA": [
           1,
-          0,
+          1,
           0,
           0,
           0,
@@ -818,7 +826,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 6,
+      "tarjetas": 10,
       "matriz": {
         "DOR": [
           0,
@@ -921,7 +929,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0
         ]
@@ -1042,7 +1050,7 @@
     {
       "nombre": "Adrián",
       "rol": "Desarrollador",
-      "tarjetas": 0,
+      "tarjetas": 3,
       "matriz": {
         "DOR": [
           0,
@@ -1490,7 +1498,7 @@
     {
       "nombre": "Juan José",
       "rol": "Tech lead",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -1539,7 +1547,7 @@
         ],
         "LEAD-REV": [
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -1602,7 +1610,7 @@
     {
       "nombre": "Luis Fernando",
       "rol": "Desarrollador",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -1730,11 +1738,26 @@
       "retrabajos": []
     },
     {
+      "clave": "CJJ-474",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-24T17:26",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-476",
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-07-27T17:33",
-      "estado": "SAND",
+      "estado": "En producción",
       "tramos": [
         {
           "etapa": "QA",
@@ -1744,6 +1767,36 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-24T13:29"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-24T13:29",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-645",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-08-19T17:39",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T07:44"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-24T07:44",
+          "fin": "2026-11-24T07:58"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-24T07:58",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1754,7 +1807,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T16:46",
-      "estado": "SAND",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "MERGE",
@@ -1764,6 +1817,11 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-23T15:22",
+          "fin": "2026-11-24T12:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-24T12:39",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1774,7 +1832,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-11T17:56",
-      "estado": "SAND",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "MERGE",
@@ -1784,6 +1842,69 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-23T15:22",
+          "fin": "2026-11-24T12:45"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-24T12:45",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-802",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-11-11T18:08",
+      "estado": "RET",
+      "tramos": [
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T17:56"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-24T17:56",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-24T17:56",
+          "desde": "LEAD-REV",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38280",
+          "resumen": "La validación de la plantilla de correo puede rechazar una plantilla válida cuando el identificador llega como texto; además quedan pendientes ajustes menores de tipado y una consulta repetitiva."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-807",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-13T10:45",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-808",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-13T11:08",
+      "estado": "QA",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1794,7 +1915,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-11-13T11:22",
-      "estado": "LEAD-REV",
+      "estado": "RET",
       "tramos": [
         {
           "etapa": "QA",
@@ -1819,6 +1940,11 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-23T15:26",
+          "fin": "2026-11-24T18:07"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-24T18:07",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1829,6 +1955,13 @@
           "categoria": "El funcionamiento es incorrecto",
           "comentario": "38231",
           "resumen": "Tras descargar un reporte que sí tenía datos, el sistema mostraba un aviso falso de «sin información», además de un aviso de error falso al cargar la pantalla de reportes."
+        },
+        {
+          "fecha": "2026-11-24T18:07",
+          "desde": "LEAD-REV",
+          "categoria": "Malas prácticas de programación",
+          "comentario": "38283",
+          "resumen": "Quedan ajustes menores de calidad de código: tipado de funciones tocadas, un comentario en español que debe traducirse y pruebas que no siguen completo el patrón AAA."
         }
       ]
     },
@@ -1848,11 +1981,64 @@
       "retrabajos": []
     },
     {
+      "clave": "CJJ-811",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-13T15:54",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T17:08"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-24T17:08",
+          "fin": "2026-11-24T17:48"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-24T17:48",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": [
+        {
+          "fecha": "2026-11-24T17:08",
+          "desde": "QA",
+          "categoria": "No cubre todos los escenarios o escenarios borde",
+          "comentario": "38276",
+          "resumen": "Enviando el encabezado de tipo JSON con otro juzgado, un funcionario puede obtener el reporte de ese otro juzgado, tanto en sentencias como en estadística."
+        }
+      ]
+    },
+    {
+      "clave": "CJJ-830",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-17T13:55",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T12:46"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-24T12:46",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-831",
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-17T14:29",
-      "estado": "SAND",
+      "estado": "En producción",
       "tramos": [
         {
           "etapa": "QA",
@@ -1862,6 +2048,16 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-24T12:44"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-24T12:44",
+          "fin": "2026-11-24T13:24"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-24T13:24",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1916,6 +2112,46 @@
       ]
     },
     {
+      "clave": "CJJ-835",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-11-18T18:06",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T16:21"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-24T16:21",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-836",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-11-18T18:55",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-24T16:38"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-24T16:38",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-837",
       "titulo": "n/d",
       "responsable": "Sebastián",
@@ -1930,10 +2166,28 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-23T15:16",
+          "fin": "2026-11-24T12:20"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-24T12:20",
+          "fin": "2026-11-24T14:01"
+        },
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-24T14:01",
           "fin": "2026-11-29T00:00"
         }
       ],
-      "retrabajos": []
+      "retrabajos": [
+        {
+          "fecha": "2026-11-24T12:20",
+          "desde": "SAND",
+          "categoria": "OTRO, No se ajusta a ninguna categoria definida",
+          "comentario": "38247",
+          "resumen": "Se devuelve la tarjeta desde Sandbox porque el problema detectado está a nivel de base de datos."
+        }
+      ]
     },
     {
       "clave": "CJJ-862",
