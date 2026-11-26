@@ -5,7 +5,7 @@
     "etiquetaPeriodo": "2026-11-22 → 2026-11-28",
     "periodoInicio": "2026-11-22",
     "periodoFin": "2026-11-28",
-    "generado": "2026-11-24T19:06",
+    "generado": "2026-11-25T19:10",
     "responsable": "Ingeniería — Lead de entrega",
     "fuente": "Jira (proyectos CJJ y CJJ-ExpedienteElectronico-2025) — consulta directa, clasificación por el agente",
     "version": "v1.4"
@@ -83,29 +83,39 @@
         "fecha": "2026-11-23",
         "valores": {
           "DOR": 1,
-          "DEV": 2,
           "AI": 4,
           "LEAD-REV": 3,
-          "QA": 8,
           "SAND": 5,
-          "RET": 2
+          "DEV": 2,
+          "RET": 2,
+          "QA": 8
         }
       },
       {
         "fecha": "2026-11-24",
         "valores": {
-          "DEV": 3,
-          "AI": 1,
-          "LEAD-REV": 5,
-          "QA": 15,
+          "RET": 4,
           "SAND": 1,
+          "DEV": 3,
+          "LEAD-REV": 5,
           "PROD": 3,
-          "RET": 4
+          "QA": 15,
+          "AI": 1
         }
       },
       {
         "fecha": "2026-11-25",
-        "valores": {}
+        "valores": {
+          "DEV": 3,
+          "AI": 11,
+          "LEAD-REV": 10,
+          "DOR": 1,
+          "PROD": 64,
+          "MERGE": 19,
+          "QA": 16,
+          "RET": 2,
+          "DEVELOP": 8
+        }
       },
       {
         "fecha": "2026-11-26",
@@ -121,7 +131,7 @@
       }
     ],
     "tablero": {
-      "fecha": "2026-11-24T19:06",
+      "fecha": "2026-11-25T19:10",
       "estados": [
         {
           "estado": "Listo para tomar",
@@ -131,7 +141,7 @@
         {
           "estado": "Desarrollo",
           "etapa": "DEV",
-          "n": 16
+          "n": 15
         },
         {
           "estado": "Revisión asistida",
@@ -141,12 +151,12 @@
         {
           "estado": "Revisión de lead",
           "etapa": "LEAD-REV",
-          "n": 56
+          "n": 59
         },
         {
           "estado": "Pruebas",
           "etapa": "QA",
-          "n": 14
+          "n": 7
         },
         {
           "estado": "Integración",
@@ -156,12 +166,12 @@
         {
           "estado": "Sandbox",
           "etapa": "SAND",
-          "n": 69
+          "n": 5
         },
         {
           "estado": "Retrabajo",
           "etapa": "RET",
-          "n": 6
+          "n": 5
         }
       ]
     },
@@ -171,11 +181,52 @@
         "n": 92
       },
       "cierre": {
-        "fecha": "2026-11-24T19:06",
-        "n": 91
+        "fecha": "2026-11-25T19:10",
+        "n": 86
       }
     },
-    "fusionadas": []
+    "fusionadas": [
+      {
+        "clave": "CJJ-299",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-363",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-464",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-474",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-494",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-798",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-807",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      },
+      {
+        "clave": "CJJ-808",
+        "fecha": "2026-11-25",
+        "repositorio": "nilo-expediente-core"
+      }
+    ]
   },
   "categorias": [
     "El funcionamiento es incorrecto",
@@ -241,7 +292,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -260,7 +311,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -378,7 +429,7 @@
     {
       "nombre": "Manny",
       "rol": "Revisor",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -490,7 +541,7 @@
     {
       "nombre": "Marck",
       "rol": "Revisor",
-      "tarjetas": 0,
+      "tarjetas": 1,
       "matriz": {
         "DOR": [
           0,
@@ -602,7 +653,7 @@
     {
       "nombre": "Rafael",
       "rol": "Tech lead",
-      "tarjetas": 1,
+      "tarjetas": 2,
       "matriz": {
         "DOR": [
           0,
@@ -714,7 +765,7 @@
     {
       "nombre": "Samuel",
       "rol": "Desarrollador",
-      "tarjetas": 5,
+      "tarjetas": 23,
       "matriz": {
         "DOR": [
           0,
@@ -752,7 +803,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -767,7 +818,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -826,7 +877,7 @@
     {
       "nombre": "Sebastián",
       "rol": "Desarrollador",
-      "tarjetas": 10,
+      "tarjetas": 31,
       "matriz": {
         "DOR": [
           0,
@@ -1050,7 +1101,7 @@
     {
       "nombre": "Adrián",
       "rol": "Desarrollador",
-      "tarjetas": 3,
+      "tarjetas": 22,
       "matriz": {
         "DOR": [
           0,
@@ -1498,7 +1549,7 @@
     {
       "nombre": "Juan José",
       "rol": "Tech lead",
-      "tarjetas": 1,
+      "tarjetas": 2,
       "matriz": {
         "DOR": [
           0,
@@ -1610,7 +1661,7 @@
     {
       "nombre": "Luis Fernando",
       "rol": "Desarrollador",
-      "tarjetas": 1,
+      "tarjetas": 10,
       "matriz": {
         "DOR": [
           0,
@@ -1723,15 +1774,1115 @@
   "colaboradoresNota": "Se contabiliza al responsable de la tarjeta en el momento del retrabajo. Una tarjeta con varios retornos aporta un caso por cada transición a Retrabajo.",
   "actividades": [
     {
-      "clave": "CJJ-363",
+      "clave": "CJJ-44",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-01-22T09:07",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-175",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-02T18:11",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-176",
+      "titulo": "n/d",
+      "responsable": "Rafael",
+      "creada": "2026-04-02T18:46",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-199",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-04-08T20:18",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-223",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:21",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T11:50"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T11:50",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-225",
       "titulo": "n/d",
       "responsable": "Sebastián",
-      "creada": "2026-06-08T23:02",
-      "estado": "QA",
+      "creada": "2026-04-08T23:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-228",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-08T23:22",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-242",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-04-13T15:13",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-247",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-04-14T16:41",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-250",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-04-24T16:45",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-283",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-287",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-292",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-294",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-298",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-299",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "QA",
           "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T08:59",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-301",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-303",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-305",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-307",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-309",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-310",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-311",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-312",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-313",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-314",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-317",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-320",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-321",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-322",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-327",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-328",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-330",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-332",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-333",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-334",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-337",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-338",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-05-27T09:21",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-357",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-05T14:22",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-363",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-08T23:02",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T08:59",
+          "fin": "2026-11-25T09:12"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T09:12",
+          "fin": "2026-11-25T11:03"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-25T11:03",
+          "fin": "2026-11-25T11:22"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T11:22",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-368",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-09T13:37",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-399",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-18T14:22",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-403",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-18T17:36",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-412",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-26T13:19",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-413",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-26T13:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-414",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-26T13:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-415",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-26T13:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-416",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-06-26T13:20",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-420",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-06-30T11:25",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-424",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-06-30T11:27",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-426",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-06-30T11:27",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-428",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-06-30T11:28",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-455",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-07T18:44",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-464",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-14T11:15",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T08:59",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-25T09:15"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T09:15",
+          "fin": "2026-11-25T11:05"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-25T11:05",
+          "fin": "2026-11-25T11:22"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T11:22",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1742,11 +2893,16 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-07-24T17:26",
-      "estado": "QA",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "QA",
           "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T08:59",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1778,6 +2934,186 @@
       "retrabajos": []
     },
     {
+      "clave": "CJJ-479",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-28T22:26",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-486",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-07-29T10:44",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-487",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-29T10:50",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-489",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-07-29T12:40",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-490",
+      "titulo": "n/d",
+      "responsable": "Adrián",
+      "creada": "2026-07-30T15:30",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-492",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-03T10:23",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-494",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-08-03T10:24",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T16:52"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T16:52",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-495",
+      "titulo": "n/d",
+      "responsable": "Luis Fernando",
+      "creada": "2026-08-03T10:47",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-642",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-08-18T17:35",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
       "clave": "CJJ-645",
       "titulo": "n/d",
       "responsable": "Adrián",
@@ -1797,6 +3133,126 @@
         {
           "etapa": "LEAD-REV",
           "inicio": "2026-11-24T07:58",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-727",
+      "titulo": "n/d",
+      "responsable": "Manny",
+      "creada": "2026-09-22T22:54",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-743",
+      "titulo": "n/d",
+      "responsable": "Marck",
+      "creada": "2026-10-05T13:47",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-762",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-10-14T17:08",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-772",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-10-27T19:45",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-773",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-10-27T19:50",
+      "estado": "En producción",
+      "tramos": [
+        {
+          "etapa": "SAND",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-798",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-09T17:37",
+      "estado": "MERGE",
+      "tramos": [
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T16:51"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T16:51",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1885,11 +3341,16 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-13T10:45",
-      "estado": "QA",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "QA",
           "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T08:59",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1900,11 +3361,16 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-13T11:08",
-      "estado": "QA",
+      "estado": "MERGE",
       "tramos": [
         {
           "etapa": "QA",
           "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T16:52"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T16:52",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1915,7 +3381,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-11-13T11:22",
-      "estado": "RET",
+      "estado": "QA",
       "tramos": [
         {
           "etapa": "QA",
@@ -1945,6 +3411,51 @@
         {
           "etapa": "RET",
           "inicio": "2026-11-24T18:07",
+          "fin": "2026-11-25T09:10"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T09:10",
+          "fin": "2026-11-25T09:34"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-25T09:34",
+          "fin": "2026-11-25T09:52"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T09:52",
+          "fin": "2026-11-25T10:20"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T10:20",
+          "fin": "2026-11-25T17:06"
+        },
+        {
+          "etapa": "RET",
+          "inicio": "2026-11-25T17:06",
+          "fin": "2026-11-25T17:42"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-25T17:42",
+          "fin": "2026-11-25T17:47"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T17:47",
+          "fin": "2026-11-25T18:07"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T18:07",
+          "fin": "2026-11-25T18:33"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-25T18:33",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1962,6 +3473,20 @@
           "categoria": "Malas prácticas de programación",
           "comentario": "38283",
           "resumen": "Quedan ajustes menores de calidad de código: tipado de funciones tocadas, un comentario en español que debe traducirse y pruebas que no siguen completo el patrón AAA."
+        },
+        {
+          "fecha": "2026-11-25T09:34",
+          "desde": "AI",
+          "categoria": "Conflicto con la rama principal",
+          "comentario": "38300",
+          "resumen": "Código aprobado en la revisión, pero el retorno se pidió porque la rama de la tarjeta tenía conflictos con develop pendientes de resolver."
+        },
+        {
+          "fecha": "2026-11-25T17:06",
+          "desde": "LEAD-REV",
+          "categoria": "Conflicto con la rama principal",
+          "comentario": "38319",
+          "resumen": "La revisión técnica aprobó el código, pero develop recibió cambios después de una fusión y la rama volvió a tener un conflicto en una vista, que debe resolverse conservando lo corregido por QA."
         }
       ]
     },
@@ -1975,6 +3500,26 @@
         {
           "etapa": "QA",
           "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T08:59"
+        },
+        {
+          "etapa": "MERGE",
+          "inicio": "2026-11-25T08:59",
+          "fin": "2026-11-25T09:00"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T09:00",
+          "fin": "2026-11-25T09:23"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T09:23",
+          "fin": "2026-11-25T11:05"
+        },
+        {
+          "etapa": "QA",
+          "inicio": "2026-11-25T11:05",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -1985,7 +3530,7 @@
       "titulo": "n/d",
       "responsable": "Samuel",
       "creada": "2026-11-13T15:54",
-      "estado": "DEV",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "QA",
@@ -2000,6 +3545,26 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-24T17:48",
+          "fin": "2026-11-25T09:02"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T09:02",
+          "fin": "2026-11-25T09:28"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T09:28",
+          "fin": "2026-11-25T17:48"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T17:48",
+          "fin": "2026-11-25T17:58"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T17:58",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -2136,7 +3701,7 @@
       "titulo": "n/d",
       "responsable": "Adrián",
       "creada": "2026-11-18T18:55",
-      "estado": "DEV",
+      "estado": "LEAD-REV",
       "tramos": [
         {
           "etapa": "DOR",
@@ -2146,6 +3711,16 @@
         {
           "etapa": "DEV",
           "inicio": "2026-11-24T16:38",
+          "fin": "2026-11-25T17:15"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T17:15",
+          "fin": "2026-11-25T17:39"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T17:39",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -2156,7 +3731,7 @@
       "titulo": "n/d",
       "responsable": "Sebastián",
       "creada": "2026-11-19T12:53",
-      "estado": "SAND",
+      "estado": "En producción",
       "tramos": [
         {
           "etapa": "QA",
@@ -2176,6 +3751,11 @@
         {
           "etapa": "SAND",
           "inicio": "2026-11-24T14:01",
+          "fin": "2026-11-25T09:01"
+        },
+        {
+          "etapa": "PROD",
+          "inicio": "2026-11-25T09:01",
           "fin": "2026-11-29T00:00"
         }
       ],
@@ -2223,7 +3803,57 @@
       "tramos": [
         {
           "etapa": "DOR",
-          "inicio": "2026-11-23T10:16",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-864",
+      "titulo": "n/d",
+      "responsable": "Sebastián",
+      "creada": "2026-11-23T17:57",
+      "estado": "DEV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T14:48"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-25T14:48",
+          "fin": "2026-11-29T00:00"
+        }
+      ],
+      "retrabajos": []
+    },
+    {
+      "clave": "CJJ-865",
+      "titulo": "n/d",
+      "responsable": "Samuel",
+      "creada": "2026-11-23T20:26",
+      "estado": "LEAD-REV",
+      "tramos": [
+        {
+          "etapa": "DOR",
+          "inicio": "2026-11-22T00:00",
+          "fin": "2026-11-25T17:42"
+        },
+        {
+          "etapa": "DEV",
+          "inicio": "2026-11-25T17:42",
+          "fin": "2026-11-25T18:21"
+        },
+        {
+          "etapa": "AI",
+          "inicio": "2026-11-25T18:21",
+          "fin": "2026-11-25T18:38"
+        },
+        {
+          "etapa": "LEAD-REV",
+          "inicio": "2026-11-25T18:38",
           "fin": "2026-11-29T00:00"
         }
       ],
